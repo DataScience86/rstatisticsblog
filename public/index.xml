@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Quick R Tutorial on R Statistics Blog</title>
+    <link>//localhost:1313/</link>
+    <description>Recent content in Quick R Tutorial on R Statistics Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	<atom:link href="//localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Getting Started</title>
+      <link>//localhost:1313/docs/quick-r-tutorial/introduction-to-r/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/docs/quick-r-tutorial/introduction-to-r/</guid>
+      <description>Introduction In this quick tutorial, we will cover essential concepts of R programming language. It is not a zero to hero tutorial. However, this course does proffer you with all the necessary information to achieve data analysis related tasks in R.
+Installation The installation of R software is pretty straight forward and is like any other software. First, you need to download the R software IDE (Interactive Development Environments).
+Download RIf you have installed the R software as guided.</description>
+    </item>
+    
+    <item>
+      <title>R Basics</title>
+      <link>//localhost:1313/docs/quick-r-tutorial/r-basics/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/docs/quick-r-tutorial/r-basics/</guid>
+      <description>Overview Ross Ihaka and Robert developed R at the University of Auckland in New Zealand. They started working on the tool in 1933 to help their students. However, they were then encouraged to make it open source. The language is based on another single letter programming language called S, primarily it is called S+, and it still exists.
+One of the major reasons for the popularity of R is that R and its packages are Open Source and Free.</description>
+    </item>
+    
+    <item>
+      <title>Conditions &amp; Loops</title>
+      <link>//localhost:1313/docs/quick-r-tutorial/using-conditional-statements-and-loops/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/docs/quick-r-tutorial/using-conditional-statements-and-loops/</guid>
+      <description>Conditions and Loops In R Conditional statements in R programming language enables the user to execute a statement based upon a particular condition or criteria. On the other hand, the loops ensure that the same task is executed again and again.
+Having knowledge and understanding of how the two work is extremely critical for any programmer. As a data analyst or a data science practitioner, you will be using them quite often.</description>
+    </item>
+    
+    <item>
+      <title>Its All About Functions</title>
+      <link>//localhost:1313/docs/quick-r-tutorial/functions-and-apply-family/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/docs/quick-r-tutorial/functions-and-apply-family/</guid>
+      <description>Functions in R By now you must have figured it out that R programming is not a traditional programming language. The language is a collection of functions that are packed together to form a package. All thanks to the open and free community, which has contributed to over 9000 packages over the years. Today one can find any function to achieve almost any statistical task in R by doing a little research.</description>
+    </item>
+    
+    <item>
+      <title>Data Frame Manipulations</title>
+      <link>//localhost:1313/docs/quick-r-tutorial/dataframe-manipulations/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/docs/quick-r-tutorial/dataframe-manipulations/</guid>
+      <description>Data Manipulation Tasks With Example Code As a data analyst, you will be working mostly with data frames. And thus, it becomes vital that you learn, understand, and practice data manipulation tasks. This chapter will focus on listing down some of the most common data manipulation tasks along with example code.
+Before, we start and dig into how to accomplish tasks mentioned above. Let&amp;rsquo;s see how to access the datasets which come along with the R packages.</description>
+    </item>
+    
+    <item>
+      <title>Creating a New Theme</title>
+      <link>//localhost:1313/posts/creating-a-new-theme/</link>
+      <pubDate>Sun, 28 Sep 2014 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/posts/creating-a-new-theme/</guid>
+      <description>Introduction This tutorial will show you how to create a simple theme in Hugo. I assume that you are familiar with HTML, the bash command line, and that you are comfortable using Markdown to format content. I&amp;rsquo;ll explain how Hugo uses templates and how you can organize your templates to create a theme. I won&amp;rsquo;t cover using CSS to style your theme.
+We&amp;rsquo;ll start with creating a new site with a very basic template.</description>
+    </item>
+    
+    <item>
+      <title>Migrate to Hugo from Jekyll</title>
+      <link>//localhost:1313/posts/migrate-from-jekyll/</link>
+      <pubDate>Mon, 10 Mar 2014 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/posts/migrate-from-jekyll/</guid>
+      <description>Move static content to static Jekyll has a rule that any directory not starting with _ will be copied as-is to the _site output. Hugo keeps all static content under static. You should therefore move it all there. With Jekyll, something that looked like
+▾ &amp;lt;root&amp;gt;/▾ images/logo.png should become
+▾ &amp;lt;root&amp;gt;/▾ static/▾ images/logo.png Additionally, you&amp;rsquo;ll want any files that should reside at the root (such as CNAME) to be moved to static.</description>
+    </item>
+    
+    <item>
+      <title>Tutorial data.table Package</title>
+      <link>//localhost:1313/docs/useful-r-packages/R-Tutorial-datatable-With-Examples/</link>
+      <pubDate>Tue, 17 Oct 2017 15:26:15 +0000</pubDate>
+      
+      <guid>//localhost:1313/docs/useful-r-packages/R-Tutorial-datatable-With-Examples/</guid>
+      <description>Overview If you are looking for fast execution of your code on large datasets, then you must read through this tutorial. Data manipulation tasks such as aggregations, add/remove/update of columns, joins, reading large files, etc., are all very important for any data science-related project. Keeping all these operations into mind, Matt Dowle and Arun Shrinivasan created a package called data.table.
+data.table package is an extension of data.frame package in R. It is one of the first choices for data scientists while they work on large datasets.</description>
+    </item>
+    
+    <item>
+      <title>Tutorial ggplot2 Package</title>
+      <link>//localhost:1313/docs/useful-r-packages/Quick-ggplot2-Tutorial/</link>
+      <pubDate>Tue, 17 Oct 2017 15:26:15 +0000</pubDate>
+      
+      <guid>//localhost:1313/docs/useful-r-packages/Quick-ggplot2-Tutorial/</guid>
+      <description>Overview The ggplot2 package in R provides a reliable system for describing and building graphs. The package is capable of creating elegant and aesthetically pleasing graphics. The framework of ggplot2 is quite different (in comparison to graphics package) and is based on the grammar of graphics(introduced initially by Leland Wilkinson). At first, you may not find it intuitive, but don&amp;rsquo;t worry, we are here to help. Together, we will master it to the core.</description>
+    </item>
+    
+    <item>
+      <title>(Hu)go Template Primer</title>
+      <link>//localhost:1313/posts/goisforlovers/</link>
+      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/posts/goisforlovers/</guid>
+      <description>Hugo uses the excellent Go html/template library for its template engine. It is an extremely lightweight engine that provides a very small amount of logic. In our experience that it is just the right amount of logic to be able to create a good static website. If you have used other template systems from different languages or frameworks you will find a lot of similarities in Go templates.
+This document is a brief primer on using Go templates.</description>
+    </item>
+    
+    <item>
+      <title>Getting Started with Hugo</title>
+      <link>//localhost:1313/posts/hugoisforlovers/</link>
+      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/posts/hugoisforlovers/</guid>
+      <description>Step 1. Install Hugo Go to Hugo releases and download the appropriate version for your OS and architecture.
+Save it somewhere specific as we will be using it in the next step.
+More complete instructions are available at Install Hugo
+Step 2. Build the Docs Hugo has its own example site which happens to also be the documentation site you are reading right now.
+Follow the following steps:
+ Clone the Hugo repository Go into the repo Run hugo in server mode and build the docs Open your browser to http://localhost:1313  Corresponding pseudo commands:</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head><script src="/livereload.js?port=1313&mindelay=10&v=2" data-no-instant defer></script>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Overview Ross Ihaka and Robert developed R at the University of Auckland in New Zealand. They started working on the tool in 1933 to help their students. However, they were then encouraged to make it open source. The language is based on another single letter programming language called S, primarily it is called S&#43;, and it still exists.
+One of the major reasons for the popularity of R is that R and its packages are Open Source and Free."><meta property="og:title" content="R Basics" />
+<meta property="og:description" content="Overview Ross Ihaka and Robert developed R at the University of Auckland in New Zealand. They started working on the tool in 1933 to help their students. However, they were then encouraged to make it open source. The language is based on another single letter programming language called S, primarily it is called S&#43;, and it still exists.
+One of the major reasons for the popularity of R is that R and its packages are Open Source and Free." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="//localhost:1313/docs/quick-r-tutorial/r-basics/" />
+<meta property="article:modified_time" content="2020-04-25T03:07:33+05:30" />
+<title>R Basics | R Statistics Blog</title>
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.6df681b0bb21155cba49f6078e3559216772d8e03e780d240c73ea21817ed5e5.css" integrity="sha256-bfaBsLshFVy6SfYHjjVZIWdy2OA&#43;eA0kDHPqIYF&#43;1eU=">
+<script defer src="/en.search.min.cb76f5a8555ce5f51c46bf98283f1953a82aac5eaba731030355629d5a3dcbd7.js" integrity="sha256-y3b1qFVc5fUcRr&#43;YKD8ZU6gqrF6rpzEDA1VinVo9y9c="></script>
+
+<script defer src="/sw.min.74a8bb07f0bee86d6bb9a2750f073f14d93c7e4512f28860370cfd879e9719b4.js" integrity="sha256-dKi7B/C&#43;6G1ruaJ1Dwc/FNk8fkUS8ohgNwz9h56XGbQ="></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body>
+  <input type="checkbox" class="hidden" id="menu-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      
+  <nav>
+<h2 class="book-brand">
+  <a href="//localhost:1313/"><span>R Statistics Blog</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  
+  
+  
+
+  
+  <ul>
+    
+      
+        <li class="book-section-flat" >
+          
+  
+    <span>Useful R Packages</span>
+  
+
+          
+  
+  
+  
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+    <a href="/docs/useful-r-packages/R-Tutorial-datatable-With-Examples/" class="">Tutorial data.table Package</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/useful-r-packages/Quick-ggplot2-Tutorial/" class="">Tutorial ggplot2 Package</a>
+  
+
+        </li>
+      
+    
+  </ul>
+  
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+    <span>Quick R Tutorial</span>
+  
+
+          
+  
+  
+  
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+    <a href="/docs/quick-r-tutorial/introduction-to-r/" class="">Getting Started</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/quick-r-tutorial/r-basics/" class="active">R Basics</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/quick-r-tutorial/using-conditional-statements-and-loops/" class="">Conditions &amp; Loops</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/quick-r-tutorial/functions-and-apply-family/" class="">Its All About Functions</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/quick-r-tutorial/dataframe-manipulations/" class="">Data Frame Manipulations</a>
+  
+
+        </li>
+      
+    
+  </ul>
+  
+
+        </li>
+      
+    
+  </ul>
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/posts/" >
+        Blog
+      </a>
+  </li>
+  
+  <li>
+    <a href="https://github.com/alex-shpak/hugo-book" target="_blank" rel="noopener">
+        Github
+      </a>
+  </li>
+  
+  <li>
+    <a href="https://themes.gohugo.io/hugo-book/" target="_blank" rel="noopener">
+        Hugo Themes
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+
+
+ 
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>R Basics</strong>
+
+  <label for="toc-control">
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+  </label>
+</div>
+
+
+  
+    <input type="checkbox" class="hidden" id="toc-control" />
+    <aside class="hidden clearfix">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#overview">Overview</a></li>
+        <li><a href="#getting-help-in-r">Getting Help in R</a></li>
+        <li><a href="#operators-in-r">Operators in R</a>
+          <ul>
+            <li><a href="#binaryarithmetic-operators">Binary/Arithmetic Operators</a></li>
+            <li><a href="#arithmetic-operators-in-action">Arithmetic operators in action</a></li>
+            <li><a href="#logical-operators">Logical Operators</a></li>
+            <li><a href="#logical-operators-in-action">Logical Operators in action</a></li>
+            <li><a href="#assignment-operator">Assignment operator</a></li>
+          </ul>
+        </li>
+        <li><a href="#numbers-and-strings">Numbers and Strings</a>
+          <ul>
+            <li><a href="#working-with-numbers">Working With Numbers</a></li>
+            <li><a href="#generating-sequence-of-numbers">Generating sequence of numbers</a></li>
+            <li><a href="#generating-uniformly-distributed-random-numbers">Generating uniformly distributed random numbers</a></li>
+            <li><a href="#generate-random-numbers-from-a-normal-distribution">Generate random numbers from a normal distribution</a></li>
+            <li><a href="#generating-the-same-sequence-of-random-numbers">Generating the same sequence of random numbers</a></li>
+            <li><a href="#rounding-numbers-to-the-nearest-value">Rounding numbers to the nearest value</a></li>
+            <li><a href="#working-with-strings">Working With Strings</a></li>
+            <li><a href="#combining-strings">Combining strings</a></li>
+            <li><a href="#searching-and-replacing-strings">Searching and Replacing strings</a></li>
+          </ul>
+        </li>
+        <li><a href="#data-types-and-structure">Data types and structure</a>
+          <ul>
+            <li><a href="#data-types">Data Types</a></li>
+            <li><a href="#data-structure">Data Structure</a></li>
+          </ul>
+        </li>
+        <li><a href="#vector-manipulation">Vector manipulation</a>
+          <ul>
+            <li><a href="#defining-vectors">Defining vectors</a></li>
+            <li><a href="#verifying-and-checking-the-class-of-the-vectors">Verifying and checking the class of the vectors</a></li>
+            <li><a href="#accessing-the-elements-of-a-vector">Accessing the elements of a vector</a></li>
+            <li><a href="#replacing-and-adding-values-to-a-vector">Replacing and adding values to a vector</a></li>
+            <li><a href="#using-index">Using Index</a></li>
+            <li><a href="#using-c-function">Using c() function</a></li>
+            <li><a href="#using-append-function">Using append() function</a></li>
+            <li><a href="#getting-the-index-of-a-particular-element">Getting the index of a particular element</a></li>
+            <li><a href="#other-important-vector-manipulation-functions">Other important vector manipulation functions</a></li>
+            <li><a href="#sorting-a-vector">Sorting a vector</a></li>
+            <li><a href="#checking-and-removing-missing-values">Checking and Removing missing values</a></li>
+            <li><a href="#subsetting-the-vector-and-getting-length-of-a-vector">Subsetting the vector and getting length of a vector</a></li>
+          </ul>
+        </li>
+        <li><a href="#list-manipulation">List manipulation</a>
+          <ul>
+            <li><a href="#defining-list">Defining list</a></li>
+            <li><a href="#referencing-values-of-a-list">Referencing values of a list</a></li>
+            <li><a href="#extracting-values-from-a-list">Extracting values from a list</a></li>
+            <li><a href="#replacing-values-in-a-list">Replacing values in a list</a></li>
+            <li><a href="#unlisting-the-list">Unlisting the list</a></li>
+            <li><a href="#checking-the-class-of-each-vector-in-a-list">Checking the class of each vector in a list</a></li>
+          </ul>
+        </li>
+        <li><a href="#matrix-manipulation">Matrix Manipulation</a>
+          <ul>
+            <li><a href="#defining-matrix">Defining Matrix</a></li>
+            <li><a href="#basic-operations-related-to-matrix">Basic operations related to matrix</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+    </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h2 id="overview">Overview</h2>
+<p>Ross Ihaka and Robert developed R at the University of Auckland in New Zealand. They started working on the tool in 1933 to help their students. However, they were then encouraged to make it open source. The language is based on another single letter programming language called S, primarily it is called S+, and it still exists.</p>
+<p>One of the major reasons for the popularity of R is that R and its packages are <strong>Open Source and Free</strong>.</p>
+<blockquote class="book-hint info">
+  <strong>Do You Know</strong>
+R, in its original form is a command-line language.
+</blockquote>
+
+<h2 id="getting-help-in-r">Getting Help in R</h2>
+<p>R has an extensive help system, and this is one of the best features of R programming. One can quickly access the documentation of functions and packages by using <code>help()</code> or <code>?</code>. These functions provide access to the documentation pages for R functions, data sets, and other objects. Almost all the documents of R packages and functions contain a couple of examples showcasing how to use the function.</p>
+<pre><code>help(mean)
+?mean
+</code></pre><h2 id="operators-in-r">Operators in R</h2>
+<p>R supports almost all the popular binary and logical operators. I am sure you will be familiar with nearly all of them. The operators mentioned below can be used with scalars, vectors, and matrices.</p>
+<h3 id="binaryarithmetic-operators">Binary/Arithmetic Operators</h3>
+<table>
+<thead>
+<tr>
+<th align="center">Operator</th>
+<th align="center">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">+</td>
+<td align="center">Addition</td>
+</tr>
+<tr>
+<td align="center">-</td>
+<td align="center">Subtraction</td>
+</tr>
+<tr>
+<td align="center">*</td>
+<td align="center">Multiplication</td>
+</tr>
+<tr>
+<td align="center">/</td>
+<td align="center">Division</td>
+</tr>
+<tr>
+<td align="center">** or ^</td>
+<td align="center">Exponentiation</td>
+</tr>
+<tr>
+<td align="center">X%/%Y</td>
+<td align="center">Integer Division</td>
+</tr>
+<tr>
+<td align="center">X%%Y</td>
+<td align="center">Modulus gives remainder</td>
+</tr>
+</tbody>
+</table>
+<h3 id="arithmetic-operators-in-action">Arithmetic operators in action</h3>
+<pre><code># adding two values
+2 + 2
+# Multiplying
+23*34
+# Integer division
+1990%/%23
+# Calculating Modulus
+7%%2
+</code></pre><p>Although R is a remarkable statistical tool, there is one exasperating thing about R that it is a case-sensitive language. That means that <strong>view</strong> (with smaller case v)and <strong>View</strong>(with capital V) are considered as two different objects.</p>
+<h3 id="logical-operators">Logical Operators</h3>
+<p>Logical operators return TRUE if the condition is met and return FALSE if the condition is not met. They can be used with both numbers and strings.</p>
+<table>
+<thead>
+<tr>
+<th align="center">Operator</th>
+<th align="center">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">&gt;</td>
+<td align="center">Greater than</td>
+</tr>
+<tr>
+<td align="center">&gt;=</td>
+<td align="center">Greater than or equal to</td>
+</tr>
+<tr>
+<td align="center">&lt;</td>
+<td align="center">Less than</td>
+</tr>
+<tr>
+<td align="center">&lt;=</td>
+<td align="center">Less than or equal to</td>
+</tr>
+<tr>
+<td align="center">==</td>
+<td align="center">Equal to</td>
+</tr>
+<tr>
+<td align="center">!=</td>
+<td align="center">Not equal to</td>
+</tr>
+<tr>
+<td align="center">x</td>
+<td align="center">y</td>
+</tr>
+<tr>
+<td align="center">x &amp; y</td>
+<td align="center">x and y</td>
+</tr>
+<tr>
+<td align="center">!x</td>
+<td align="center">Not x</td>
+</tr>
+</tbody>
+</table>
+<h3 id="logical-operators-in-action">Logical Operators in action</h3>
+<pre><code># Using Great than
+10 &gt; 11
+# Using equal to
+&quot;Hanna&quot;==&quot;hanna&quot;
+# Using not x
+!10 == 11
+#Using AND operator
+(10 == 10) &amp; (2 ==2)
+</code></pre><h3 id="assignment-operator">Assignment operator</h3>
+<p>The <strong>assignment operator</strong> is used in programming languages to save or assign a value to the variable. The variable can then be used for further processing. In R, we use <strong>assignment operator (&lt;-)</strong> to assign a value. We can also use <strong>equal to (=) symbol</strong> as assignment operator. However, <strong>assignment operator (&lt;-)</strong> are far more prevalent in R than the equal to sign.</p>
+<pre><code># Assigning number values
+num &lt;- 23
+num
+
+# Assigning string value
+strng &lt;- &quot;Hanna&quot;
+strng
+</code></pre><blockquote class="book-hint info">
+  Strings like most other programming languages are defined using double or single quotes.
+</blockquote>
+
+<h2 id="numbers-and-strings">Numbers and Strings</h2>
+<p>Numbers and strings are what constitute any dataset in general. So it becomes crucial we understand some of the most common tasks and functions you will be required to execute while dealing with them in general.</p>
+<h3 id="working-with-numbers">Working With Numbers</h3>
+<h3 id="generating-sequence-of-numbers">Generating sequence of numbers</h3>
+<p>To generate sequence of numbers one can either use <strong>semicolon(:)</strong> or can use <code>seq()</code> function.</p>
+<pre><code># Using (:) to generate sequence of integer numbers
+1:10
+# Using seq() function to generate sequence of numbers
+seq(10, 20, by = 0.7)
+</code></pre><h3 id="generating-uniformly-distributed-random-numbers">Generating uniformly distributed random numbers</h3>
+<p>Among many functions, the functions which I like the most are <code>runif()</code> and <code>sample()</code> functions.</p>
+<pre><code># Using runif() function to generate 10 random numbers
+# By default generates number between 0 and 1
+runif(10)
+
+# Generating numbers between 200 to 500
+runif(10, min = 200, max = 500)
+
+# Generating four random numbers **REPLACEMENT**
+sample(10:15, 4, replace=TRUE)
+
+# Generating three random numbers **WITHOUT REPLACEMENT**
+sample(10:15, 4, replace=FALSE)
+</code></pre><p>sample() function is often used for creating random samples from the dataset. The sample data can then be used for training Machine Learning models or to deep dive and understand the data.</p>
+<h3 id="generate-random-numbers-from-a-normal-distribution">Generate random numbers from a normal distribution</h3>
+<p>A normal distribution is a distribution that follows a bell curve. Statistically speaking, its mean, median, and mode are all the same.</p>
+<pre><code># Using rnorm() function to generate 10 random numbers
+rnorm(10)
+# Setting the desired standard deviation and mean
+rnorm(10, mean = 5, sd = 2)
+</code></pre><h3 id="generating-the-same-sequence-of-random-numbers">Generating the same sequence of random numbers</h3>
+<p>The <code>set.seed()</code> function can be used to generate the same set of random numbers. A useful function that can help you to generate reproducible results. The function takes one argument, which is an integer number. Keeping that number the same gives you identical results.</p>
+<pre><code># With set.seed()
+# Output 1
+set.seed(23)
+rnorm(10, mean = 5, sd = 2)
+# Output 2
+set.seed(23)
+rnorm(10, mean = 5, sd = 2)
+
+# Without set.see()
+# Output 1
+rnorm(10, mean = 5, sd = 2)
+# Output 2
+rnorm(10, mean = 5, sd = 2)
+</code></pre><h3 id="rounding-numbers-to-the-nearest-value">Rounding numbers to the nearest value</h3>
+<p>We have a couple of ways to achieve this. One can round the values to the nearest integer, to the upper side, to the lower side, or towards zero. The following set of functions can be used to achieve either of the said tasks.</p>
+<pre><code># Generating a sequence of numbers
+numerSeq&lt;- seq(0, 1, by=.05)
+
+# Rounding to nearest integer - it uses that .5 rule
+round(numerSeq)
+# Rounding to one decimal point
+round(numerSeq, 1)
+# Rounding towards upper side value
+ceiling(numerSeq)
+# Rounding towards lower side value
+floor(numerSeq)
+# Rounding towards Zero
+trunc(numerSeq)
+</code></pre><h3 id="working-with-strings">Working With Strings</h3>
+<p>The two tasks which are very critical from the data analysis point of view are:
+Combining Strings
+Searching &amp; Replacing Strings</p>
+<h3 id="combining-strings">Combining strings</h3>
+<p>Knowing how to combine strings or a string with a number can be of great help. I often use this to represent or print my final output. Another use comes from the analysis point of view. Considering these two tasks in mind the two most widely used functions are <code>paste()</code>(space is a default separator) or <code>paste0()</code>(there is no separator) function and <code>sprintf()</code> function.</p>
+<pre><code># Combing two strings using paste() function
+paste(&quot;Hanna&quot;, &quot;Ask&quot;)
+# Choosing different separator
+paste(&quot;Hanna&quot;, &quot;Ask&quot;, sep = &quot;$&quot;)
+
+# Using paste0() function
+paste0(&quot;Hanna&quot;, &quot;Ask&quot;)
+</code></pre><p>You can also pass a collection of string inside the <code>paste()</code> function.  This collection of similar elements in R is formally called a vector. More on this later.</p>
+<pre><code># Creating a vector of string
+strgVec &lt;- c(&quot;Cat&quot;, &quot;Dog&quot;, &quot;Fish&quot;, &quot;Cow&quot;)
+# Combing the values by +
+paste(strgVec, collapse = &quot;+&quot;)
+</code></pre><p>sprintf() function is derived from c programming.</p>
+<pre><code># Using sprintf() function to combine two string
+sprintf(&quot;My name is %s&quot;, &quot;Hanna&quot;)
+
+# Combining a string and an integer
+sprintf(&quot;My name is %s and I am %d years old&quot;, &quot;Hanna&quot;, 30)
+</code></pre><h3 id="searching-and-replacing-strings">Searching and Replacing strings</h3>
+<p>We will cover three very useful functions here are those are <code>sub()</code>, <code>gsub()</code> and <code>grep()</code>.</p>
+<pre><code># Defining a string
+strng &lt;- “You’re gonna need a bigger boat boat.”
+
+# Replacing boat with car
+sub(&quot;boat&quot;, &quot;car&quot;, strng)
+
+# Replacing boat by  with car at all instances
+gsub(&quot;boat&quot;, &quot;car&quot;, strng)
+
+# Returns the index where the string matches
+grep(&quot;[car]&quot;, letters)
+</code></pre><h2 id="data-types-and-structure">Data types and structure</h2>
+<p>In R, there are six data types and four data structures.</p>
+<h3 id="data-types">Data Types</h3>
+<ol>
+<li><strong>Character</strong> - it the collection of string. Example - &ldquo;Hanna&rdquo;, &ldquo;Dog&rdquo;, &ldquo;Male&rdquo;.</li>
+<li><strong>Numeric</strong> - it is a numeric value which is represented by decimal points. Example - 10.4, 12.45.</li>
+<li><strong>Integer</strong> - its is also a number but only the integer part. Example - 109, 123, 34.</li>
+<li><strong>Logical</strong> - the Boolean values. Example  - TRUE, FALSE</li>
+<li><strong>Factor</strong> - qualitative variable which can be either of nominal or ordinal type. If  it is ordinal then it is called as ordered factor. Example Nominal - &ldquo;Male&rdquo; and &ldquo;Female&rdquo;. Example Ordinal - &ldquo;Good&rdquo;, &ldquo;Average&rdquo; and &ldquo;Best&rdquo;.</li>
+<li><strong>Complex</strong> - a number which has got an imaginary part to it.</li>
+</ol>
+<blockquote class="book-hint danger">
+  Integer values can also represent the factor variable. So always make a habit of going back and looking at the metadata for variable information.
+</blockquote>
+
+<h3 id="data-structure">Data Structure</h3>
+<p>The data structures in R are defined based on the dimensionality and homogeneity of data type it can hold.</p>
+<ol>
+<li>
+<p><strong>Vector</strong> - They are also formally known as <strong>Atomic Vectors</strong>. A Vector can hold only <strong>one type of data</strong> and is <strong>one-dimensional</strong>.</p>
+</li>
+<li>
+<p><strong>List</strong> - List is also <strong>one-dimensional</strong> structure; however it can store <strong>multiple data types</strong>.</p>
+</li>
+<li>
+<p><strong>Matrix</strong> - Matrix is <strong>two-dimensional</strong> structure and can only save <strong>one data type</strong>.</p>
+</li>
+<li>
+<p><strong>Data Frame</strong> - Data Frame is also a <strong>two-dimensional</strong> structure but can save <strong>multiple types of data</strong>.</p>
+</li>
+</ol>
+<h2 id="vector-manipulation">Vector manipulation</h2>
+<p>Now we will learn about some of the most basic data manipulation functions. The knowledge of these functions is an absolute must for anyone to move forward and perform any kind of data analysis task.</p>
+<h3 id="defining-vectors">Defining vectors</h3>
+<p>Here is a collection of all the functions which are used to define different data types and structures in R programming.</p>
+<pre><code># Defining character vectors
+characterVector &lt;- c(&quot;Football&quot;, &quot;Cricket&quot;, &quot;Tennis&quot;, &quot;Badminton&quot;)
+# Defining numeric vectors
+numericVector &lt;- c(12.3, 23.4, 17.9, 89.7)
+# Defining integer vectors
+integerVector &lt;- c(12L, 23L, 17L, 89L)
+# Defining logical vectors
+logicVector &lt;- c(TRUE, FALSE, TRUE, TRUE)
+
+# Defining factor - nominal
+factorVector &lt;- factor(characterVector)
+# Defining factor - ordinal
+orderedFactorVector &lt;- factor(characterVector, ordered = TRUE)
+</code></pre><h3 id="verifying-and-checking-the-class-of-the-vectors">Verifying and checking the class of the vectors</h3>
+<p>For vectors, when we check the data structure type, it returns the type of the data which it holds. For checking the class of the vector we can use either <code>class()</code> function or <code>typeof()</code> function. There are other functions, but these are the common ones.</p>
+<pre><code># Using class() function to check the object type
+class(numericVector)
+
+# Using typeof function to check the object type
+typeof(numericVector)
+</code></pre><p>If you just wish to check the type of vector, then we can use <code>is</code> family functions. These functions will return TRUE if the vector belongs to a specific kind else it returns FALSE.</p>
+<pre><code># Checking if the vector is character type
+is.character(numericVector)
+# Checking if the vector is numeric type
+is.numeric(numericVector)
+</code></pre><h3 id="accessing-the-elements-of-a-vector">Accessing the elements of a vector</h3>
+<p>The elements inside a vector can be accessed using an index. Unlike other programming languages like C or Python, the indexing in R starts from 1 and not zero.</p>
+<pre><code># Extracting third elements
+characterVector[3]
+# Extracting multiple elements
+characterVector[c(1,3)]
+
+# Deleting element
+characterVector[-1]
+# Deleting multiple element
+characterVector[-c(1,3)]
+</code></pre><blockquote class="book-hint warning">
+  <strong>Note</strong>
+One is not allowed to pass both positive and negative index values.
+</blockquote>
+
+<h3 id="replacing-and-adding-values-to-a-vector">Replacing and adding values to a vector</h3>
+<p>To replace existing values in a vector. First, call the value using <strong>square brackets []</strong> and then simply assign a new value to it.</p>
+<pre><code># Replacing football with basketball
+characterVector[1] &lt;- &quot;Basketball&quot;
+characterVector
+# Replacing more than one values
+numericVector[c(1,4)] &lt;- c(55, 66)
+numericVector
+</code></pre><p>To add new value to a vector, you can use either of the below approaches based upon your requirement.</p>
+<h3 id="using-index">Using Index</h3>
+<p>The <strong>numericVector</strong> contains 4 elements. We will add a new element to this vector by using the index. However, this method only allows us to add a new element at the end of the vector.</p>
+<pre><code># Adding element at the end.
+numericVector[5] &lt;- 77
+numericVector
+</code></pre><h3 id="using-c-function">Using c() function</h3>
+<p>By using <code>c()</code> function, you can add new element either at the beginning or at the end of a vector.</p>
+<pre><code># Adding element at the end.
+numericVector &lt;- c(numericVector, 99)
+numericVector
+
+# Adding element at the beginning
+numericVector &lt;- c(99, numericVector)
+numericVector
+</code></pre><h3 id="using-append-function">Using append() function</h3>
+<p>If you wish to add a new element at any given index in a vector, then <code>append()</code> function is the correct choice. The function takes three arguments.</p>
+<pre><code># Using append function to add value after 4th positon
+numericVector &lt;- append(numericVector, # vector
+                        99, # element to be interted
+                        4) # index after which to be inserted
+</code></pre><h3 id="getting-the-index-of-a-particular-element">Getting the index of a particular element</h3>
+<p>The below code can be used to get the index of an element in R.</p>
+<pre><code># Printing the index of values which are equal to 99
+which(numericVector == 99.0)
+</code></pre><h3 id="other-important-vector-manipulation-functions">Other important vector manipulation functions</h3>
+<p>Below is the list of essential and useful functions for the manipulation of vectors in R.</p>
+<h3 id="sorting-a-vector">Sorting a vector</h3>
+<pre><code># Sorting in ascending order
+numericVector[order(numericVector)]
+# Sorting in descending order
+numericVector[order(numericVector, decreasing = TRUE)]
+</code></pre><h3 id="checking-and-removing-missing-values">Checking and Removing missing values</h3>
+<pre><code># Adding NA value to a vector
+numericVector[2] &lt;- NA
+# Checking if missing value is present
+is.na(numericVector)
+
+# Removing NA values using ! not
+numericVector[!is.na(numericVector)]
+# Removing NA values using na.omit() function
+na.omit(numericVector)
+</code></pre><h3 id="subsetting-the-vector-and-getting-length-of-a-vector">Subsetting the vector and getting length of a vector</h3>
+<pre><code># Getting elements greater than 30
+numericVector &lt;- numericVector[numericVector &gt; 30]
+
+# Checking the total number of elements in the new vector
+length(numericVector)
+</code></pre><h2 id="list-manipulation">List manipulation</h2>
+<h3 id="defining-list">Defining list</h3>
+<p>To define a list we use <code>list()</code> function. The function can be used to create simple list or named list.</p>
+<pre><code>
+# Defining list
+example1 &lt;- list(c(2,3,4), c(&quot;aa&quot;, &quot;bb&quot;, &quot;cc&quot;, &quot;dd&quot;), c(TRUE, TRUE))
+example1
+
+# Defining vectors
+empName &lt;- c(&quot;Chris&quot;, &quot;Robin&quot;, &quot;Matt&quot;)
+empSalary &lt;- c(2000, 4000, 6000)
+bonusGiven &lt;- c(TRUE, TRUE, FALSE)
+
+# Defining list using vectors
+listStruct &lt;- list(empName, empSalary, bonusGiven)
+listStruct
+# Defining Named list
+namedListStruct &lt;- list(&quot;empName&quot; = empName,
+                   &quot;empSalary&quot; = empSalary,
+                   &quot;bonusGiven&quot; = bonusGiven)
+namedListStruct
+</code></pre><h3 id="referencing-values-of-a-list">Referencing values of a list</h3>
+<p>A value inside a list can be accessed using an index or by using the name(if it is a named list). Fundamentally list is nothing but a collection of vectors. That means we can apply all the data manipulations, which we have just learned in the <strong>Vector Manipulation</strong> section.</p>
+<h3 id="extracting-values-from-a-list">Extracting values from a list</h3>
+<pre><code># Extracting a value list of emp names from unnamed list
+listStruct[[1]]
+
+# Extracting a value list of emp names from the named list
+namedListStruct$empName
+
+# Extract Robin from the emp names
+listStruct[[1]][2]
+
+# Extracting a value list of emp names from named list
+namedListStruct$empName[2]
+</code></pre><h3 id="replacing-values-in-a-list">Replacing values in a list</h3>
+<pre><code># Replace salary for Robin by 8000
+listStruct[[2]][2] &lt;- 8000
+listStruct
+
+# or in named list
+namedListStruct$empSalary[2] &lt;- 8000
+namedListStruct
+</code></pre><h3 id="unlisting-the-list">Unlisting the list</h3>
+<p><code>Unlist()</code> function can be used to flatten out the list to one level.</p>
+<pre><code>unlist(listStruct)
+</code></pre><h3 id="checking-the-class-of-each-vector-in-a-list">Checking the class of each vector in a list</h3>
+<pre><code>lapply(listStruct, class)
+</code></pre><blockquote class="book-hint info">
+  A list can consist of multiple levels, and one can also create a nested list. Also, lists can be used to bundle objects of different lengths.
+</blockquote>
+
+<h2 id="matrix-manipulation">Matrix Manipulation</h2>
+<h3 id="defining-matrix">Defining Matrix</h3>
+<p>As it is a two-dimensional structure while defining, we need to mention the number of rows and number of columns.</p>
+<pre><code># Defining a matrix
+matStruct &lt;- matrix(integerVector,
+                    nrow = 2, ncol = 2,
+                    byrow = TRUE)
+
+# Defining a matrix
+matStruct1 &lt;- matrix(integerVector,
+                    nrow = 2, ncol = 2,
+                    byrow = FALSE)
+</code></pre><h3 id="basic-operations-related-to-matrix">Basic operations related to matrix</h3>
+<p>In the below code snippet we are sharing some functions which are good to know and will help you with your data science work.</p>
+<pre><code># naming columns
+colnames(matStruct) &lt;- c(&quot;col1&quot;, &quot;col2&quot;)
+# naming rows
+rownames(matStruct) &lt;- c(&quot;row1&quot;, &quot;row2&quot;)
+# Getting the dimension of the matrix
+dim(matStruct)
+# Getting the count of the rows
+nrow(matStruct)
+# Getting the count of the columns
+ncol(matStruct)
+# Accessing 2 column values
+matStruct[, 2]
+# Accessing 1 row values
+matStruct[1, ]
+# Combing two matrix by columns
+cbind(matStruct, matStruct1)
+# Combing two matrix by rows - appending
+rbind(matStruct, matStruct1)
+</code></pre><p>In this chapter, we looked at all the basic concepts of R Programming. We learned and spent some time looking at things like different operators, data types, structures, and some must-know functions, which will enable you to manipulate these structures.  We hope you got some sense of how powerful this software can be. In the next chapter, we’ll look at an extensive list of data manipulation tasks related to data frames.</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex justify-between">
+
+  
+
+
+  
+
+  
+
+  
+
+
+
+<div class="book-languages" tabindex="0" aria-haspopup="true">
+  <ul>
+    <li class="flex align-center">
+      <img src="/svg/translate.svg" class="book-icon" alt="Languages" />
+      English
+    </li> 
+  </ul>
+
+  <ul class="book-languages-list">
+    
+    <li class="active">
+      <a href="//localhost:1313/" class="flex align-center">
+        <img src="/svg/translate.svg" class="book-icon" alt="Languages" />
+        English
+      </a>
+    </li>
+    
+    <li class="">
+      <a href="//localhost:1313/ru/" class="flex align-center">
+        <img src="/svg/translate.svg" class="book-icon" alt="Languages" />
+        Russian
+      </a>
+    </li>
+    
+    <li class="">
+      <a href="//localhost:1313/zh/" class="flex align-center">
+        <img src="/svg/translate.svg" class="book-icon" alt="Languages" />
+        Chinese
+      </a>
+    </li>
+    
+  </ul>
+</div>
+
+
+
+
+
+
+</div>
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#overview">Overview</a></li>
+        <li><a href="#getting-help-in-r">Getting Help in R</a></li>
+        <li><a href="#operators-in-r">Operators in R</a>
+          <ul>
+            <li><a href="#binaryarithmetic-operators">Binary/Arithmetic Operators</a></li>
+            <li><a href="#arithmetic-operators-in-action">Arithmetic operators in action</a></li>
+            <li><a href="#logical-operators">Logical Operators</a></li>
+            <li><a href="#logical-operators-in-action">Logical Operators in action</a></li>
+            <li><a href="#assignment-operator">Assignment operator</a></li>
+          </ul>
+        </li>
+        <li><a href="#numbers-and-strings">Numbers and Strings</a>
+          <ul>
+            <li><a href="#working-with-numbers">Working With Numbers</a></li>
+            <li><a href="#generating-sequence-of-numbers">Generating sequence of numbers</a></li>
+            <li><a href="#generating-uniformly-distributed-random-numbers">Generating uniformly distributed random numbers</a></li>
+            <li><a href="#generate-random-numbers-from-a-normal-distribution">Generate random numbers from a normal distribution</a></li>
+            <li><a href="#generating-the-same-sequence-of-random-numbers">Generating the same sequence of random numbers</a></li>
+            <li><a href="#rounding-numbers-to-the-nearest-value">Rounding numbers to the nearest value</a></li>
+            <li><a href="#working-with-strings">Working With Strings</a></li>
+            <li><a href="#combining-strings">Combining strings</a></li>
+            <li><a href="#searching-and-replacing-strings">Searching and Replacing strings</a></li>
+          </ul>
+        </li>
+        <li><a href="#data-types-and-structure">Data types and structure</a>
+          <ul>
+            <li><a href="#data-types">Data Types</a></li>
+            <li><a href="#data-structure">Data Structure</a></li>
+          </ul>
+        </li>
+        <li><a href="#vector-manipulation">Vector manipulation</a>
+          <ul>
+            <li><a href="#defining-vectors">Defining vectors</a></li>
+            <li><a href="#verifying-and-checking-the-class-of-the-vectors">Verifying and checking the class of the vectors</a></li>
+            <li><a href="#accessing-the-elements-of-a-vector">Accessing the elements of a vector</a></li>
+            <li><a href="#replacing-and-adding-values-to-a-vector">Replacing and adding values to a vector</a></li>
+            <li><a href="#using-index">Using Index</a></li>
+            <li><a href="#using-c-function">Using c() function</a></li>
+            <li><a href="#using-append-function">Using append() function</a></li>
+            <li><a href="#getting-the-index-of-a-particular-element">Getting the index of a particular element</a></li>
+            <li><a href="#other-important-vector-manipulation-functions">Other important vector manipulation functions</a></li>
+            <li><a href="#sorting-a-vector">Sorting a vector</a></li>
+            <li><a href="#checking-and-removing-missing-values">Checking and Removing missing values</a></li>
+            <li><a href="#subsetting-the-vector-and-getting-length-of-a-vector">Subsetting the vector and getting length of a vector</a></li>
+          </ul>
+        </li>
+        <li><a href="#list-manipulation">List manipulation</a>
+          <ul>
+            <li><a href="#defining-list">Defining list</a></li>
+            <li><a href="#referencing-values-of-a-list">Referencing values of a list</a></li>
+            <li><a href="#extracting-values-from-a-list">Extracting values from a list</a></li>
+            <li><a href="#replacing-values-in-a-list">Replacing values in a list</a></li>
+            <li><a href="#unlisting-the-list">Unlisting the list</a></li>
+            <li><a href="#checking-the-class-of-each-vector-in-a-list">Checking the class of each vector in a list</a></li>
+          </ul>
+        </li>
+        <li><a href="#matrix-manipulation">Matrix Manipulation</a>
+          <ul>
+            <li><a href="#defining-matrix">Defining Matrix</a></li>
+            <li><a href="#basic-operations-related-to-matrix">Basic operations related to matrix</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+ 
+    </aside>
+    
+  </main>
+
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
