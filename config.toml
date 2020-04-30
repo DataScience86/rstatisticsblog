@@ -4,6 +4,8 @@ baseURL = '/'
 title = 'R Statistics Blog'
 theme = 'book'
 
+googleAnalytics = "UA-131766057-1"
+
 # Book configuration
 disablePathToLower = true
 enableGitInfo = true
@@ -17,9 +19,6 @@ enableGitInfo = true
   startLevel = 1
 
 ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
-
-# Analytic section
-googleAnalytics = "UA-131766057-1"
 
 # Multi-lingual mode config
 # There are different options to translate files

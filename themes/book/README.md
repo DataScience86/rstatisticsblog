@@ -136,39 +136,39 @@ enableGitInfo = true
 # (Optional) Theme is intended for documentation use, therefore it doesn't render taxonomy.
 # You can remove related files with config below
 disableKinds = ['taxonomy', 'taxonomyTerm']
-  
+
 [params]
   # (Optional, default true) Controls table of contents visibility on right side of pages.
   # Start and end levels can be controlled with markup.tableOfContents setting.
   # You can also specify this parameter per page in front matter.
   BookToC = true
-  
+
   # (Optional, default none) Set the path to a logo for the book. If the logo is
   # /static/logo.png then the path would be 'logo.png'
   BookLogo = 'logo.png'
-  
+
   # (Optional, default none) Set leaf bundle to render as side menu
   # When not specified file structure and weights will be used
   BookMenuBundle = '/menu'
-  
+
   # (Optional, default docs) Specify section of content to render as menu
   # You can also set value to "*" to render all sections to menu
   BookSection = 'docs'
-  
+
   # Set source repository location.
   # Used for 'Last Modified' and 'Edit this page' links.
   BookRepo = 'https://github.com/alex-shpak/hugo-book'
-  
+
   # Enable 'Edit this page' links for 'doc' page type.
   # Disabled by default. Uncomment to enable. Requires 'BookRepo' param.
   # Path must point to 'content' directory of repo.
   BookEditPath = 'edit/master/exampleSite/content'
-  
+
   # (Optional, default January 2, 2006) Configure the date format used on the pages
   # - In git information
   # - In blog posts
   BookDateFormat = 'Jan 2, 2006'
-  
+
   # (Optional, default true) Enables search function with flexsearch,
   # Index is built on fly, therefore it might slowdown your website.
   # Configuration for indexing can be adjusted in i18n folder per language.
