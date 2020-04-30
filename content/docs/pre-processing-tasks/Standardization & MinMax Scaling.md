@@ -1,5 +1,6 @@
 ---
 title: "Standardization And Scaling"
+date: 2020-01-10
 weight: 7
 ---
 

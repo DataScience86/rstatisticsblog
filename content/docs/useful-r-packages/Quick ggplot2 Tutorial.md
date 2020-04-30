@@ -1,5 +1,6 @@
 ---
 title: "Tutorial ggplot2 Package"
+date: 2020-04-15
 weight: 1
 ---
 

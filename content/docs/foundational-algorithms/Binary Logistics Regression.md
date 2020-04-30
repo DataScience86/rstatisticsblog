@@ -1,5 +1,6 @@
 ---
 title: "Binary Logistic Regression"
+date: 2020-02-10
 weight: 4
 ---
 

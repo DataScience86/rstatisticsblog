@@ -18,6 +18,7 @@ enableGitInfo = true
 
 ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
 
+# Analytic section
 googleAnalytics = "UA-131766057-1"
 
 # Multi-lingual mode config

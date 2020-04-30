@@ -1,5 +1,6 @@
 ---
 title: "Linear Regression"
+date: 2020-3-21
 weight: 1
 ---
 

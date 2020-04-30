@@ -1,5 +1,6 @@
 ---
 title: "Hypothesis Testing"
+date: 2019-12-12
 weight: 4
 ---
 

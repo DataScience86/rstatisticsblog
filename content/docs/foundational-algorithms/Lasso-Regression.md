@@ -1,5 +1,6 @@
 ---
 title: "Lasso Regression"
+date: 2020-02-16
 weight: 3
 ---
 

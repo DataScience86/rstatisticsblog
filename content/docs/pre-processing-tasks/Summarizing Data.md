@@ -1,5 +1,6 @@
 ---
 title: "Summarizing data"
+date: 2020-01-12
 weight: 3
 ---
 

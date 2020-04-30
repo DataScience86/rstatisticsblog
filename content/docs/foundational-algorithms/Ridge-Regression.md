@@ -1,5 +1,6 @@
 ---
 title: "Ridge Regression"
+date: 2020-03-29
 weight: 2
 ---
 

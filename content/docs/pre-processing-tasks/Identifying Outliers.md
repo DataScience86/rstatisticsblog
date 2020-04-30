@@ -1,5 +1,6 @@
 ---
 title: "Analysing Outliers"
+date: 2019-12-18
 weight: 1
 ---
 

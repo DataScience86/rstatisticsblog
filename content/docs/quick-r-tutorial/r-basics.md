@@ -1,5 +1,6 @@
 ---
 title: "R Basics"
+date: 2019-11-06
 weight: 2
 ---
 

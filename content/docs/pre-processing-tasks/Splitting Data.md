@@ -1,5 +1,6 @@
 ---
 title: "Splitting Data"
+date: 2020-01-03
 weight: 9
 ---
 

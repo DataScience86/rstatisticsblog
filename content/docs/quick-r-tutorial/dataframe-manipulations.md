@@ -1,5 +1,6 @@
 ---
 title: "Data Frame Manipulations"
+date: 2019-10-09
 weight: 5
 ---
 

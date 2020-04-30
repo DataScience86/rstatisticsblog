@@ -1,5 +1,6 @@
 ---
 title: "Multinomial Logistic Regression"
+date: 2020-02-22
 weight: 5
 ---
 

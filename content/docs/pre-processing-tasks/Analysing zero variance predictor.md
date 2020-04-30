@@ -1,5 +1,6 @@
 ---
 title: "Analysing zero variance predictor"
+date: 2019-12-01
 weight: 6
 ---
 

@@ -1,5 +1,6 @@
 ---
 title: "Principal Component Analysis"
+date: 2019-12-28
 weight: 8
 ---
 

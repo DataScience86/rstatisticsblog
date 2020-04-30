@@ -1,5 +1,6 @@
 ---
 title: "k-Mean Clustering"
+date: 2020-03-14
 weight: 6
 ---
 
