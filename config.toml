@@ -8,7 +8,7 @@ googleAnalytics = "UA-131766057-1"
 
 # (Optional) If you provide a Disqus shortname, comments will be enabled on
 # all pages.
-disqusShortname = "rstatisticsblog"
+disqusShortname = "rstatisticsblog-com"
 
 # Book configuration
 disablePathToLower = true
