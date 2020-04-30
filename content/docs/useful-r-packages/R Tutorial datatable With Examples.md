@@ -1,5 +1,6 @@
 ---
 title: "Tutorial data.table Package"
+date: 2020-04-30
 weight: 2
 ---
 
@@ -7,7 +8,7 @@ weight: 2
 # Overview
 If you are looking for fast execution of your code on large datasets, then you must read through this tutorial. Data manipulation tasks such as aggregations, add/remove/update of columns, joins, reading large files, etc., are all very important for any data science-related project. Keeping all these operations into mind, Matt Dowle and Arun Shrinivasan created a package called `data.table`.
 
-**data.table** package is an extension of **data.frame** package in R. It is one of the first choices for data scientists while they work on large datasets. Some of the notable features which makes the `data.table` a package so popular and easy to learn are:-
+**data.table** package is an extension of **data.frame** package in R. It is one of the first choices for data scientists while they work on large datasets. Some of the notable features which makes the `data.table` package popular are:-
 
 1. Irrespective of what set of operations you like to perform the `data.table` offers a concise and consistent syntax.
 2. It automatically provides fast **primary** and **secondary** indexing of rows.

@@ -6,7 +6,7 @@ theme = 'book'
 
 # Book configuration
 disablePathToLower = true
-enableGitInfo = false
+enableGitInfo = true
 
 # Needed for mermaid/katex shortcodes
 [markup]
@@ -17,6 +17,8 @@ enableGitInfo = false
   startLevel = 1
 
 ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
+
+googleAnalytics = "UA-131766057-1"
 
 # Multi-lingual mode config
 # There are different options to translate files
@@ -39,11 +41,11 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
 #   weight = 3
 
 [menu]
-# [[menu.before]]
-#[[menu.after]]
-#  name = "Github"
-#  url = "https://github.com/alex-shpak/hugo-book"
-#  weight = 10
+[[menu.before]]
+[[menu.after]]
+ name = "Github"
+ url = "https://github.com/DataScience86/rstatisticsblog/tree/master/content"
+ weight = 10
 
 #[[menu.after]]
 #  name = "Hugo Themes"
@@ -71,7 +73,7 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
 
   # Set source repository location.
   # Used for 'Last Modified' and 'Edit this page' links.
-  BookRepo = ''
+  BookRepo = 'https://github.com/DataScience86/rstatisticsblog/tree/master/content/docs'
 
   # Enable "Edit this page" links for 'doc' page type.
   # Disabled by default. Uncomment to enable. Requires 'BookRepo' param.
