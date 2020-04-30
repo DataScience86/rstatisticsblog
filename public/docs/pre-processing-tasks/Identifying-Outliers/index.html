@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head><script src="/livereload.js?port=1313&mindelay=10&v=2" data-no-instant defer></script>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Outlier is a value that does not follow the usual norms of the data. For almost all the statistical methods, outliers present a particular challenge, and so it becomes crucial to identify and treat them. Let&rsquo;s see which all packages and functions can be used in R to deal with outliers.
+ Overview The presence of outliers in the dataset can be a result of an error, or it can be a real value present in the data as a result of the actual distribution of the data."><meta property="og:title" content="Analysing Outliers" />
+<meta property="og:description" content="Outlier is a value that does not follow the usual norms of the data. For almost all the statistical methods, outliers present a particular challenge, and so it becomes crucial to identify and treat them. Let&rsquo;s see which all packages and functions can be used in R to deal with outliers.
+ Overview The presence of outliers in the dataset can be a result of an error, or it can be a real value present in the data as a result of the actual distribution of the data." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="//localhost:1313/docs/pre-processing-tasks/Identifying-Outliers/" />
+<meta property="article:published_time" content="2019-12-18T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-04-30T10:51:20+05:30" />
+<title>Analysing Outliers | R Statistics Blog</title>
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.6df681b0bb21155cba49f6078e3559216772d8e03e780d240c73ea21817ed5e5.css" integrity="sha256-bfaBsLshFVy6SfYHjjVZIWdy2OA&#43;eA0kDHPqIYF&#43;1eU=">
+<script defer src="/en.search.min.d57240dc8b064f390ea28d6a2ec3d38165e5dfc8433d2a750739a6c9c766d392.js" integrity="sha256-1XJA3IsGTzkOoo1qLsPTgWXl38hDPSp1Bzmmycdm05I="></script>
+
+<script defer src="/sw.min.74a8bb07f0bee86d6bb9a2750f073f14d93c7e4512f28860370cfd879e9719b4.js" integrity="sha256-dKi7B/C&#43;6G1ruaJ1Dwc/FNk8fkUS8ohgNwz9h56XGbQ="></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body>
+  <input type="checkbox" class="hidden" id="menu-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      
+  <nav>
+<h2 class="book-brand">
+  <a href="//localhost:1313/"><span>R Statistics Blog</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="" target="_blank" rel="noopener">
+        
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+
+  
+
+
+
+  
+  
+  
+  
+
+  
+  <ul>
+    
+      
+        <li class="book-section-flat" >
+          
+  
+    <span>Quick R Tutorial</span>
+  
+
+          
+  
+  
+  
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+    <a href="/docs/quick-r-tutorial/introduction-to-r/" class="">Getting Started</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/quick-r-tutorial/r-basics/" class="">R Basics</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/quick-r-tutorial/using-conditional-statements-and-loops/" class="">Conditions &amp; Loops</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/quick-r-tutorial/functions-and-apply-family/" class="">Its All About Functions</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/quick-r-tutorial/dataframe-manipulations/" class="">Data Frame Manipulations</a>
+  
+
+        </li>
+      
+    
+  </ul>
+  
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+    <span>Useful R Packages</span>
+  
+
+          
+  
+  
+  
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+    <a href="/docs/useful-r-packages/Quick-ggplot2-Tutorial/" class="">Tutorial ggplot2 Package</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/useful-r-packages/R-Tutorial-datatable-With-Examples/" class="">Tutorial data.table Package</a>
+  
+
+        </li>
+      
+    
+  </ul>
+  
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+    <span>Pre Processing Tasks</span>
+  
+
+          
+  
+  
+  
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+    <a href="/docs/pre-processing-tasks/Identifying-Outliers/" class="active">Analysing Outliers</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/pre-processing-tasks/Missing-Value-Imputation/" class="">Missing Value Imputation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/pre-processing-tasks/Summarizing-Data/" class="">Summarizing data</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/pre-processing-tasks/Hypothesis-Testing/" class="">Hypothesis Testing</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/pre-processing-tasks/Correlation/" class="">Correlation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/pre-processing-tasks/Analysing-zero-variance-predictor/" class="">Analysing zero variance predictor</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/pre-processing-tasks/Standardization-MinMax-Scaling/" class="">Standardization And Scaling</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/pre-processing-tasks/Principal-Component-Analysis/" class="">Principal Component Analysis</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/pre-processing-tasks/Splitting-Data/" class="">Splitting Data</a>
+  
+
+        </li>
+      
+    
+  </ul>
+  
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+    <span>Foundational Algorithms</span>
+  
+
+          
+  
+  
+  
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+    <a href="/docs/foundational-algorithms/Linear-Regression/" class="">Linear Regression</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/foundational-algorithms/Ridge-Regression/" class="">Ridge Regression</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/foundational-algorithms/Lasso-Regression/" class="">Lasso Regression</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/foundational-algorithms/Binary-Logistics-Regression/" class="">Binary Logistic Regression</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/foundational-algorithms/Multinomial-Logistic-Regressions/" class="">Multinomial Logistic Regression</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/foundational-algorithms/k-means-clustering/" class="">k-Mean Clustering</a>
+  
+
+        </li>
+      
+    
+  </ul>
+  
+
+        </li>
+      
+    
+  </ul>
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/posts/" >
+        Blog
+      </a>
+  </li>
+  
+  <li>
+    <a href="https://github.com/DataScience86/rstatisticsblog/tree/master/content" target="_blank" rel="noopener">
+        Github
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+
+
+ 
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Analysing Outliers</strong>
+
+  <label for="toc-control">
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+  </label>
+</div>
+
+
+  
+    <input type="checkbox" class="hidden" id="toc-control" />
+    <aside class="hidden clearfix">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#overview">Overview</a></li>
+    <li><a href="#using-tukey-formula-to-identify-outlier">Using tukey formula to identify outlier</a></li>
+    <li><a href="#using-histograms-to-identify-outliers">Using histograms to identify outliers</a></li>
+    <li><a href="#using-boxplot-to-identify-outliers">Using boxplot to identify outliers</a></li>
+    <li><a href="#using-cooks-distance-to-identify-outliers">Using cook&rsquo;s distance to identify outliers</a></li>
+    <li><a href="#using-dbscan---a-machine-learning-approach">Using DBSCAN - A machine learning approach</a>
+      <ul>
+        <li><a href="#optimal-value-of-eps">Optimal value of <strong>eps</strong></a></li>
+      </ul>
+    </li>
+    <li><a href="#possible-actions-towards-outliers">Possible actions towards outliers</a></li>
+  </ul>
+</nav>
+
+
+    </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><blockquote>
+<p><strong>Outlier</strong> is a value that does not follow the usual norms of the data. For almost all the statistical methods, outliers present a particular challenge, and so it becomes crucial to identify and treat them. Let&rsquo;s see which all packages and functions can be used in R to deal with outliers.</p>
+</blockquote>
+<h1 id="overview">Overview</h1>
+<p>The presence of outliers in the dataset can be a result of an error, or it can be a real value present in the data as a result of the actual distribution of the data. In either case, it is the responsibility of the analyst to identify and treat outlier values.</p>
+<h1 id="using-tukey-formula-to-identify-outlier">Using tukey formula to identify outlier</h1>
+<p>The tukey formula uses quantiles to produce upper and lower range values beyond which all values are considered as outliers.</p>
+<p>Outlier on the upper side = 3rd Quartile + 1.5 * IQR<br/>
+Outlier on the lower side = 1st Quartile – 1.5 * IQR</p>
+<p>The same formula is also used in a boxplot. The whiskers on either side represent the upper and lower threshold values.</p>
+<h1 id="using-histograms-to-identify-outliers">Using histograms to identify outliers</h1>
+<p>In a histogram, values beyond ± 2 standard deviations can be tossed as an outlier. However, this is not a rigid rule, and one can modify this on a need basis.</p>
+<pre><code># Building a histogram
+hist(iris$Sepal.Width,
+     col = &quot;blue&quot;,
+     main = &quot;Histogram&quot;,
+     xlab = &quot;Sepal width of flowers&quot;)
+</code></pre><figure>
+  <img src="/images/outlier/hist1.jpeg" alt="Histogram to identify outliers">
+</figure>
+<h1 id="using-boxplot-to-identify-outliers">Using boxplot to identify outliers</h1>
+<pre><code># Building a box plot
+library(ggplot2)
+ggplot(iris, aes(x = &quot;&quot;, y=Sepal.Width)) +
+  geom_boxplot(outlier.colour=&quot;red&quot;,
+             outlier.shape=16,
+             outlier.size=2, notch=FALSE)
+</code></pre><figure>
+  <img src="/images/outlier/boxplot1.jpeg" alt="Boxplot to identify outliers">
+</figure>
+<p>In the above plot, red dots represent the outlier values. We can also take a deeper plunge by looking at the boxplot by flower type. This should help us explore and understand if missing values are coming from a particular group or not.</p>
+<pre><code># Building a box plot
+library(ggplot2)
+ggplot(iris, aes(x = Species, y=Sepal.Width)) +
+  geom_boxplot(outlier.colour=&quot;red&quot;,
+             outlier.shape=16,
+             outlier.size=2, notch=FALSE)
+</code></pre><figure>
+  <img src="/images/outlier/boxplot2.jpeg" alt="Boxplot by group variable">
+</figure>
+<p>There are flowers in Setosa and Virginia categories that have an unusual sepal width. However, Versicolor species of flowers have no outlier.</p>
+<h1 id="using-cooks-distance-to-identify-outliers">Using cook&rsquo;s distance to identify outliers</h1>
+<p><strong>Cooks Distance</strong> is a multivariate method that is used to identify outliers while running a regression analysis. The algorithm tries to capture information about the predictor variables through a distance measure, which is a combination of leverage and each value in the dataset.</p>
+<p>A higher value of cooks distance indicates that the values are outliers. Following rules are used to make a decision using cooks distance.</p>
+<ul>
+<li>A value is considered an outlier if it is three times the mean value.</li>
+<li>Another rule states that all values which are higher than 4/n (n is the total number of observations) must be investigated.</li>
+</ul>
+<pre><code># Detecting outliers in cars dataset
+mod &lt;- glm(mpg ~ ., data = mtcars)
+mtcars$cooksd &lt;- cooks.distance(mod)
+
+# Defining outliers based on 4/n criteria
+mtcars$outlier &lt;- ifelse(mtcars$cooksd &lt; 4/nrow(mtcars), &quot;keep&quot;,&quot;delete&quot;)
+
+# Inspecting the dataset
+mtcars[5:12, ]
+</code></pre><pre><code>#Output
+                  mpg cyl  disp  hp drat   wt  qsec vs am gear carb        cooksd outlier
+Hornet Sportabout 18.7   8 360.0 175 3.15 3.44 17.02  0  0    3    2 0.00408313839    keep
+Valiant           18.1   6 225.0 105 2.76 3.46 20.22  1  0    3    1 0.03697080496    keep
+Duster 360        14.3   8 360.0 245 3.21 3.57 15.84  0  0    3    4 0.00006907413    keep
+Merc 240D         24.4   4 146.7  62 3.69 3.19 20.00  1  0    4    2 0.03454201049    keep
+Merc 230          22.8   4 140.8  95 3.92 3.15 22.90  1  0    4    2 0.37922064047  delete
+Merc 280          19.2   6 167.6 123 3.92 3.44 18.30  1  0    4    4 0.00428238516    keep
+Merc 280C         17.8   6 167.6 123 3.92 3.44 18.90  1  0    4    4 0.02404481831    keep
+Merc 450SE        16.4   8 275.8 180 3.07 4.07 17.40  0  0    3    3 0.04013728968    keep
+</code></pre><p><strong>Merc 230 is detected as an outlier by cooks distance</strong></p>
+<h1 id="using-dbscan---a-machine-learning-approach">Using DBSCAN - A machine learning approach</h1>
+<p><strong>DBSCAN</strong> is a method that uses a clustering algorithm to separate dense areas with sparse areas. DBSCAN identifies collective outliers, and thus one should ensure that not more than 5% of values are chosen to be recognized as outliers while running the algorithm.</p>
+<pre><code>library(fpc)
+# Compute DBSCAN using fpc package
+set.seed(86)
+db &lt;- fpc::dbscan(iris[, -c(5,4,3)], eps = 0.20, MinPts = 3)
+# Plot DBSCAN results
+plot(db, iris[, -c(5,4,3)], main = &quot;DBSCAN&quot;, frame = FALSE)
+</code></pre><figure>
+  <img src="/images/outlier/dbscan1.jpeg" alt="Scatter plot showcasing output of DBSCAN">
+</figure>
+<h2 id="optimal-value-of-eps">Optimal value of <strong>eps</strong></h2>
+<p><strong>eps</strong> is the maximum distance between two points, and based upon this distance; the algorithm decides whether a point is an outlier or not. So it becomes essential to identify the optimal eps value in order to make the correct decision. The below code dictated how we can identify optimal value for eps.</p>
+<pre><code>library(dbscan)
+dbscan::kNNdistplot(iris[, -c(5,4,3)], k =  4)
+abline(h = 0.15, lty = 2)
+</code></pre><p><strong>The point where you see an elbow like bend corresponds to the optimal eps value or where the dotted line crosses the solid line is considered as optimal.</strong></p>
+<figure>
+  <img src="/images/outlier/dbscan2.jpeg" alt="line plot showcasing optimal eps value for DBSCAN">
+</figure>
+<h1 id="possible-actions-towards-outliers">Possible actions towards outliers</h1>
+<p>The possible actions which we can take outliers are mentioned below:</p>
+<p><strong>1. Capping And flooring</strong> - We cap every value that is greater or lesser than the tukey formula by the value returned by the tukey method. When you seal the value on the higher side, we call it as capping. The same action for the lower side values is called as flooring.<br/>
+<strong>2. Delete Outliers</strong> - Another solution is to delete all the values which are unusual and do not represent the major chunk of the data.<br/>
+<strong>3. Model Outliers</strong> - In cases where outliers are a significant percentage of total data, you are advised to separate all the outliers and build a different model for these values.</p>
+<p>In this chapter, we learned different statistical algorithms and methods which can be used to identify the outliers. These methods included univariate and multivariate techniques. We also learned what possible actions could a data scientist take in case data has outliers. In the next chapter, we will learn how to train linear regression models and validate the same before using it for scoring in R.</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex justify-between">
+
+
+
+  <div><a class="flex align-center" href="https://github.com/DataScience86/rstatisticsblog/tree/master/content/docs/commit/fabb964f9c6102dfd12c195a35f45ae618bd98a2" title='Last modified by datasciencebeginner | April 30, 2020' target="_blank" rel="noopener">
+      <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
+      <span>April 30, 2020</span>
+    </a>
+  </div>
+
+
+
+</div>
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#overview">Overview</a></li>
+    <li><a href="#using-tukey-formula-to-identify-outlier">Using tukey formula to identify outlier</a></li>
+    <li><a href="#using-histograms-to-identify-outliers">Using histograms to identify outliers</a></li>
+    <li><a href="#using-boxplot-to-identify-outliers">Using boxplot to identify outliers</a></li>
+    <li><a href="#using-cooks-distance-to-identify-outliers">Using cook&rsquo;s distance to identify outliers</a></li>
+    <li><a href="#using-dbscan---a-machine-learning-approach">Using DBSCAN - A machine learning approach</a>
+      <ul>
+        <li><a href="#optimal-value-of-eps">Optimal value of <strong>eps</strong></a></li>
+      </ul>
+    </li>
+    <li><a href="#possible-actions-towards-outliers">Possible actions towards outliers</a></li>
+  </ul>
+</nav>
+
+ 
+    </aside>
+    
+  </main>
+
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

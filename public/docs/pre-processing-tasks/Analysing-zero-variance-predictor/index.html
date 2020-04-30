@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head><script src="/livereload.js?port=1313&mindelay=10&v=2" data-no-instant defer></script>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Some variables in the dataset contain very little information because they mostly consist of a single value (e.g. zero). These variables are called a zero variance variable.
+ Overview Many a time it happens that in the dataset, we have variables which either have unique values or have only a handful of unique values. The variables with only one exceptional value, when passed to fit the model, can cause problems like unstable models or, in some cases, can also cause the model to crash."><meta property="og:title" content="Analysing zero variance predictor" />
+<meta property="og:description" content="Some variables in the dataset contain very little information because they mostly consist of a single value (e.g. zero). These variables are called a zero variance variable.
+ Overview Many a time it happens that in the dataset, we have variables which either have unique values or have only a handful of unique values. The variables with only one exceptional value, when passed to fit the model, can cause problems like unstable models or, in some cases, can also cause the model to crash." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="//localhost:1313/docs/pre-processing-tasks/Analysing-zero-variance-predictor/" />
+<meta property="article:published_time" content="2019-12-01T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-04-30T10:51:20+05:30" />
+<title>Analysing zero variance predictor | R Statistics Blog</title>
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.6df681b0bb21155cba49f6078e3559216772d8e03e780d240c73ea21817ed5e5.css" integrity="sha256-bfaBsLshFVy6SfYHjjVZIWdy2OA&#43;eA0kDHPqIYF&#43;1eU=">
+<script defer src="/en.search.min.d57240dc8b064f390ea28d6a2ec3d38165e5dfc8433d2a750739a6c9c766d392.js" integrity="sha256-1XJA3IsGTzkOoo1qLsPTgWXl38hDPSp1Bzmmycdm05I="></script>
+
+<script defer src="/sw.min.74a8bb07f0bee86d6bb9a2750f073f14d93c7e4512f28860370cfd879e9719b4.js" integrity="sha256-dKi7B/C&#43;6G1ruaJ1Dwc/FNk8fkUS8ohgNwz9h56XGbQ="></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body>
+  <input type="checkbox" class="hidden" id="menu-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      
+  <nav>
+<h2 class="book-brand">
+  <a href="//localhost:1313/"><span>R Statistics Blog</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="" target="_blank" rel="noopener">
+        
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+
+  
+
+
+
+  
+  
+  
+  
+
+  
+  <ul>
+    
+      
+        <li class="book-section-flat" >
+          
+  
+    <span>Quick R Tutorial</span>
+  
+
+          
+  
+  
+  
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+    <a href="/docs/quick-r-tutorial/introduction-to-r/" class="">Getting Started</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/quick-r-tutorial/r-basics/" class="">R Basics</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/quick-r-tutorial/using-conditional-statements-and-loops/" class="">Conditions &amp; Loops</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/quick-r-tutorial/functions-and-apply-family/" class="">Its All About Functions</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/quick-r-tutorial/dataframe-manipulations/" class="">Data Frame Manipulations</a>
+  
+
+        </li>
+      
+    
+  </ul>
+  
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+    <span>Useful R Packages</span>
+  
+
+          
+  
+  
+  
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+    <a href="/docs/useful-r-packages/Quick-ggplot2-Tutorial/" class="">Tutorial ggplot2 Package</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/useful-r-packages/R-Tutorial-datatable-With-Examples/" class="">Tutorial data.table Package</a>
+  
+
+        </li>
+      
+    
+  </ul>
+  
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+    <span>Pre Processing Tasks</span>
+  
+
+          
+  
+  
+  
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+    <a href="/docs/pre-processing-tasks/Identifying-Outliers/" class="">Analysing Outliers</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/pre-processing-tasks/Missing-Value-Imputation/" class="">Missing Value Imputation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/pre-processing-tasks/Summarizing-Data/" class="">Summarizing data</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/pre-processing-tasks/Hypothesis-Testing/" class="">Hypothesis Testing</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/pre-processing-tasks/Correlation/" class="">Correlation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/pre-processing-tasks/Analysing-zero-variance-predictor/" class="active">Analysing zero variance predictor</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/pre-processing-tasks/Standardization-MinMax-Scaling/" class="">Standardization And Scaling</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/pre-processing-tasks/Principal-Component-Analysis/" class="">Principal Component Analysis</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/pre-processing-tasks/Splitting-Data/" class="">Splitting Data</a>
+  
+
+        </li>
+      
+    
+  </ul>
+  
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+    <span>Foundational Algorithms</span>
+  
+
+          
+  
+  
+  
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+    <a href="/docs/foundational-algorithms/Linear-Regression/" class="">Linear Regression</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/foundational-algorithms/Ridge-Regression/" class="">Ridge Regression</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/foundational-algorithms/Lasso-Regression/" class="">Lasso Regression</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/foundational-algorithms/Binary-Logistics-Regression/" class="">Binary Logistic Regression</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/foundational-algorithms/Multinomial-Logistic-Regressions/" class="">Multinomial Logistic Regression</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/foundational-algorithms/k-means-clustering/" class="">k-Mean Clustering</a>
+  
+
+        </li>
+      
+    
+  </ul>
+  
+
+        </li>
+      
+    
+  </ul>
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/posts/" >
+        Blog
+      </a>
+  </li>
+  
+  <li>
+    <a href="https://github.com/DataScience86/rstatisticsblog/tree/master/content" target="_blank" rel="noopener">
+        Github
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+
+
+ 
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Analysing zero variance predictor</strong>
+
+  <label for="toc-control">
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+  </label>
+</div>
+
+
+  
+    <input type="checkbox" class="hidden" id="toc-control" />
+    <aside class="hidden clearfix">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#overview">Overview</a></li>
+    <li><a href="#methods-to-identify-such-variables">Methods to identify such variables</a></li>
+    <li><a href="#identify-zero-variance-conditioned-on-group-variable">Identify zero variance conditioned on group variable</a></li>
+  </ul>
+</nav>
+
+
+    </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><blockquote>
+<p>Some variables in the dataset contain very little information because they mostly consist of a single value (e.g. zero). These variables are called a zero variance variable.</p>
+</blockquote>
+<h1 id="overview">Overview</h1>
+<p>Many a time it happens that in the dataset, we have variables which either have unique values or have only a handful of unique values. The variables with only one exceptional value, when passed to fit the model, can cause problems like unstable models or, in some cases, can also cause the model to crash. Such predictor variables are called as Zero-variance variables.</p>
+<p>The variables which have a few unique values with low frequency can also lead to problems. For example, in the survey dataset, some of the levels of exercise variable have a low-frequency rate. These variables may become zero-variance predictors during the train/test split or at the time of the cross-validation process. They are also sometimes termed as near-zero variance predictors.</p>
+<h1 id="methods-to-identify-such-variables">Methods to identify such variables</h1>
+<p>All such variables which fall into these categories need to be identified and excluded from the datasets. There are many different things one can do to identify these variables like you can check unique values, generate frequency tables, etc. Also, one can use the following metrics to determine the zero variance or near-zero variance predictors –</p>
+<ol>
+<li>
+<p><strong>Frequency Ratio</strong> – It is the ratio of the most common value over the second most prevalent value. If the value is close to one, then the predictor is good to use. However, a substantial value indicates that the variable is unbalanced and should be eliminated.</p>
+</li>
+<li>
+<p><strong>Percentage of Unique Values</strong> – It is calculated by dividing the number of unique values divided by the total number of samples that approaches zero as the granularity of the data increases.
+Any variable which crosses the predefined threshold for frequency ratio and has a frequency of unique values percentage less than the limit should be considered as zero variance predictor.</p>
+</li>
+</ol>
+<blockquote class="book-hint warning">
+  Not all low granularity variables are near-zero variance predictors. These variables can often have evenly distributed distribution and can lead to false identification of zero variance predictors. To avoid any mistakes, one must use both the metrics mentioned above.
+</blockquote>
+
+<p><code>caret</code> package in R provides a function called <code>nearZeroVar()</code> to identify and to remove such problematic variables before modeling. Some of the arguments which you must be aware or are -</p>
+<ol>
+<li><strong>x</strong> = Dataset</li>
+<li><strong>freqCut</strong> = the cutoff for the ratio of the most common value to the second most common value. The default value is set at 95/5</li>
+<li><strong>uniqueCut</strong> = the cutoff for the percentage of distinct values out of the number of total samples. The default value is 10.</li>
+<li><strong>saveMetrics</strong> = takes logical input. If false, only the position of zero- and near-zero variables is returned. If true, a dataframe with predictor information is returned.<br></li>
+</ol>
+<p>The default values mentioned for <code>freqCut</code> and <code>uniqueCut</code> are fairly conservative. So, based upon your requirements, feel free to change these numbers.</p>
+<pre><code># Identifying near-zero variance variable
+nearZeroVar(iris[, -5], saveMetrics = TRUE)
+</code></pre><pre><code>#Output
+             freqRatio percentUnique zeroVar   nzv
+Sepal.Length  1.111111      23.33333   FALSE FALSE
+Sepal.Width   1.857143      15.33333   FALSE FALSE
+Petal.Length  1.000000      28.66667   FALSE FALSE
+Petal.Width   2.230769      14.66667   FALSE FALSE
+</code></pre><h1 id="identify-zero-variance-conditioned-on-group-variable">Identify zero variance conditioned on group variable</h1>
+<p><code>checkConditionalX()</code> function can be used to look at the distribution of the columns of x conditioned on the levels of y. This function identifies columns of data that are sparse within groups of y variable.</p>
+<pre><code>set.seed(1)
+classes &lt;- factor(rep(letters[1:3], each = 30))
+x &lt;- data.frame(x1 = rep(c(0, 1), 45),
+                x2 = c(rep(0, 10), rep(1, 80)))
+
+lapply(x, table, y = classes)
+checkConditionalX(x, classes)
+</code></pre><pre><code># Output
+lapply(x, table, y = classes)
+$x1
+   y
+     a  b  c
+  0 15 15 15
+  1 15 15 15
+
+$x2
+   y
+     a  b  c
+  0 10  0  0
+  1 20 30 30
+
+checkConditionalX(x, classes)
+[1] 2
+</code></pre><p>In this chapter, you learned about what is a zero variance and near-zero variance variables. You also learned how to identify such variables conditioned on a grouped variable or at an individual level.</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex justify-between">
+
+
+
+  <div><a class="flex align-center" href="https://github.com/DataScience86/rstatisticsblog/tree/master/content/docs/commit/fabb964f9c6102dfd12c195a35f45ae618bd98a2" title='Last modified by datasciencebeginner | April 30, 2020' target="_blank" rel="noopener">
+      <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
+      <span>April 30, 2020</span>
+    </a>
+  </div>
+
+
+
+</div>
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#overview">Overview</a></li>
+    <li><a href="#methods-to-identify-such-variables">Methods to identify such variables</a></li>
+    <li><a href="#identify-zero-variance-conditioned-on-group-variable">Identify zero variance conditioned on group variable</a></li>
+  </ul>
+</nav>
+
+ 
+    </aside>
+    
+  </main>
+
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head><script src="/livereload.js?port=1313&mindelay=10&v=2" data-no-instant defer></script>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Multinomial logistic regression is used when the target variable is categorical with more than two levels. It is an extension of binomial logistic regression.
+ Overview - Multinomial Regression Multinomial regression is used to predict the nominal target variable. In case the target variable is of ordinal type, then we need to use ordinal logistic regression. In this tutorial, we will see how we can run multinomial logistic regression. As part of data preparation, ensure that data is free of multicollinearity, outliers, and high influential leverage points."><meta property="og:title" content="Multinomial Logistic Regression" />
+<meta property="og:description" content="Multinomial logistic regression is used when the target variable is categorical with more than two levels. It is an extension of binomial logistic regression.
+ Overview - Multinomial Regression Multinomial regression is used to predict the nominal target variable. In case the target variable is of ordinal type, then we need to use ordinal logistic regression. In this tutorial, we will see how we can run multinomial logistic regression. As part of data preparation, ensure that data is free of multicollinearity, outliers, and high influential leverage points." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="//localhost:1313/docs/foundational-algorithms/Multinomial-Logistic-Regressions/" />
+<meta property="article:published_time" content="2020-02-22T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-04-30T10:51:20+05:30" />
+<title>Multinomial Logistic Regression | R Statistics Blog</title>
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.6df681b0bb21155cba49f6078e3559216772d8e03e780d240c73ea21817ed5e5.css" integrity="sha256-bfaBsLshFVy6SfYHjjVZIWdy2OA&#43;eA0kDHPqIYF&#43;1eU=">
+<script defer src="/en.search.min.d57240dc8b064f390ea28d6a2ec3d38165e5dfc8433d2a750739a6c9c766d392.js" integrity="sha256-1XJA3IsGTzkOoo1qLsPTgWXl38hDPSp1Bzmmycdm05I="></script>
+
+<script defer src="/sw.min.74a8bb07f0bee86d6bb9a2750f073f14d93c7e4512f28860370cfd879e9719b4.js" integrity="sha256-dKi7B/C&#43;6G1ruaJ1Dwc/FNk8fkUS8ohgNwz9h56XGbQ="></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body>
+  <input type="checkbox" class="hidden" id="menu-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      
+  <nav>
+<h2 class="book-brand">
+  <a href="//localhost:1313/"><span>R Statistics Blog</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="" target="_blank" rel="noopener">
+        
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+
+  
+
+
+
+  
+  
+  
+  
+
+  
+  <ul>
+    
+      
+        <li class="book-section-flat" >
+          
+  
+    <span>Quick R Tutorial</span>
+  
+
+          
+  
+  
+  
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+    <a href="/docs/quick-r-tutorial/introduction-to-r/" class="">Getting Started</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/quick-r-tutorial/r-basics/" class="">R Basics</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/quick-r-tutorial/using-conditional-statements-and-loops/" class="">Conditions &amp; Loops</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/quick-r-tutorial/functions-and-apply-family/" class="">Its All About Functions</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/quick-r-tutorial/dataframe-manipulations/" class="">Data Frame Manipulations</a>
+  
+
+        </li>
+      
+    
+  </ul>
+  
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+    <span>Useful R Packages</span>
+  
+
+          
+  
+  
+  
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+    <a href="/docs/useful-r-packages/Quick-ggplot2-Tutorial/" class="">Tutorial ggplot2 Package</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/useful-r-packages/R-Tutorial-datatable-With-Examples/" class="">Tutorial data.table Package</a>
+  
+
+        </li>
+      
+    
+  </ul>
+  
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+    <span>Pre Processing Tasks</span>
+  
+
+          
+  
+  
+  
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+    <a href="/docs/pre-processing-tasks/Identifying-Outliers/" class="">Analysing Outliers</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/pre-processing-tasks/Missing-Value-Imputation/" class="">Missing Value Imputation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/pre-processing-tasks/Summarizing-Data/" class="">Summarizing data</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/pre-processing-tasks/Hypothesis-Testing/" class="">Hypothesis Testing</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/pre-processing-tasks/Correlation/" class="">Correlation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/pre-processing-tasks/Analysing-zero-variance-predictor/" class="">Analysing zero variance predictor</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/pre-processing-tasks/Standardization-MinMax-Scaling/" class="">Standardization And Scaling</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/pre-processing-tasks/Principal-Component-Analysis/" class="">Principal Component Analysis</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/pre-processing-tasks/Splitting-Data/" class="">Splitting Data</a>
+  
+
+        </li>
+      
+    
+  </ul>
+  
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+    <span>Foundational Algorithms</span>
+  
+
+          
+  
+  
+  
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+    <a href="/docs/foundational-algorithms/Linear-Regression/" class="">Linear Regression</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/foundational-algorithms/Ridge-Regression/" class="">Ridge Regression</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/foundational-algorithms/Lasso-Regression/" class="">Lasso Regression</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/foundational-algorithms/Binary-Logistics-Regression/" class="">Binary Logistic Regression</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/foundational-algorithms/Multinomial-Logistic-Regressions/" class="active">Multinomial Logistic Regression</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/foundational-algorithms/k-means-clustering/" class="">k-Mean Clustering</a>
+  
+
+        </li>
+      
+    
+  </ul>
+  
+
+        </li>
+      
+    
+  </ul>
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/posts/" >
+        Blog
+      </a>
+  </li>
+  
+  <li>
+    <a href="https://github.com/DataScience86/rstatisticsblog/tree/master/content" target="_blank" rel="noopener">
+        Github
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+
+
+ 
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Multinomial Logistic Regression</strong>
+
+  <label for="toc-control">
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+  </label>
+</div>
+
+
+  
+    <input type="checkbox" class="hidden" id="toc-control" />
+    <aside class="hidden clearfix">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#overview---multinomial-regression">Overview - Multinomial Regression</a></li>
+    <li><a href="#case-study---what-is-uci-breast-tissue">Case Study - What is UCI Breast Tissue?</a>
+      <ul>
+        <li><a href="#reading-the-breast-tissue-data">Reading the breast tissue data</a></li>
+        <li><a href="#building-multinomial-regression-model">Building Multinomial Regression Model</a>
+          <ul>
+            <li><a href="#splitting-the-data-in-train-and-test">Splitting the data in train and test</a></li>
+            <li><a href="#setting-the-reference-level">Setting the reference level</a></li>
+            <li><a href="#training-the-multinomial-classification-model">Training the multinomial classification model</a></li>
+            <li><a href="#predicting--validating-the-model">Predicting &amp; Validating the model</a></li>
+            <li><a href="#predicting-the-class-on-test-dataset">Predicting the class on test dataset.</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+    </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><blockquote>
+<p><strong>Multinomial logistic</strong> regression is used when the target variable is categorical with more than two levels. It is an extension of binomial logistic regression.</p>
+</blockquote>
+<h1 id="overview---multinomial-regression">Overview - Multinomial Regression</h1>
+<p>Multinomial regression is used to predict the nominal target variable. In case the target variable is of ordinal type, then we need to use ordinal logistic regression. In this tutorial, we will see how we can run multinomial logistic regression. As part of data preparation, ensure that data is free of multicollinearity, outliers, and high influential leverage points.</p>
+<h1 id="case-study---what-is-uci-breast-tissue">Case Study - What is UCI Breast Tissue?</h1>
+<p>In this tutorial, we will be using 
+  <a href="https://archive.ics.uci.edu/ml/machine-learning-databases/00192/">Breast Tissu</a>e data from UCI machine learning repository the classification of breast tissue. Originally, the breast tissues have been classified into  6 groups.</p>
+<p>However, we will merge the fibro-adenoma, mastopathy, and glandular classes as their discrimination are not important. Check the tutorial on 
+  <a href="../dataframe-manipulations">Dataframe Manipulations</a> to learn about the merging of levels and other tasks related to dataframe in R programming.</p>
+<h2 id="reading-the-breast-tissue-data">Reading the breast tissue data</h2>
+<pre><code>library(readr)
+tissue &lt;- read_csv(&quot;./static/data/BreastTissue.csv&quot;)
+# Checking the structure of adult data
+str(tissue)
+</code></pre><pre><code># Output
+Classes ‘tbl_df’, ‘tbl’ and 'data.frame':    106 obs. of  11 variables:
+ $ Case #: int  1 2 3 4 5 6 7 8 9 10 ...
+ $ Class : chr  &quot;car&quot; &quot;car&quot; &quot;car&quot; &quot;car&quot; ...
+ $ I0    : num  525 330 552 380 363 ...
+ $ PA500 : num  0.187 0.227 0.232 0.241 0.201 ...
+ $ HFS   : num  0.0321 0.2653 0.0635 0.2862 0.2443 ...
+ $ DA    : num  229 121 265 138 125 ...
+ $ Area  : num  6844 3163 11888 5402 3290 ...
+ $ A/DA  : num  29.9 26.1 44.9 39.2 26.3 ...
+ $ Max IP: num  60.2 69.7 77.8 88.8 69.4 ...
+ $ DR    : num  220.7 99.1 253.8 105.2 103.9 ...
+ $ P     : num  557 400 657 494 425 ...
+</code></pre><p>Combining levels of target variable and deleting the <strong>case #</strong> as it is a unique variable.</p>
+<pre><code>tissue &lt;- tissue[, -1]
+tissue$Class &lt;- as.factor(tissue$Class)
+levels(tissue$Class)[levels(tissue$Class) %in% c(&quot;fad&quot;, &quot;gla&quot;, &quot;mas&quot;)] &lt;- &quot;other&quot;
+levels(tissue$Class)
+</code></pre><pre><code># Output
+[1] &quot;adi&quot;   &quot;car&quot;   &quot;con&quot;   &quot;other&quot;
+</code></pre><h2 id="building-multinomial-regression-model">Building Multinomial Regression Model</h2>
+<p>We will be predicting <strong>Class</strong> of the breast tissue using Breast Tissue data from the UCI machine learning repository.</p>
+<h3 id="splitting-the-data-in-train-and-test">Splitting the data in train and test</h3>
+<pre><code>#Splitting the data using a function from dplyr package
+library(caret)
+
+index &lt;- createDataPartition(tissue$Class, p = .70, list = FALSE)
+train &lt;- tissue[index,]
+test &lt;- tissue[-index,]
+</code></pre><h3 id="setting-the-reference-level">Setting the reference level</h3>
+<p>Unlike binary logistic regression in multinomial logistic regression, we need to define the reference level. Please note this is specific to the function which I am using from <strong>nnet</strong> package in R. There are some functions from other R packages where you don&rsquo;t really need to mention the reference level before building the model.</p>
+<pre><code># Setting the reference
+train$Class &lt;- relevel(train$Class, ref = &quot;adi&quot;)
+</code></pre><h3 id="training-the-multinomial-classification-model">Training the multinomial classification model</h3>
+<p>To train the model, we will be using <code>multinom</code> function from <code>nnet</code> package. Once the model is trained, then we will use the summary() function to check the model coefficients.</p>
+<pre><code>require(nnet)
+# Training the multinomial model
+multinom_model &lt;- multinom(Class ~ ., data = tissue)
+
+# Checking the model
+summary(multinom_model)
+</code></pre><pre><code># Output
+Call:
+multinom(formula = Class ~ ., data = tissue)
+
+Coefficients:
+      (Intercept)         I0     PA500        HFS         DA
+car      86.73299 -1.2415518 34.805551 -31.338876 -3.3819409
+con      65.23130 -0.1313008  3.504613   5.178805  0.6902009
+other    94.25666 -0.7356228 -9.929850  47.648766 -0.7567586
+             Area     `A/DA`  `Max IP`         DR           P
+car   -0.01439290 -0.6831729 3.1996740  3.9293080  0.92505697
+con   -0.01189647  2.3845927 0.4270486 -0.1631782 -0.03680047
+other -0.01590076  1.6362184 0.8789358  1.3702359  0.51944534
+
+Std. Errors:
+      (Intercept)         I0       PA500          HFS
+car   0.038670563 0.11903866 0.019490301 0.0378583878
+con   0.001741294 0.09413872 0.000350851 0.0005646109
+other 0.038878992 0.11367934 0.019507244 0.0378385159
+              DA       Area     `A/DA`  `Max IP`        DR
+car   0.65220286 0.02077879 0.55684441 0.4874646 0.6119659
+con   0.09834323 0.01535892 0.06383315 0.4114490 0.1080821
+other 0.65428634 0.02068448 0.55666884 0.4881945 0.6102327
+              P
+car   0.1770202
+con   0.1120580
+other 0.1728985
+
+Residual Deviance: 8.24364
+AIC: 68.24364
+</code></pre><p>Just like binary logistic regression, we need to convert the coefficients to odds by taking the exponential of the coefficients.</p>
+<pre><code>exp(coef(multinom_model))
+</code></pre><p>The predicted values are saved as fitted.values in the model object. Let&rsquo;s see the top 6 observations.</p>
+<pre><code>head(round(fitted(multinom_model), 2))
+</code></pre><pre><code># Output
+  adi  car con other
+1   0 0.97   0  0.03
+2   0 1.00   0  0.00
+3   0 1.00   0  0.00
+4   0 1.00   0  0.00
+5   0 1.00   0  0.00
+6   0 0.97   0  0.03
+</code></pre><p>The multinomial regression predicts the probability of a particular observation to be part of the said level. This is what we are seeing in the above table. Columns represent the classification levels and rows represent the observations. This means that the first six observation are classified as car.</p>
+<h3 id="predicting--validating-the-model">Predicting &amp; Validating the model</h3>
+<p>To validate the model, we will be looking at the accuracy of the model. This accuracy can be calculated from the classification table.</p>
+<pre><code># Predicting the values for train dataset
+train$ClassPredicted &lt;- predict(multinom_model, newdata = train, &quot;class&quot;)
+
+# Building classification table
+tab &lt;- table(train$Class, train$ClassPredicted)
+
+# Calculating accuracy - sum of diagonal elements divided by total obs
+round((sum(diag(tab))/sum(tab))*100,2)
+</code></pre><pre><code># Output
+[1] 98.68
+</code></pre><p><em>Our model accuracy has turned out to be 98.68% in the training dataset</em>.</p>
+<h3 id="predicting-the-class-on-test-dataset">Predicting the class on test dataset.</h3>
+<pre><code># Predicting the class for test dataset
+test$ClassPredicted &lt;- predict(multinom_model, newdata = test, &quot;class&quot;)
+
+# Building classification table
+tab &lt;- table(test$Class, test$ClassPredicted)
+tab
+</code></pre><pre><code># Output
+
+        adi car con other
+  adi     6   0   0     0
+  car     0   6   0     0
+  con     0   0   4     0
+  other   0   0   0    14
+</code></pre><p><em>We were able to achieve 100% accuracy in the test dataset and this number is very close to train, and thus we conclude that the model is good and is also stable.</em></p>
+<p>In this tutorial, we learned how to build the multinomial logistic regression model, how to validate and make a prediction on the unseen dataset.</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex justify-between">
+
+
+
+  <div><a class="flex align-center" href="https://github.com/DataScience86/rstatisticsblog/tree/master/content/docs/commit/fabb964f9c6102dfd12c195a35f45ae618bd98a2" title='Last modified by datasciencebeginner | April 30, 2020' target="_blank" rel="noopener">
+      <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
+      <span>April 30, 2020</span>
+    </a>
+  </div>
+
+
+
+</div>
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#overview---multinomial-regression">Overview - Multinomial Regression</a></li>
+    <li><a href="#case-study---what-is-uci-breast-tissue">Case Study - What is UCI Breast Tissue?</a>
+      <ul>
+        <li><a href="#reading-the-breast-tissue-data">Reading the breast tissue data</a></li>
+        <li><a href="#building-multinomial-regression-model">Building Multinomial Regression Model</a>
+          <ul>
+            <li><a href="#splitting-the-data-in-train-and-test">Splitting the data in train and test</a></li>
+            <li><a href="#setting-the-reference-level">Setting the reference level</a></li>
+            <li><a href="#training-the-multinomial-classification-model">Training the multinomial classification model</a></li>
+            <li><a href="#predicting--validating-the-model">Predicting &amp; Validating the model</a></li>
+            <li><a href="#predicting-the-class-on-test-dataset">Predicting the class on test dataset.</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+ 
+    </aside>
+    
+  </main>
+
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

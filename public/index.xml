@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Quick R Tutorial on R Statistics Blog</title>
+    <link>//localhost:1313/</link>
+    <description>Recent content in Quick R Tutorial on R Statistics Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	<atom:link href="//localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Tutorial ggplot2 Package</title>
+      <link>//localhost:1313/docs/useful-r-packages/Quick-ggplot2-Tutorial/</link>
+      <pubDate>Wed, 15 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/docs/useful-r-packages/Quick-ggplot2-Tutorial/</guid>
+      <description>Overview The ggplot2 package in R provides a reliable system for describing and building graphs. The package is capable of creating elegant and aesthetically pleasing graphics. The framework of ggplot2 is quite different (in comparison to graphics package) and is based on the grammar of graphics(introduced initially by Leland Wilkinson). At first, you may not find it intuitive, but don&amp;rsquo;t worry, we are here to help. Together, we will master it to the core.</description>
+    </item>
+    
+    <item>
+      <title>Analysing Outliers</title>
+      <link>//localhost:1313/docs/pre-processing-tasks/Identifying-Outliers/</link>
+      <pubDate>Wed, 18 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/docs/pre-processing-tasks/Identifying-Outliers/</guid>
+      <description>Outlier is a value that does not follow the usual norms of the data. For almost all the statistical methods, outliers present a particular challenge, and so it becomes crucial to identify and treat them. Let&amp;rsquo;s see which all packages and functions can be used in R to deal with outliers.
+ Overview The presence of outliers in the dataset can be a result of an error, or it can be a real value present in the data as a result of the actual distribution of the data.</description>
+    </item>
+    
+    <item>
+      <title>Getting Started</title>
+      <link>//localhost:1313/docs/quick-r-tutorial/introduction-to-r/</link>
+      <pubDate>Sat, 12 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/docs/quick-r-tutorial/introduction-to-r/</guid>
+      <description>Introduction In this quick tutorial, we will cover essential concepts of R programming language. It is not a zero to hero tutorial. However, this course does proffer you with all the necessary information to achieve data analysis related tasks in R.
+Installation The installation of R software is pretty straight forward and is like any other software. First, you need to download the R software IDE (Interactive Development Environments).
+Download RIf you have installed the R software as guided.</description>
+    </item>
+    
+    <item>
+      <title>Linear Regression</title>
+      <link>//localhost:1313/docs/foundational-algorithms/Linear-Regression/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/docs/foundational-algorithms/Linear-Regression/</guid>
+      <description>Linear regression is a supervised machine learning algorithm that is used to predict the continuous variable. The algorithm assumes that the relation between the dependent variable(Y) and independent variables(X), is linear and is represented by a line of best fit. In this chapter, we will learn how to execute linear regression in R using some select functions and test its assumptions before we use it for a final prediction on test data.</description>
+    </item>
+    
+    <item>
+      <title>Tutorial data.table Package</title>
+      <link>//localhost:1313/docs/useful-r-packages/R-Tutorial-datatable-With-Examples/</link>
+      <pubDate>Thu, 30 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/docs/useful-r-packages/R-Tutorial-datatable-With-Examples/</guid>
+      <description>Overview If you are looking for fast execution of your code on large datasets, then you must read through this tutorial. Data manipulation tasks such as aggregations, add/remove/update of columns, joins, reading large files, etc., are all very important for any data science-related project. Keeping all these operations into mind, Matt Dowle and Arun Shrinivasan created a package called data.table.
+data.table package is an extension of data.frame package in R. It is one of the first choices for data scientists while they work on large datasets.</description>
+    </item>
+    
+    <item>
+      <title>Ridge Regression</title>
+      <link>//localhost:1313/docs/foundational-algorithms/Ridge-Regression/</link>
+      <pubDate>Sun, 29 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/docs/foundational-algorithms/Ridge-Regression/</guid>
+      <description>Ridge Regression is a variation of linear regression. We use ridge regression to tackle the multicollinearity problem. Due to multicollinearity, the model estimates (least square) see a large variance. Ridge regression is a method by which we add a degree of bias to the regression estimates.
+ Overview - Ridge Regression Ridge regression is a parsimonious model that performs L2 regularization. The L2 regularization adds a penalty equivalent to the square of the magnitude of regression coefficients and tries to minimize them.</description>
+    </item>
+    
+    <item>
+      <title>Missing Value Imputation</title>
+      <link>//localhost:1313/docs/pre-processing-tasks/Missing-Value-Imputation/</link>
+      <pubDate>Sun, 22 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/docs/pre-processing-tasks/Missing-Value-Imputation/</guid>
+      <description>Overview Having missing values in a data set is a very common phenomenon. There are many reasons due to which a missing value occurs in a dataset. It is vital to figure out the reason for missing values. However, in this article, we will only focus on how to identify and impute the missing values.
+Before we start, let us first, randomly add some missing values to the iris dataset.</description>
+    </item>
+    
+    <item>
+      <title>R Basics</title>
+      <link>//localhost:1313/docs/quick-r-tutorial/r-basics/</link>
+      <pubDate>Wed, 06 Nov 2019 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/docs/quick-r-tutorial/r-basics/</guid>
+      <description>Overview Ross Ihaka and Robert developed R at the University of Auckland in New Zealand. They started working on the tool in 1933 to help their students. However, they were then encouraged to make it open source. The language is based on another single letter programming language called S, primarily it is called S+, and it still exists.
+One of the major reasons for the popularity of R is that R and its packages are Open Source and Free.</description>
+    </item>
+    
+    <item>
+      <title>Lasso Regression</title>
+      <link>//localhost:1313/docs/foundational-algorithms/Lasso-Regression/</link>
+      <pubDate>Sun, 16 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/docs/foundational-algorithms/Lasso-Regression/</guid>
+      <description>LASSO stands for Least Absolute Shrinkage and Selection Operator. The algorithm is another variation of linear regression, just like ridge regression. We use lasso regression when we have a large number of predictor variables.
+ Overview - Lasso Regression Lasso regression is a parsimonious model that performs L1 regularization. The L1 regularization adds a penalty equivalent to the absolute magnitude of regression coefficients and tries to minimize them. The equation of lasso is similar to ridge regression and looks like as given below.</description>
+    </item>
+    
+    <item>
+      <title>Summarizing data</title>
+      <link>//localhost:1313/docs/pre-processing-tasks/Summarizing-Data/</link>
+      <pubDate>Sun, 12 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/docs/pre-processing-tasks/Summarizing-Data/</guid>
+      <description>The very first task in any project related to data modeling is to explore the data, formally known as,
+ Overview Exploratory Data Analysis(EDA) - There are many statistics that we calculate as part of EDA. However, in this chapter we will learn how to summarize data using descriptive statistics.
+Data is a collection of observations and there features (known as variables). When we try to summarize the data, the variable type plays an important role in deciding which statistic we will be considering to summarize the variable.</description>
+    </item>
+    
+    <item>
+      <title>Conditions &amp; Loops</title>
+      <link>//localhost:1313/docs/quick-r-tutorial/using-conditional-statements-and-loops/</link>
+      <pubDate>Tue, 01 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/docs/quick-r-tutorial/using-conditional-statements-and-loops/</guid>
+      <description>Conditions and Loops In R Conditional statements in R programming language enables the user to execute a statement based upon a particular condition or criteria. On the other hand, the loops ensure that the same task is executed again and again.
+Having knowledge and understanding of how the two work is extremely critical for any programmer. As a data analyst or a data science practitioner, you will be using them quite often.</description>
+    </item>
+    
+    <item>
+      <title>Binary Logistic Regression</title>
+      <link>//localhost:1313/docs/foundational-algorithms/Binary-Logistics-Regression/</link>
+      <pubDate>Mon, 10 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/docs/foundational-algorithms/Binary-Logistics-Regression/</guid>
+      <description>Logistics Regression is used to explain the relationship between the categorical dependent variable and one or more independent variables. When the dependent variable is dichotomous, we use binary logistic regression. However, by default, a binary logistic regression is almost always called logistics regression.
+ Overview - Logistic Regression The logistic regression model is used to model the relationship between a binary target variable and a set of independent variables. These independent variables can be either qualitative or quantitative.</description>
+    </item>
+    
+    <item>
+      <title>Hypothesis Testing</title>
+      <link>//localhost:1313/docs/pre-processing-tasks/Hypothesis-Testing/</link>
+      <pubDate>Thu, 12 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/docs/pre-processing-tasks/Hypothesis-Testing/</guid>
+      <description>Hypothesis testing uses concepts from statistics to determine the probability that a given assumption is valid. In this chapter, you will learn about several types of statistical tests, their practical applications, and how to interpret the results of hypothesis testing.
+ Overview Through hypothesis testing, one can make inferences about the population parameters by analysing the sample statistics.
+Typically hypothesis testing starts with an assumption or an assertion about a population parameter.</description>
+    </item>
+    
+    <item>
+      <title>Its All About Functions</title>
+      <link>//localhost:1313/docs/quick-r-tutorial/functions-and-apply-family/</link>
+      <pubDate>Sat, 05 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/docs/quick-r-tutorial/functions-and-apply-family/</guid>
+      <description>Functions in R By now you must have figured it out that R programming is not a traditional programming language. The language is a collection of functions that are packed together to form a package. All thanks to the open and free community, which has contributed to over 9000 packages over the years. Today one can find any function to achieve almost any statistical task in R by doing a little research.</description>
+    </item>
+    
+    <item>
+      <title>Multinomial Logistic Regression</title>
+      <link>//localhost:1313/docs/foundational-algorithms/Multinomial-Logistic-Regressions/</link>
+      <pubDate>Sat, 22 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/docs/foundational-algorithms/Multinomial-Logistic-Regressions/</guid>
+      <description>Multinomial logistic regression is used when the target variable is categorical with more than two levels. It is an extension of binomial logistic regression.
+ Overview - Multinomial Regression Multinomial regression is used to predict the nominal target variable. In case the target variable is of ordinal type, then we need to use ordinal logistic regression. In this tutorial, we will see how we can run multinomial logistic regression. As part of data preparation, ensure that data is free of multicollinearity, outliers, and high influential leverage points.</description>
+    </item>
+    
+    <item>
+      <title>Correlation</title>
+      <link>//localhost:1313/docs/pre-processing-tasks/Correlation/</link>
+      <pubDate>Sat, 07 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/docs/pre-processing-tasks/Correlation/</guid>
+      <description>Overview Correlation coefficients are used to describe the degree of association between quantitative variables. The value of the correlation lies between +1 to -1. The signs only indicate the direction of the relationship. That means a +0.86 value is equal to -0.86. However, -ve sign indicates that if one variable increases, the other decreases, and +ve sign indicates that if one variable increases, the other also increases. A value in the range of +0.</description>
+    </item>
+    
+    <item>
+      <title>Data Frame Manipulations</title>
+      <link>//localhost:1313/docs/quick-r-tutorial/dataframe-manipulations/</link>
+      <pubDate>Wed, 09 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/docs/quick-r-tutorial/dataframe-manipulations/</guid>
+      <description>Data Manipulation Tasks With Example Code As a data analyst, you will be working mostly with data frames. And thus, it becomes vital that you learn, understand, and practice data manipulation tasks. This chapter will focus on listing down some of the most common data manipulation tasks along with example code.
+Before, we start and dig into how to accomplish tasks mentioned above. Let&amp;rsquo;s see how to access the datasets which come along with the R packages.</description>
+    </item>
+    
+    <item>
+      <title>k-Mean Clustering</title>
+      <link>//localhost:1313/docs/foundational-algorithms/k-means-clustering/</link>
+      <pubDate>Sat, 14 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/docs/foundational-algorithms/k-means-clustering/</guid>
+      <description>What is k-means clustering Clustering is one of the most popular and widespread unsupervised machine learning method used for data analysis and mining patterns. At its core clustering is grouping similar observations based upon the characteristics of each observations. There are multiple approaches for generating clusters of similar objects. However, in this section, you will learn how to build clusters based on k-Means algorithm.
+How does k means algorithm works In simple words, k-means clustering is a technique which aims to divide the data into k number of clusters.</description>
+    </item>
+    
+    <item>
+      <title>Analysing zero variance predictor</title>
+      <link>//localhost:1313/docs/pre-processing-tasks/Analysing-zero-variance-predictor/</link>
+      <pubDate>Sun, 01 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/docs/pre-processing-tasks/Analysing-zero-variance-predictor/</guid>
+      <description>Some variables in the dataset contain very little information because they mostly consist of a single value (e.g. zero). These variables are called a zero variance variable.
+ Overview Many a time it happens that in the dataset, we have variables which either have unique values or have only a handful of unique values. The variables with only one exceptional value, when passed to fit the model, can cause problems like unstable models or, in some cases, can also cause the model to crash.</description>
+    </item>
+    
+    <item>
+      <title>Standardization And Scaling</title>
+      <link>//localhost:1313/docs/pre-processing-tasks/Standardization-MinMax-Scaling/</link>
+      <pubDate>Fri, 10 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/docs/pre-processing-tasks/Standardization-MinMax-Scaling/</guid>
+      <description>While building a Machine Learning model, do not throw away all of your information! Normalize your features.
+ Overview It is a general requirement for many machine learning algorithms to have features with similar scales. It is important because if we pass features with different scales to algorithms like SVMs, perceptron’s, neural networks, optimization algorithms in logistic regressions, and more prominently, you can think of algorithms which use gradient descent will end up having a faster update for some feature values as compared to others.</description>
+    </item>
+    
+    <item>
+      <title>Principal Component Analysis</title>
+      <link>//localhost:1313/docs/pre-processing-tasks/Principal-Component-Analysis/</link>
+      <pubDate>Sat, 28 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/docs/pre-processing-tasks/Principal-Component-Analysis/</guid>
+      <description>Principal component analysis(PCA) is an unsupervised machine learning technique that is used to reduce the dimensions of a large multi-dimensional dataset without losing much of the information. It is often also used to visualize and explore these high dimensional datasets.
+ Overview One of the challenges among others that large datasets present is the time to model or learn the relationship between independent variables and the target variables. Thus it becomes essential for us to reduce the number of variables that we want to pass into the model to predict the target variable.</description>
+    </item>
+    
+    <item>
+      <title>Splitting Data</title>
+      <link>//localhost:1313/docs/pre-processing-tasks/Splitting-Data/</link>
+      <pubDate>Fri, 03 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/docs/pre-processing-tasks/Splitting-Data/</guid>
+      <description>To create the best model which generalizes well to new unseen data. You must ensure that your test set serves as a proxy for actual dataset IE it represents the new dataset.
+ Overview The very first step after pre-processing of the dataset is to split the data into training and test datasets. We usually split the data around 70%-30% between training and testing stages. The training set is the one that we use to learn the relationship between independent variables and the target variable.</description>
+    </item>
+    
+  </channel>
+</rss>

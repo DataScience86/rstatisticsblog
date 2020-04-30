@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>R Statistics Blog</title>
+    <link>//localhost:1313/docs/pre-processing-tasks/</link>
+    <description>Recent content on R Statistics Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	<atom:link href="//localhost:1313/docs/pre-processing-tasks/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Analysing Outliers</title>
+      <link>//localhost:1313/docs/pre-processing-tasks/Identifying-Outliers/</link>
+      <pubDate>Wed, 18 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/docs/pre-processing-tasks/Identifying-Outliers/</guid>
+      <description>Outlier is a value that does not follow the usual norms of the data. For almost all the statistical methods, outliers present a particular challenge, and so it becomes crucial to identify and treat them. Let&amp;rsquo;s see which all packages and functions can be used in R to deal with outliers.
+ Overview The presence of outliers in the dataset can be a result of an error, or it can be a real value present in the data as a result of the actual distribution of the data.</description>
+    </item>
+    
+    <item>
+      <title>Missing Value Imputation</title>
+      <link>//localhost:1313/docs/pre-processing-tasks/Missing-Value-Imputation/</link>
+      <pubDate>Sun, 22 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/docs/pre-processing-tasks/Missing-Value-Imputation/</guid>
+      <description>Overview Having missing values in a data set is a very common phenomenon. There are many reasons due to which a missing value occurs in a dataset. It is vital to figure out the reason for missing values. However, in this article, we will only focus on how to identify and impute the missing values.
+Before we start, let us first, randomly add some missing values to the iris dataset.</description>
+    </item>
+    
+    <item>
+      <title>Summarizing data</title>
+      <link>//localhost:1313/docs/pre-processing-tasks/Summarizing-Data/</link>
+      <pubDate>Sun, 12 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/docs/pre-processing-tasks/Summarizing-Data/</guid>
+      <description>The very first task in any project related to data modeling is to explore the data, formally known as,
+ Overview Exploratory Data Analysis(EDA) - There are many statistics that we calculate as part of EDA. However, in this chapter we will learn how to summarize data using descriptive statistics.
+Data is a collection of observations and there features (known as variables). When we try to summarize the data, the variable type plays an important role in deciding which statistic we will be considering to summarize the variable.</description>
+    </item>
+    
+    <item>
+      <title>Hypothesis Testing</title>
+      <link>//localhost:1313/docs/pre-processing-tasks/Hypothesis-Testing/</link>
+      <pubDate>Thu, 12 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/docs/pre-processing-tasks/Hypothesis-Testing/</guid>
+      <description>Hypothesis testing uses concepts from statistics to determine the probability that a given assumption is valid. In this chapter, you will learn about several types of statistical tests, their practical applications, and how to interpret the results of hypothesis testing.
+ Overview Through hypothesis testing, one can make inferences about the population parameters by analysing the sample statistics.
+Typically hypothesis testing starts with an assumption or an assertion about a population parameter.</description>
+    </item>
+    
+    <item>
+      <title>Correlation</title>
+      <link>//localhost:1313/docs/pre-processing-tasks/Correlation/</link>
+      <pubDate>Sat, 07 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/docs/pre-processing-tasks/Correlation/</guid>
+      <description>Overview Correlation coefficients are used to describe the degree of association between quantitative variables. The value of the correlation lies between +1 to -1. The signs only indicate the direction of the relationship. That means a +0.86 value is equal to -0.86. However, -ve sign indicates that if one variable increases, the other decreases, and +ve sign indicates that if one variable increases, the other also increases. A value in the range of +0.</description>
+    </item>
+    
+    <item>
+      <title>Analysing zero variance predictor</title>
+      <link>//localhost:1313/docs/pre-processing-tasks/Analysing-zero-variance-predictor/</link>
+      <pubDate>Sun, 01 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/docs/pre-processing-tasks/Analysing-zero-variance-predictor/</guid>
+      <description>Some variables in the dataset contain very little information because they mostly consist of a single value (e.g. zero). These variables are called a zero variance variable.
+ Overview Many a time it happens that in the dataset, we have variables which either have unique values or have only a handful of unique values. The variables with only one exceptional value, when passed to fit the model, can cause problems like unstable models or, in some cases, can also cause the model to crash.</description>
+    </item>
+    
+    <item>
+      <title>Standardization And Scaling</title>
+      <link>//localhost:1313/docs/pre-processing-tasks/Standardization-MinMax-Scaling/</link>
+      <pubDate>Fri, 10 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/docs/pre-processing-tasks/Standardization-MinMax-Scaling/</guid>
+      <description>While building a Machine Learning model, do not throw away all of your information! Normalize your features.
+ Overview It is a general requirement for many machine learning algorithms to have features with similar scales. It is important because if we pass features with different scales to algorithms like SVMs, perceptron’s, neural networks, optimization algorithms in logistic regressions, and more prominently, you can think of algorithms which use gradient descent will end up having a faster update for some feature values as compared to others.</description>
+    </item>
+    
+    <item>
+      <title>Principal Component Analysis</title>
+      <link>//localhost:1313/docs/pre-processing-tasks/Principal-Component-Analysis/</link>
+      <pubDate>Sat, 28 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/docs/pre-processing-tasks/Principal-Component-Analysis/</guid>
+      <description>Principal component analysis(PCA) is an unsupervised machine learning technique that is used to reduce the dimensions of a large multi-dimensional dataset without losing much of the information. It is often also used to visualize and explore these high dimensional datasets.
+ Overview One of the challenges among others that large datasets present is the time to model or learn the relationship between independent variables and the target variables. Thus it becomes essential for us to reduce the number of variables that we want to pass into the model to predict the target variable.</description>
+    </item>
+    
+    <item>
+      <title>Splitting Data</title>
+      <link>//localhost:1313/docs/pre-processing-tasks/Splitting-Data/</link>
+      <pubDate>Fri, 03 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/docs/pre-processing-tasks/Splitting-Data/</guid>
+      <description>To create the best model which generalizes well to new unseen data. You must ensure that your test set serves as a proxy for actual dataset IE it represents the new dataset.
+ Overview The very first step after pre-processing of the dataset is to split the data into training and test datasets. We usually split the data around 70%-30% between training and testing stages. The training set is the one that we use to learn the relationship between independent variables and the target variable.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head><script src="/livereload.js?port=1313&mindelay=10&v=2" data-no-instant defer></script>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="While building a Machine Learning model, do not throw away all of your information! Normalize your features.
+ Overview It is a general requirement for many machine learning algorithms to have features with similar scales. It is important because if we pass features with different scales to algorithms like SVMs, perceptron’s, neural networks, optimization algorithms in logistic regressions, and more prominently, you can think of algorithms which use gradient descent will end up having a faster update for some feature values as compared to others."><meta property="og:title" content="Standardization And Scaling" />
+<meta property="og:description" content="While building a Machine Learning model, do not throw away all of your information! Normalize your features.
+ Overview It is a general requirement for many machine learning algorithms to have features with similar scales. It is important because if we pass features with different scales to algorithms like SVMs, perceptron’s, neural networks, optimization algorithms in logistic regressions, and more prominently, you can think of algorithms which use gradient descent will end up having a faster update for some feature values as compared to others." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="//localhost:1313/docs/pre-processing-tasks/Standardization-MinMax-Scaling/" />
+<meta property="article:published_time" content="2020-01-10T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-04-30T10:51:20+05:30" />
+<title>Standardization And Scaling | R Statistics Blog</title>
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.6df681b0bb21155cba49f6078e3559216772d8e03e780d240c73ea21817ed5e5.css" integrity="sha256-bfaBsLshFVy6SfYHjjVZIWdy2OA&#43;eA0kDHPqIYF&#43;1eU=">
+<script defer src="/en.search.min.d57240dc8b064f390ea28d6a2ec3d38165e5dfc8433d2a750739a6c9c766d392.js" integrity="sha256-1XJA3IsGTzkOoo1qLsPTgWXl38hDPSp1Bzmmycdm05I="></script>
+
+<script defer src="/sw.min.74a8bb07f0bee86d6bb9a2750f073f14d93c7e4512f28860370cfd879e9719b4.js" integrity="sha256-dKi7B/C&#43;6G1ruaJ1Dwc/FNk8fkUS8ohgNwz9h56XGbQ="></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body>
+  <input type="checkbox" class="hidden" id="menu-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      
+  <nav>
+<h2 class="book-brand">
+  <a href="//localhost:1313/"><span>R Statistics Blog</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="" target="_blank" rel="noopener">
+        
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+
+  
+
+
+
+  
+  
+  
+  
+
+  
+  <ul>
+    
+      
+        <li class="book-section-flat" >
+          
+  
+    <span>Quick R Tutorial</span>
+  
+
+          
+  
+  
+  
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+    <a href="/docs/quick-r-tutorial/introduction-to-r/" class="">Getting Started</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/quick-r-tutorial/r-basics/" class="">R Basics</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/quick-r-tutorial/using-conditional-statements-and-loops/" class="">Conditions &amp; Loops</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/quick-r-tutorial/functions-and-apply-family/" class="">Its All About Functions</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/quick-r-tutorial/dataframe-manipulations/" class="">Data Frame Manipulations</a>
+  
+
+        </li>
+      
+    
+  </ul>
+  
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+    <span>Useful R Packages</span>
+  
+
+          
+  
+  
+  
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+    <a href="/docs/useful-r-packages/Quick-ggplot2-Tutorial/" class="">Tutorial ggplot2 Package</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/useful-r-packages/R-Tutorial-datatable-With-Examples/" class="">Tutorial data.table Package</a>
+  
+
+        </li>
+      
+    
+  </ul>
+  
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+    <span>Pre Processing Tasks</span>
+  
+
+          
+  
+  
+  
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+    <a href="/docs/pre-processing-tasks/Identifying-Outliers/" class="">Analysing Outliers</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/pre-processing-tasks/Missing-Value-Imputation/" class="">Missing Value Imputation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/pre-processing-tasks/Summarizing-Data/" class="">Summarizing data</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/pre-processing-tasks/Hypothesis-Testing/" class="">Hypothesis Testing</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/pre-processing-tasks/Correlation/" class="">Correlation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/pre-processing-tasks/Analysing-zero-variance-predictor/" class="">Analysing zero variance predictor</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/pre-processing-tasks/Standardization-MinMax-Scaling/" class="active">Standardization And Scaling</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/pre-processing-tasks/Principal-Component-Analysis/" class="">Principal Component Analysis</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/pre-processing-tasks/Splitting-Data/" class="">Splitting Data</a>
+  
+
+        </li>
+      
+    
+  </ul>
+  
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+    <span>Foundational Algorithms</span>
+  
+
+          
+  
+  
+  
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+    <a href="/docs/foundational-algorithms/Linear-Regression/" class="">Linear Regression</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/foundational-algorithms/Ridge-Regression/" class="">Ridge Regression</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/foundational-algorithms/Lasso-Regression/" class="">Lasso Regression</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/foundational-algorithms/Binary-Logistics-Regression/" class="">Binary Logistic Regression</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/foundational-algorithms/Multinomial-Logistic-Regressions/" class="">Multinomial Logistic Regression</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/foundational-algorithms/k-means-clustering/" class="">k-Mean Clustering</a>
+  
+
+        </li>
+      
+    
+  </ul>
+  
+
+        </li>
+      
+    
+  </ul>
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/posts/" >
+        Blog
+      </a>
+  </li>
+  
+  <li>
+    <a href="https://github.com/DataScience86/rstatisticsblog/tree/master/content" target="_blank" rel="noopener">
+        Github
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+
+
+ 
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Standardization And Scaling</strong>
+
+  <label for="toc-control">
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+  </label>
+</div>
+
+
+  
+    <input type="checkbox" class="hidden" id="toc-control" />
+    <aside class="hidden clearfix">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#overview">Overview</a></li>
+    <li><a href="#which-is-better-z-score-standardization-or-min-max-scaling">Which is better Z-score standardization or Min-Max scaling?</a></li>
+    <li><a href="#how-it-can-be-done-using-r-programming">How it can be done using R programming</a></li>
+  </ul>
+</nav>
+
+
+    </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><blockquote>
+<p>While building a Machine Learning model, do not throw away all of your information! Normalize your features.</p>
+</blockquote>
+<h1 id="overview">Overview</h1>
+<p>It is a general requirement for many machine learning algorithms to have features with similar scales. It is important because if we pass features with different scales to algorithms like SVMs, perceptron’s, neural networks, optimization algorithms in logistic regressions, and more prominently, you can think of algorithms which use gradient descent will end up having a faster update for some feature values as compared to others. This is because the feature values play an important role in weight updates.</p>
+<figure>
+  <img src="/images/Processing/formula.jpg" alt="Formula Gradient Descent">
+</figure>
+<p>Below is the list of algorithms which get highly impacted by the differing scale of features:</p>
+<ol>
+<li>
+<p>K-Nearest Neighbours and K-Means algorithm which uses Euclidean distance as a measure</p>
+</li>
+<li>
+<p>If you are using gradient descent-based optimization in algorithms like logistics regression, neural network, SVM, perceptron etc. we should bring the features on the same scale else some weights will get updated faster when compared to others.</p>
+</li>
+<li>
+<p>In the case of principal component analysis, kernel principal component analysis and linear discriminant analysis as these algorithms intent on finding the direction of maximum variance; you must pass features with similar scales otherwise the algorithm will put much more emphasis on features with the higher measurement as compared to ones with smaller scales.</p>
+</li>
+</ol>
+<p>When we wish to bring the features on the same scale, we can broadly do the following:</p>
+<ol>
+<li><strong>Standardization also sometimes called Z-score normalization</strong> - When you apply this technique, the features are scaled in such a way that they end up having properties of a standard normal distribution with mean equal to zero and standard deviation of one. We simply calculate the Z-score of each observation in the dataset for the feature.</li>
+</ol>
+<p><em>A Z-Score is calculated using the following formula</em>:</p>
+<p style="text-align:center">
+
+<link rel="stylesheet" href="/katex/katex.min.css" />
+<script defer src="/katex/katex.min.js"></script>
+<script defer src="/katex/auto-render.min.js" onload="renderMathInElement(document.body);"></script><span>
+  \(
+\Zeta = (x- \mu)/\sigma\)
+</span>
+
+</p>
+<ol start="2">
+<li><strong>Min-Max scaling also sometimes refers to Normalization</strong> - Often, people confuse the Min-Max scaling with the Z-Score Normalization. In this approach, the data is scaled in such a way that the values usually range between 0 – 1. In contrast to the standardization, the min-max scaling results into smaller standard deviations. What this essentially means is that we will be suppressing the effects of outliers.</li>
+</ol>
+<p><em>A min-max scaling is typically done using the following formula</em>:</p>
+<figure>
+  <img src="/images/Processing/MinMaxScaling.jpg" alt="Formula for min-max scaling">
+</figure>
+<h1 id="which-is-better-z-score-standardization-or-min-max-scaling">Which is better Z-score standardization or Min-Max scaling?</h1>
+<p>Both Standardization and Min-Max scaling have there pros and cons. I am listing these below, and hopefully, this will help you make a call on when to use what.</p>
+<p><strong>Min-max Scaling</strong> - All features end up having the same scale, but it does not handle outliers well.</p>
+<p><strong>Z-score Standardization</strong> - Handles outliers, but the data produced does not have the exact same scale.</p>
+<h1 id="how-it-can-be-done-using-r-programming">How it can be done using R programming</h1>
+<p>The below code we are creating a UDF for <strong>min-max scaling</strong>. We have created a sored list of numeric values that are randomly generated from the exponential distribution. We then apply our UDF, which is named as <code>MinMaxScaling</code>. You will notice that the first value is zero, and the last value is one as we squeeze the values between 1 and 0.</p>
+<pre><code># generating random numbers
+num = sort(rexp(10))
+
+# Min-Max Scaling function
+MinMaxScaling &lt;- function(x){
+  return((x-min(x))/(max(x)-min(x)))
+  }
+
+# Calling the function
+MinMaxScaling(num)
+</code></pre><pre><code># Output
+ [1] 0.00000000 0.07356108 0.08615292 0.12786590
+ [5] 0.22440422 0.31220196 0.41876790 0.52747519
+ [9] 0.55234810 1.00000000
+</code></pre><p>For the <strong>Z-score standardization</strong>, you can use the <code>scale()</code> from the base R package. The function is very easy to use. And let&rsquo;s just apply the same on the above numerical values. For your reference, we are sharing the minimum, maximum, mean, and standard deviation for the scaled values.</p>
+<pre><code># Usinf scale function
+scaledValues &lt;- scale(num)
+</code></pre><pre><code># Output
+&gt; scaledValues
+             [,1]
+ [1,] -1.09310641
+ [2,] -0.85110980
+ [3,] -0.80968594
+ [4,] -0.67246119
+ [5,] -0.35487550
+ [6,] -0.06604399
+ [7,]  0.28452994
+ [8,]  0.64214835
+ [9,]  0.72397370
+[10,]  2.19663083
+attr(,&quot;scaled:center&quot;)
+[1] 0.6872931
+attr(,&quot;scaled:scale&quot;)
+[1] 0.5836444
+
+&gt; min(scaledValues)
+[1] -1.093106
+
+&gt; max(scaledValues)
+[1] 2.196631
+
+&gt; round(mean(scaledValues),0)
+[1] 0
+
+&gt; round(sd(scaledValues),0)
+[1] 1
+</code></pre><p>In this chapter, you learned about different techniques of normalizing your data. When using machine learning algorithms, it is imperative that you bring your variables on the same scale. You might have an amazing dataset with many significant features, but if you do not normalize your features, one of those features might completely dominate the others.</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex justify-between">
+
+
+
+  <div><a class="flex align-center" href="https://github.com/DataScience86/rstatisticsblog/tree/master/content/docs/commit/fabb964f9c6102dfd12c195a35f45ae618bd98a2" title='Last modified by datasciencebeginner | April 30, 2020' target="_blank" rel="noopener">
+      <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
+      <span>April 30, 2020</span>
+    </a>
+  </div>
+
+
+
+</div>
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#overview">Overview</a></li>
+    <li><a href="#which-is-better-z-score-standardization-or-min-max-scaling">Which is better Z-score standardization or Min-Max scaling?</a></li>
+    <li><a href="#how-it-can-be-done-using-r-programming">How it can be done using R programming</a></li>
+  </ul>
+</nav>
+
+ 
+    </aside>
+    
+  </main>
+
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

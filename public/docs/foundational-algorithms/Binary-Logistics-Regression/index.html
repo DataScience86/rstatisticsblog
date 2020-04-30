@@ -1,0 +1,882 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head><script src="/livereload.js?port=1313&mindelay=10&v=2" data-no-instant defer></script>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Logistics Regression is used to explain the relationship between the categorical dependent variable and one or more independent variables. When the dependent variable is dichotomous, we use binary logistic regression. However, by default, a binary logistic regression is almost always called logistics regression.
+ Overview - Logistic Regression The logistic regression model is used to model the relationship between a binary target variable and a set of independent variables. These independent variables can be either qualitative or quantitative."><meta property="og:title" content="Binary Logistic Regression" />
+<meta property="og:description" content="Logistics Regression is used to explain the relationship between the categorical dependent variable and one or more independent variables. When the dependent variable is dichotomous, we use binary logistic regression. However, by default, a binary logistic regression is almost always called logistics regression.
+ Overview - Logistic Regression The logistic regression model is used to model the relationship between a binary target variable and a set of independent variables. These independent variables can be either qualitative or quantitative." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="//localhost:1313/docs/foundational-algorithms/Binary-Logistics-Regression/" />
+<meta property="article:published_time" content="2020-02-10T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-04-30T10:59:29+05:30" />
+<title>Binary Logistic Regression | R Statistics Blog</title>
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.6df681b0bb21155cba49f6078e3559216772d8e03e780d240c73ea21817ed5e5.css" integrity="sha256-bfaBsLshFVy6SfYHjjVZIWdy2OA&#43;eA0kDHPqIYF&#43;1eU=">
+<script defer src="/en.search.min.d57240dc8b064f390ea28d6a2ec3d38165e5dfc8433d2a750739a6c9c766d392.js" integrity="sha256-1XJA3IsGTzkOoo1qLsPTgWXl38hDPSp1Bzmmycdm05I="></script>
+
+<script defer src="/sw.min.74a8bb07f0bee86d6bb9a2750f073f14d93c7e4512f28860370cfd879e9719b4.js" integrity="sha256-dKi7B/C&#43;6G1ruaJ1Dwc/FNk8fkUS8ohgNwz9h56XGbQ="></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body>
+  <input type="checkbox" class="hidden" id="menu-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      
+  <nav>
+<h2 class="book-brand">
+  <a href="//localhost:1313/"><span>R Statistics Blog</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="" target="_blank" rel="noopener">
+        
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+
+  
+
+
+
+  
+  
+  
+  
+
+  
+  <ul>
+    
+      
+        <li class="book-section-flat" >
+          
+  
+    <span>Quick R Tutorial</span>
+  
+
+          
+  
+  
+  
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+    <a href="/docs/quick-r-tutorial/introduction-to-r/" class="">Getting Started</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/quick-r-tutorial/r-basics/" class="">R Basics</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/quick-r-tutorial/using-conditional-statements-and-loops/" class="">Conditions &amp; Loops</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/quick-r-tutorial/functions-and-apply-family/" class="">Its All About Functions</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/quick-r-tutorial/dataframe-manipulations/" class="">Data Frame Manipulations</a>
+  
+
+        </li>
+      
+    
+  </ul>
+  
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+    <span>Useful R Packages</span>
+  
+
+          
+  
+  
+  
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+    <a href="/docs/useful-r-packages/Quick-ggplot2-Tutorial/" class="">Tutorial ggplot2 Package</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/useful-r-packages/R-Tutorial-datatable-With-Examples/" class="">Tutorial data.table Package</a>
+  
+
+        </li>
+      
+    
+  </ul>
+  
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+    <span>Pre Processing Tasks</span>
+  
+
+          
+  
+  
+  
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+    <a href="/docs/pre-processing-tasks/Identifying-Outliers/" class="">Analysing Outliers</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/pre-processing-tasks/Missing-Value-Imputation/" class="">Missing Value Imputation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/pre-processing-tasks/Summarizing-Data/" class="">Summarizing data</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/pre-processing-tasks/Hypothesis-Testing/" class="">Hypothesis Testing</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/pre-processing-tasks/Correlation/" class="">Correlation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/pre-processing-tasks/Analysing-zero-variance-predictor/" class="">Analysing zero variance predictor</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/pre-processing-tasks/Standardization-MinMax-Scaling/" class="">Standardization And Scaling</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/pre-processing-tasks/Principal-Component-Analysis/" class="">Principal Component Analysis</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/pre-processing-tasks/Splitting-Data/" class="">Splitting Data</a>
+  
+
+        </li>
+      
+    
+  </ul>
+  
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+    <span>Foundational Algorithms</span>
+  
+
+          
+  
+  
+  
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+    <a href="/docs/foundational-algorithms/Linear-Regression/" class="">Linear Regression</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/foundational-algorithms/Ridge-Regression/" class="">Ridge Regression</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/foundational-algorithms/Lasso-Regression/" class="">Lasso Regression</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/foundational-algorithms/Binary-Logistics-Regression/" class="active">Binary Logistic Regression</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/foundational-algorithms/Multinomial-Logistic-Regressions/" class="">Multinomial Logistic Regression</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/foundational-algorithms/k-means-clustering/" class="">k-Mean Clustering</a>
+  
+
+        </li>
+      
+    
+  </ul>
+  
+
+        </li>
+      
+    
+  </ul>
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/posts/" >
+        Blog
+      </a>
+  </li>
+  
+  <li>
+    <a href="https://github.com/DataScience86/rstatisticsblog/tree/master/content" target="_blank" rel="noopener">
+        Github
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+
+
+ 
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Binary Logistic Regression</strong>
+
+  <label for="toc-control">
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+  </label>
+</div>
+
+
+  
+    <input type="checkbox" class="hidden" id="toc-control" />
+    <aside class="hidden clearfix">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#overview---logistic-regression">Overview - Logistic Regression</a></li>
+    <li><a href="#case-study---what-is-uci-adult-income--a-namecase-studya">Case Study - What is UCI Adult Income ? <a name="Case Study"></a></a></li>
+    <li><a href="#getting-the-data">Getting the data</a></li>
+    <li><a href="#summarizing-categorical-variable">Summarizing categorical variable</a></li>
+    <li><a href="#deleting-the-missing-values">Deleting the missing values</a></li>
+    <li><a href="#finally-taking-a-look-into-the-target-variable">Finally taking a look into the target variable</a></li>
+    <li><a href="#building-the-model">Building the Model</a>
+      <ul>
+        <li><a href="#interpreting-logistic-regression-output">Interpreting Logistic Regression Output</a></li>
+      </ul>
+    </li>
+    <li><a href="#predicting-dependent-variabley-in-test-dataset">Predicting Dependent Variable(Y) in Test Dataset</a></li>
+    <li><a href="#evaluating-logistic-regression-model">Evaluating Logistic Regression Model</a></li>
+    <li><a href="#converting-probability-to-class-values-in-the-training-dataset">Converting probability to class values in the training dataset</a></li>
+    <li><a href="#training-dataset-converting-from-probability-to-class-values">Training dataset converting from probability to class values</a></li>
+    <li><a href="#accuracy">Accuracy</a>
+      <ul>
+        <li><a href="#misclassification-rate">Misclassification Rate</a></li>
+        <li><a href="#true-positive-rate---recall-or-sensitivity">True Positive Rate - Recall or Sensitivity</a></li>
+        <li><a href="#true-negative-rate">True Negative Rate</a>
+          <ul>
+            <li><a href="#precision">Precision</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#calculating-f-score">Calculating F-Score</a></li>
+    <li><a href="#roc-curve">ROC Curve</a></li>
+    <li><a href="#concordance">Concordance</a></li>
+  </ul>
+</nav>
+
+
+    </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><blockquote>
+<p><strong>Logistics Regression</strong> is used to explain the relationship between the categorical dependent variable and one or more independent variables. When the dependent variable is dichotomous, we use <strong>binary logistic regression</strong>. However, by default, a binary logistic regression is almost always called logistics regression.</p>
+</blockquote>
+<h1 id="overview---logistic-regression">Overview - Logistic Regression</h1>
+<p>The logistic regression model is used to model the relationship between a binary target variable and a set of independent variables. These independent variables can be either qualitative or quantitative. In logistic regression, the model predicts the logit transformation of the probability of the event. The following mathematical formula is used to generate the final output.</p>
+<figure>
+  <img src="/images/regression/logitMathEquation.JPG", alt="mathematical equation of logistic regression">
+</figure>
+<p>In the above equation, p represents the odds ratio, and the formula for the odds ratio is as given below:</p>
+<figure>
+  <img src="/images/regression/oddsMathEquation.JPG", alt="mathematical equation of odds ratio">
+</figure>
+<h1 id="case-study---what-is-uci-adult-income--a-namecase-studya">Case Study - What is UCI Adult Income ? <a name="Case Study"></a></h1>
+<p>In this tutorial, we will be using Adult Income data from the UCI machine learning repository to predict the income class of an individual based upon the information provided in the data. You can download this 
+  <a href="https://archive.ics.uci.edu/ml/machine-learning-databases/adult/">Adult Income</a> data from the UCI repository.</p>
+<p><strong>Beta coefficient in logistics regression are chosen based upon maximum likelihood estimates.</strong></p>
+<p>The idea here is to give you a fair idea about how a data scientist or a statistician builds a predictive model. So, we will try to demonstrate all the essential tasks which are part of model building exercise. However, for the demo purpose, we will be using only three variables from the whole dataset.</p>
+<h1 id="getting-the-data">Getting the data</h1>
+<p>The adult dataset is fairly large, and to read it faster, I will be using <code>read_csv()</code> from <code>readr</code> package to load the data from my local machine.</p>
+<pre><code>library(readr)
+adult &lt;- read_csv(&quot;./static/data/adult.csv&quot;)
+# Checking the structure of adult data
+str(adult)
+</code></pre><pre><code># Output
+Classes ‘tbl_df’, ‘tbl’ and 'data.frame':    48842 obs. of  15 variables:
+ $ Age           : int  25 38 28 44 18 34 29 63 24 55 ...
+ $ Workclass     : chr  &quot;Private&quot; &quot;Private&quot; &quot;Local-gov&quot; &quot;Private&quot; ...
+ $ Fnlwgt        : int  226802 89814 336951 160323 103497 198693 227026 104626 369667 104996 ...
+ $ Education     : chr  &quot;11th&quot; &quot;HS-grad&quot; &quot;Assoc-acdm&quot; &quot;Some-college&quot; ...
+ $ Education-num : int  7 9 12 10 10 6 9 15 10 4 ...
+ $ Marital-status: chr  &quot;Never-married&quot; &quot;Married-civ-spouse&quot; &quot;Married-civ-spouse&quot; &quot;Married-civ-spouse&quot; ...
+ $ Occupation    : chr  &quot;Machine-op-inspct&quot; &quot;Farming-fishing&quot; &quot;Protective-serv&quot; &quot;Machine-op-inspct&quot; ...
+ $ Relationship  : chr  &quot;Own-child&quot; &quot;Husband&quot; &quot;Husband&quot; &quot;Husband&quot; ...
+ $ Race          : chr  &quot;Black&quot; &quot;White&quot; &quot;White&quot; &quot;Black&quot; ...
+ $ Sex           : chr  &quot;Male&quot; &quot;Male&quot; &quot;Male&quot; &quot;Male&quot; ...
+ $ Capital-gain  : int  0 0 0 7688 0 0 0 3103 0 0 ...
+ $ Capital-loss  : int  0 0 0 0 0 0 0 0 0 0 ...
+ $ Hours-per-week: int  40 50 40 40 30 30 40 32 40 10 ...
+ $ Native-country: chr  &quot;United-States&quot; &quot;United-States&quot; &quot;United-States&quot; &quot;United-States&quot; ...
+ $ Class         : chr  &quot;&lt;=50K&quot; &quot;&lt;=50K&quot; &quot;&gt;50K&quot; &quot;&gt;50K&quot; ...
+</code></pre><p>As mentioned earlier, we will be using three variables; <strong>WorkClass</strong>, <strong>Marital-status</strong> and <strong>Age</strong> to build the model. Out of these three variables - <strong>WorkClass</strong> and <strong>Marital-status</strong> are <strong>categorical variables</strong> where as <strong>Age</strong> is a continuous variable.</p>
+<pre><code># Subsetting the data and keeping the required variables
+adult &lt;- adult[ ,c(&quot;Workclass&quot;, &quot;Marital-status&quot;, &quot;Age&quot;, &quot;Class&quot;)]
+# Checking the dim
+dim(adult)
+</code></pre><pre><code># Output
+[1] 48842     4
+</code></pre><p><em>The new dataset has 48842 observations and only 4 variables</em></p>
+<blockquote class="book-hint warning">
+  We cannot use categorical variables directly in the model. So for these variables, we need to create dummy variables. A <strong>dummy variable</strong> takes the value of 0 or 1 to indicate the absence or presence of a particular level. In our example, the function will automatically create dummy variables.
+</blockquote>
+
+<h1 id="summarizing-categorical-variable">Summarizing categorical variable</h1>
+<p>The best way to summarize the categorical variable is to create the frequency table, and that is what we will do using <code>table</code> function.</p>
+<pre><code># Generating the frequency table
+table(adult$Workclass)
+</code></pre><pre><code># Output
+        ?      Federal-gov        Local-gov     Never-worked
+            2799             1432             3136               10
+         Private     Self-emp-inc Self-emp-not-inc        State-gov
+           33906             1695             3862             1981
+     Without-pay
+              21
+</code></pre><p><em>The table suggests that there are some 2799 missing values in this variable, which are represented by the (?) symbol. Also, the data is not uniformly distributed. Some of the levels have very few observations and looks like we have an opportunity to combine similar looking levels</em>.</p>
+<pre><code># Combining levels
+adult$Workclass[adult$Workclass == &quot;Without-pay&quot; | adult$Workclass == &quot;Never-worked&quot;] &lt;- &quot;Unemployed&quot;
+adult$Workclass[adult$Workclass == &quot;State-gov&quot; | adult$Workclass == &quot;Local-gov&quot;] &lt;- &quot;SL-gov&quot;
+adult$Workclass[adult$Workclass == &quot;Self-emp-inc&quot; | adult$Workclass == &quot;Self-emp-not-inc&quot;] &lt;- &quot;Self-employed&quot;
+
+# Checking the table again
+table(adult$Workclass)
+</code></pre><pre><code># Output
+
+            ?   Federal-gov       Private Self-employed
+         2799          1432         33906          5557
+       SL-gov    Unemployed
+         5117            31
+</code></pre><p><strong>Let us do a similar treatment for our other categorical variable</strong></p>
+<pre><code># Generating the frequency table
+table(adult$Marital-status)
+</code></pre><pre><code># Output
+    Divorced     Married-AF-spouse
+                 6633                    37
+   Married-civ-spouse Married-spouse-absent
+                22379                   628
+        Never-married             Separated
+                16117                  1530
+              Widowed
+                 1518
+</code></pre><p><em>We can reduce the above levels to never married, married and never married</em>.</p>
+<pre><code># Combining levels
+adult$Marital-status[adult$Marital-status == &quot;Married-AF-spouse&quot; | adult$Marital-status == &quot;Married-civ-spouse&quot; | adult$Marital-status == &quot;Married-spouse-absent&quot;] &lt;- &quot;Married&quot;
+
+adult$Marital-status[adult$Marital-status == &quot;Divorced&quot; |
+                       adult$Marital-status == &quot;Separated&quot; |
+                       adult$Marital-status == &quot;Widowed&quot;] &lt;- &quot;Not-Married&quot;
+
+# Checking the table again
+table(adult$Marital-status)
+</code></pre><pre><code># Output
+      Married       Never-married   Not-Married
+        23044         16117          9681
+</code></pre><p><em>This variable looks well-distributed then Workclass. Now, we must convert them to factor variables using as.factor() function.</em></p>
+<pre><code># Converting to factor variables
+adult$Workclass &lt;- as.factor(adult$Workclass)
+adult$Marital-status &lt;- as.factor(adult$Marital-status)
+adult$Class &lt;- as.factor(adult$Class)
+</code></pre><h1 id="deleting-the-missing-values">Deleting the missing values</h1>
+<p>We will first convert all ? to NA and then use <code>na.omit()</code> to keep the complete observation.</p>
+<pre><code># Converting ? to NA
+adult[adult == &quot;?&quot;] &lt;- NA
+
+# Keeping only the na.omit() function
+adult &lt;- na.omit(adult)
+</code></pre><h1 id="finally-taking-a-look-into-the-target-variable">Finally taking a look into the target variable</h1>
+<p>To save time, I will directly be going forward with the bivariate analysis. Let us see how the distribution of age looks for the two income groups.</p>
+<pre><code>library(ggplot2)
+ggplot(adult, aes(Age)) +
+  geom_histogram(aes(fill = Class), color = &quot;black&quot;, binwidth = 2)
+</code></pre><figure>
+  <img src="/images/regression/classAge.jpeg" alt= "Distribution of age by class variable using histogram">
+<figure>
+<p>Data looks much more skewed for the lower-income people as compared to the high-income group.</p>
+<h1 id="building-the-model">Building the Model</h1>
+<p>We will be splitting the data into the test and train using the <code>createDataPartition()</code> function from the <code>caret</code> package in R. We will train the model using the training dataset and predict the values on the test dataset. To train the logistic model, we will be using <code>glm()</code> function.</p>
+<pre><code># Loading caret library
+require(caret)
+# Splitting the data into train and test
+index &lt;- createDataPartition(adult$Class, p = .70, list = FALSE)
+train &lt;- adult[index, ]
+test &lt;- adult[-index, ]
+
+# Training the model
+logistic_model &lt;- glm(Class ~ ., family = binomial(), train)
+
+# Checking the model
+summary(logistic_model)
+</code></pre><pre><code># Output
+Call:
+glm(formula = Class ~ ., family = binomial(), data = train)
+
+Deviance Residuals:
+    Min       1Q   Median       3Q      Max  
+-1.6509  -0.8889  -0.3380  -0.2629   2.5834  
+
+Coefficients:
+                               Estimate Std. Error z value             Pr(&gt;|z|)    
+(Intercept)                   -0.591532   0.094875  -6.235     0.00000000045227 ***
+WorkclassPrivate              -0.717277   0.077598  -9.244 &lt; 0.0000000000000002 ***
+WorkclassSelf-employed        -0.575340   0.084055  -6.845     0.00000000000766 ***
+WorkclassSL-gov               -0.445104   0.086089  -5.170     0.00000023374732 ***
+WorkclassUnemployed           -2.494210   0.766488  -3.254              0.00114 **
+`Marital-status`Never-married -2.435902   0.051187 -47.589 &lt; 0.0000000000000002 ***
+`Marital-status`Not-Married   -2.079032   0.045996 -45.200 &lt; 0.0000000000000002 ***
+Age                            0.023362   0.001263  18.503 &lt; 0.0000000000000002 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 36113  on 32230  degrees of freedom
+Residual deviance: 28842  on 32223  degrees of freedom
+AIC: 28858
+
+Number of Fisher Scoring iterations: 5
+</code></pre><h2 id="interpreting-logistic-regression-output">Interpreting Logistic Regression Output</h2>
+<p>All the variables in the above output have turned out to be significant(p values are less than 0.05 for all the variables). If you look at the categorical variables, you will notice that n - 1 dummy variables are created for these variables. Here, n represents the total number of levels. The one level which is left is considered as the reference variable, and all other variable levels are interpreted in reference to this level.</p>
+<p><strong>1. Null and Residual deviance</strong> - Null deviance suggests the response by the model if we only consider the intercept; lower the value better is the model. The Residual deviance indicates the response by the model when all the variables are included; again, lower the value, better is the model.</p>
+<p><strong>2. (Intercept)</strong> - Intercept(β0) indicates the log of odds of the whole population of interest to be on higher-income class with no predictor variables in the model. We can convert the log of odds back to simple probabilities by using <strong>sigmoid</strong> function.</p>
+<pre><code>Sigmoid function, p = exp(-0.591532)/(1+exp(-0.591532))
+</code></pre>
+<p>The other way is to convert this logit of odds to simple odds by taking exp(-0.591532) =  0.5534. The number indicates that the odds of an individual being in the high-income group decreases by 45% if we have no predictor variables.</p>
+<p><strong>3. WorkclassPrivate</strong> - The beta coefficient against this variable is -0.717277.  Let us convert this value into odds by taking the exp(-0.717277) = 0.4880795. The value indicates that the odds of an individual with Private work-class being in the high-income group decreases by 52% than the one in a Federal-gov job.</p>
+<blockquote>
+<p>Out of 5 levels, the Federal-gov level became the reference, and thus all other levels of workclass variables are inferred in comparison to the referenced variable. That is how we interpret the categorical variables.</p>
+</blockquote>
+<p><strong>4. Age</strong> - The beta coefficient of the age variable is 0.023362, which is in the logit of odds terms. When we convert this to odds by taking exp(0.023362) we get 1.023. The value indicates that as age increase by one more unit, then the odds of an individual being in the high-income group will increase by 2%.</p>
+<blockquote class="book-hint info">
+  <strong>Note</strong><br>
+Odds value is never negative, and the value of 1 indicates that this variable has no impact on the target variables. If the value is less than one then the value is read as (1 - value) as a decrease in odds and a value greater than one indicates an increase in the odds.
+</blockquote>
+
+<h1 id="predicting-dependent-variabley-in-test-dataset">Predicting Dependent Variable(Y) in Test Dataset</h1>
+<p>To predict the target variable in the unseen data, we use <code>predict</code> function. The output of the predict function is the probability.</p>
+<pre><code># Predicting in the test dataset
+pred_prob &lt;- predict(logistic_model, test, type = &quot;response&quot;)
+</code></pre><h1 id="evaluating-logistic-regression-model">Evaluating Logistic Regression Model</h1>
+<p>There are number of ways in which we can validate our logistic regression model. We have picked all the popular once which you can use to evaluate the model. Let&rsquo;s discuss and see how to run those in R.</p>
+<p><strong>1. Classification Table</strong> - I would say this one is the most popular validation technique among all the known validation methods of the logistic model. It&rsquo;s basically a contingency table that we draw between the actual values and the predicted values. The table is then used to dig in many other estimates like <strong>Accuracy</strong>, <strong>Misclassification Rate</strong>, <strong>True Positive Rate</strong>, also known as recall, <strong>True Negative Rate</strong>, and <strong>Precision</strong>.</p>
+<p>Here is the representation of the contingency table marking essential terms.</p>
+<figure>
+  <img src="/images/regression/confusionMatrix.jpg" alt= "Important terms in classification">
+<figure>
+<p>Before we create a contingency table, we need to convert the probability into the two levels IE class &lt;=50K and &gt;50K. To get these values, we will be using a simple <code>ifelse()</code> function and will create a new variable in the train data by the name pred_class.</p>
+<p><strong>We have to repeat the below steps for both the test and train dataset</strong>.</p>
+<h1 id="converting-probability-to-class-values-in-the-training-dataset">Converting probability to class values in the training dataset</h1>
+<pre><code># Converting from probability to actual output
+train$pred_class &lt;- ifelse(logistic_model$fitted.values &gt;= 0.5, &quot;&gt;50K&quot;, &quot;&lt;=50K&quot;)
+
+# Generating the classification table
+ctab_train &lt;- table(train$Class, train$pred_class)
+ctab_train
+</code></pre><pre><code># Output
+        &lt;=50K  &gt;50K
+  &lt;=50K  1844 22391
+  &gt;50K   1697  6299
+</code></pre><h1 id="training-dataset-converting-from-probability-to-class-values">Training dataset converting from probability to class values</h1>
+<pre><code># Converting from probability to actual output
+test$pred_class &lt;- ifelse(pred_prob &gt;= 0.5, &quot;&gt;50K&quot;, &quot;&lt;=50K&quot;)
+
+# Generating the classification table
+ctab_test &lt;- table(test$Class, test$pred_class)
+ctab_test
+</code></pre><pre><code># Output
+        &lt;=50K  &gt;50K
+  &lt;=50K  9602   784
+  &gt;50K   2676   750
+</code></pre><h1 id="accuracy">Accuracy</h1>
+<p>Accuracy is calculated by adding the diagonal elements and dividing it by the sum of all the elements of the contingency table. We will also compare the accuracy of the training dataset with the test dataset to see if our results are holding in the unseen data or not.</p>
+<pre><code>Accuracy = (TP + TN)/(TN + FP + FN + TP)
+</code></pre>
+<pre><code># Accuracy in Training dataset
+accuracy_train &lt;- sum(diag(ctab_train))/sum(ctab_train)*100
+accuracy_train
+</code></pre><pre><code>#Output
+[1] 74.7355
+</code></pre><p>Our logistics model is able to classify 74.7% of all the observations correctly in training dataset.</p>
+<pre><code># Accuracy in Test dataset
+accuracy_test &lt;- sum(diag(ctab_test))/sum(ctab_test)*100
+accuracy_test
+</code></pre><pre><code>#Output
+[1] 74.94932
+</code></pre><p>The over all correct classification accuracy in test dataset is 74.9% which is comparable to train dataset. This shows that our model is performing good.</p>
+<blockquote>
+<p>A model is considered fairly good if the model accuracy is greater than 70%.</p>
+</blockquote>
+<h2 id="misclassification-rate">Misclassification Rate</h2>
+<p><strong>Misclassification Rate</strong> indicates how often is our predicted values are False.</p>
+<pre><code>Misclassification Rate = (FP+FN)/(TN + FP + FN + TP)
+</code></pre>
+<h2 id="true-positive-rate---recall-or-sensitivity">True Positive Rate - Recall or Sensitivity</h2>
+<p><strong>Recall or TPR</strong> indicates how often does our model predicts actual TRUE from the overall TRUE events.</p>
+<pre><code>Recall Or TPR = TP/(FN + TP)
+</code></pre>
+<pre><code># Recall in Train dataset
+Recall &lt;- (ctab_train[2, 2]/sum(ctab_train[2, ]))*100
+Recall
+</code></pre><pre><code># Output
+[1] 21.22311
+</code></pre><h2 id="true-negative-rate">True Negative Rate</h2>
+<p><strong>TNR</strong> indicates how often does our model predicts actual non events from the overall non events.</p>
+<pre><code>TNR = TN/(TN + FP)
+</code></pre>
+<pre><code># TNR in Train dataset
+TNR &lt;- (ctab_train[1, 1]/sum(ctab_train[1, ]))*100
+TNR
+</code></pre><pre><code>#Output
+92.39117
+</code></pre><h3 id="precision">Precision</h3>
+<p><strong>Precision</strong> indicates how often does your predicted TRUE values are actually TRUE.</p>
+<pre><code>Precision = TP/FP + TP
+</code></pre>
+<pre><code># Precision in Train dataset
+Precision &lt;- (ctab_train[2, 2]/sum(ctab_train[, 2]))*100
+Precision
+</code></pre><pre><code>#Output
+[1] 47.92432
+</code></pre><h1 id="calculating-f-score">Calculating F-Score</h1>
+<p><strong>F-Score</strong> is a harmonic mean of recall and precision. The score value lies between 0 and 1. The value of 1 represents perfect precision &amp; recall. The value 0 represents the worst case.</p>
+<pre><code>F_Score &lt;- (2 * Precision * Recall / (Precision + Recall))/100
+F_Score
+</code></pre><pre><code>#Output
+[1] 0.2941839
+</code></pre><h1 id="roc-curve">ROC Curve</h1>
+<p>The area under the curve(AUC) is the measure that represents ROC(Receiver Operating Characteristic) curve. This ROC curve is a line plot that is drawn between the Sensitivity and (1 - Specificity) Or between TPR and TNR. This graph is then used to generate the AUC value. An AUC value of greater than .70 indicates a good model.</p>
+<pre><code>library(pROC)
+roc &lt;- roc(train$Class, logistic_model$fitted.values)
+auc(roc)
+</code></pre><pre><code># Output
+Area under the curve: 0.7965
+</code></pre><h1 id="concordance">Concordance</h1>
+<p><strong>Concordance</strong> In how many pairs does the probability of ones is higher than the probability of zeros divided by the total number of possible pairs. The higher the values better is the model. The value of concordance lies between 0 and 1.</p>
+<p>Similar to concordance, we have <strong>disconcordance</strong> which states in how many pairs the probability of ones was less than zeros. If the probability of ones is equal to 1 we say it is a <strong>tied pair</strong>.</p>
+<pre><code>library(InformationValue)
+Concordance(logistic_model$y,logistic_model$fitted.values)
+</code></pre><pre><code># Output
+$`Concordance`
+[1] 0.7943923
+
+$Discordance
+[1] 0.2056077
+
+$Tied
+[1] 0
+
+$Pairs
+[1] 193783060
+</code></pre></article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex justify-between">
+
+
+
+  <div><a class="flex align-center" href="https://github.com/DataScience86/rstatisticsblog/tree/master/content/docs/commit/ab5e0b8053f8e8f2deb5517bb8334c062f300ec4" title='Last modified by datasciencebeginner | April 30, 2020' target="_blank" rel="noopener">
+      <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
+      <span>April 30, 2020</span>
+    </a>
+  </div>
+
+
+
+</div>
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#overview---logistic-regression">Overview - Logistic Regression</a></li>
+    <li><a href="#case-study---what-is-uci-adult-income--a-namecase-studya">Case Study - What is UCI Adult Income ? <a name="Case Study"></a></a></li>
+    <li><a href="#getting-the-data">Getting the data</a></li>
+    <li><a href="#summarizing-categorical-variable">Summarizing categorical variable</a></li>
+    <li><a href="#deleting-the-missing-values">Deleting the missing values</a></li>
+    <li><a href="#finally-taking-a-look-into-the-target-variable">Finally taking a look into the target variable</a></li>
+    <li><a href="#building-the-model">Building the Model</a>
+      <ul>
+        <li><a href="#interpreting-logistic-regression-output">Interpreting Logistic Regression Output</a></li>
+      </ul>
+    </li>
+    <li><a href="#predicting-dependent-variabley-in-test-dataset">Predicting Dependent Variable(Y) in Test Dataset</a></li>
+    <li><a href="#evaluating-logistic-regression-model">Evaluating Logistic Regression Model</a></li>
+    <li><a href="#converting-probability-to-class-values-in-the-training-dataset">Converting probability to class values in the training dataset</a></li>
+    <li><a href="#training-dataset-converting-from-probability-to-class-values">Training dataset converting from probability to class values</a></li>
+    <li><a href="#accuracy">Accuracy</a>
+      <ul>
+        <li><a href="#misclassification-rate">Misclassification Rate</a></li>
+        <li><a href="#true-positive-rate---recall-or-sensitivity">True Positive Rate - Recall or Sensitivity</a></li>
+        <li><a href="#true-negative-rate">True Negative Rate</a>
+          <ul>
+            <li><a href="#precision">Precision</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#calculating-f-score">Calculating F-Score</a></li>
+    <li><a href="#roc-curve">ROC Curve</a></li>
+    <li><a href="#concordance">Concordance</a></li>
+  </ul>
+</nav>
+
+ 
+    </aside>
+    
+  </main>
+
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head><script src="/livereload.js?port=1313&mindelay=10&v=2" data-no-instant defer></script>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Linear regression is a supervised machine learning algorithm that is used to predict the continuous variable. The algorithm assumes that the relation between the dependent variable(Y) and independent variables(X), is linear and is represented by a line of best fit. In this chapter, we will learn how to execute linear regression in R using some select functions and test its assumptions before we use it for a final prediction on test data."><meta property="og:title" content="Linear Regression" />
+<meta property="og:description" content="Linear regression is a supervised machine learning algorithm that is used to predict the continuous variable. The algorithm assumes that the relation between the dependent variable(Y) and independent variables(X), is linear and is represented by a line of best fit. In this chapter, we will learn how to execute linear regression in R using some select functions and test its assumptions before we use it for a final prediction on test data." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="//localhost:1313/docs/foundational-algorithms/Linear-Regression/" />
+<meta property="article:modified_time" content="2020-04-30T10:51:20+05:30" />
+<title>Linear Regression | R Statistics Blog</title>
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.6df681b0bb21155cba49f6078e3559216772d8e03e780d240c73ea21817ed5e5.css" integrity="sha256-bfaBsLshFVy6SfYHjjVZIWdy2OA&#43;eA0kDHPqIYF&#43;1eU=">
+<script defer src="/en.search.min.d57240dc8b064f390ea28d6a2ec3d38165e5dfc8433d2a750739a6c9c766d392.js" integrity="sha256-1XJA3IsGTzkOoo1qLsPTgWXl38hDPSp1Bzmmycdm05I="></script>
+
+<script defer src="/sw.min.74a8bb07f0bee86d6bb9a2750f073f14d93c7e4512f28860370cfd879e9719b4.js" integrity="sha256-dKi7B/C&#43;6G1ruaJ1Dwc/FNk8fkUS8ohgNwz9h56XGbQ="></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body>
+  <input type="checkbox" class="hidden" id="menu-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      
+  <nav>
+<h2 class="book-brand">
+  <a href="//localhost:1313/"><span>R Statistics Blog</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="" target="_blank" rel="noopener">
+        
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+
+  
+
+
+
+  
+  
+  
+  
+
+  
+  <ul>
+    
+      
+        <li class="book-section-flat" >
+          
+  
+    <span>Quick R Tutorial</span>
+  
+
+          
+  
+  
+  
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+    <a href="/docs/quick-r-tutorial/introduction-to-r/" class="">Getting Started</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/quick-r-tutorial/r-basics/" class="">R Basics</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/quick-r-tutorial/using-conditional-statements-and-loops/" class="">Conditions &amp; Loops</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/quick-r-tutorial/functions-and-apply-family/" class="">Its All About Functions</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/quick-r-tutorial/dataframe-manipulations/" class="">Data Frame Manipulations</a>
+  
+
+        </li>
+      
+    
+  </ul>
+  
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+    <span>Useful R Packages</span>
+  
+
+          
+  
+  
+  
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+    <a href="/docs/useful-r-packages/Quick-ggplot2-Tutorial/" class="">Tutorial ggplot2 Package</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/useful-r-packages/R-Tutorial-datatable-With-Examples/" class="">Tutorial data.table Package</a>
+  
+
+        </li>
+      
+    
+  </ul>
+  
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+    <span>Pre Processing Tasks</span>
+  
+
+          
+  
+  
+  
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+    <a href="/docs/pre-processing-tasks/Identifying-Outliers/" class="">Analysing Outliers</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/pre-processing-tasks/Missing-Value-Imputation/" class="">Missing Value Imputation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/pre-processing-tasks/Summarizing-Data/" class="">Summarizing data</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/pre-processing-tasks/Hypothesis-Testing/" class="">Hypothesis Testing</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/pre-processing-tasks/Correlation/" class="">Correlation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/pre-processing-tasks/Analysing-zero-variance-predictor/" class="">Analysing zero variance predictor</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/pre-processing-tasks/Standardization-MinMax-Scaling/" class="">Standardization And Scaling</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/pre-processing-tasks/Principal-Component-Analysis/" class="">Principal Component Analysis</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/pre-processing-tasks/Splitting-Data/" class="">Splitting Data</a>
+  
+
+        </li>
+      
+    
+  </ul>
+  
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+    <span>Foundational Algorithms</span>
+  
+
+          
+  
+  
+  
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+    <a href="/docs/foundational-algorithms/Linear-Regression/" class="active">Linear Regression</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/foundational-algorithms/Ridge-Regression/" class="">Ridge Regression</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/foundational-algorithms/Lasso-Regression/" class="">Lasso Regression</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/foundational-algorithms/Binary-Logistics-Regression/" class="">Binary Logistic Regression</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/foundational-algorithms/Multinomial-Logistic-Regressions/" class="">Multinomial Logistic Regression</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/foundational-algorithms/k-means-clustering/" class="">k-Mean Clustering</a>
+  
+
+        </li>
+      
+    
+  </ul>
+  
+
+        </li>
+      
+    
+  </ul>
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/posts/" >
+        Blog
+      </a>
+  </li>
+  
+  <li>
+    <a href="https://github.com/DataScience86/rstatisticsblog/tree/master/content" target="_blank" rel="noopener">
+        Github
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+
+
+ 
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Linear Regression</strong>
+
+  <label for="toc-control">
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+  </label>
+</div>
+
+
+  
+    <input type="checkbox" class="hidden" id="toc-control" />
+    <aside class="hidden clearfix">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#overview---linear-regression">Overview - Linear Regression</a></li>
+    <li><a href="#glimpse-of-exploratory-data-analysis">Glimpse of Exploratory Data Analysis</a></li>
+    <li><a href="#training-regression-model">Training Regression Model</a>
+      <ul>
+        <li><a href="#diving-data-into-train-and-test-subsets">Diving data into train and test subsets</a></li>
+        <li><a href="#building-model">Building Model</a></li>
+      </ul>
+    </li>
+    <li><a href="#interpreting-regression-coefficients">Interpreting Regression Coefficients</a></li>
+    <li><a href="#validating-regression-coefficients-and-models">Validating Regression Coefficients and Models</a></li>
+    <li><a href="#checking-assumptions-of-linear-regression">Checking Assumptions of Linear Regression</a>
+      <ul>
+        <li><a href="#generating-histogram">Generating histogram</a></li>
+        <li><a href="#generating-npp-plot">Generating NPP plot</a></li>
+        <li><a href="#generating-the-scatterplot-between-residuals-and-fitted-values">Generating the scatterplot between residuals and fitted values</a></li>
+      </ul>
+    </li>
+    <li><a href="#predicting-dependent-variabley-in-test-dataset">Predicting Dependent Variable(Y) in Test Dataset</a></li>
+    <li><a href="#generating-r-squared-value-for-the-test-dataset">Generating R-Squared Value for the test dataset</a></li>
+  </ul>
+</nav>
+
+
+    </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><blockquote>
+<p>Linear regression is a supervised machine learning algorithm that is used to predict the continuous variable. The algorithm assumes that the relation between the dependent variable(Y) and independent variables(X), is linear and is represented by a line of best fit. In this chapter, we will learn how to execute linear regression in R using some select functions and test its assumptions before we use it for a final prediction on test data.</p>
+</blockquote>
+<h1 id="overview---linear-regression">Overview - Linear Regression</h1>
+<p>In statistics,  linear regression is used to model a relationship between a continuous dependent variable and one or more independent variables. The independent variable can be either categorical or numerical. The case when we have only <strong>one independent variable</strong> then it is called as <strong>simple linear regression</strong>. If we have <strong>more than one independent variable</strong>, then it is called as <strong>multivariate regression</strong>.</p>
+<p>A mathematical representation of a linear regression model  is as give below:</p>
+
+<link rel="stylesheet" href="/katex/katex.min.css" />
+<script defer src="/katex/katex.min.js"></script>
+<script defer src="/katex/auto-render.min.js" onload="renderMathInElement(document.body);"></script><span>
+  \(
+Y = β_0 &#43; β_1*X_1 &#43; β_2*X_2 &#43; β_3*X_3 &#43; ….. &#43; β_n*X_n &#43; error\)
+</span>
+
+<p>In the above equation, <span>
+  \(β_0\)
+</span>
+ coefficient represents <strong>intercept</strong> and <span>
+  \(β_i\)
+</span>
+ coefficient represents <strong>slope</strong>. To help you understand how to implement linear regression, we will be directly diving into a case study.</p>
+<p>In the below case study, we will be using <strong>USA housing data</strong> to predict the price. Let us look at the top six observations of USA housing data.</p>
+<pre><code># Reading data
+housing &lt;- read.csv(&quot;./static/data/USA_Housing.csv&quot;,
+                    header = TRUE, sep = &quot;,&quot;)
+# Print top 6 observations
+head(housing)
+</code></pre><pre><code># Output
+ AreaIncome AreaHouse AreaNumberofRooms AreaNumberofBedrooms AreaPopulation     Price
+1   79545.46  5.682861          7.009188                 4.09       23086.80 1059033.6
+2   79248.64  6.002900          6.730821                 3.09       40173.07 1505890.9
+3   61287.07  5.865890          8.512727                 5.13       36882.16 1058988.0
+4   63345.24  7.188236          5.586729                 3.26       34310.24 1260616.8
+5   59982.20  5.040555          7.839388                 4.23       26354.11  630943.5
+6   80175.75  4.988408          6.104512                 4.04       26748.43 1068138.1
+</code></pre><h1 id="glimpse-of-exploratory-data-analysis">Glimpse of Exploratory Data Analysis</h1>
+<p><strong>1. Checking distribution of target variable</strong> - First, you should always try to understand the nature of your target variable. To achieve this, we will be drawing a histogram with a density plot.</p>
+<pre><code>library(ggplot2)
+# Building histogram
+ggplot(data=housing, aes(housing$Price)) +
+  geom_histogram(aes(y =..density..), fill = &quot;orange&quot;) +
+  geom_density()
+</code></pre><figure>
+  <img src = "/images/regression/priceHist.jpeg" alt ="Building histogram for checking the distribution of price variable">
+</figure>
+<p><strong>It is good that the price variable follows a normal distribution.</strong></p>
+<p><strong>2. Analyzing Summary Statistics</strong> - Here, we will simply create summary statistics for all the variables to understand the behavior of all the independent variables. It will also provide information about missing values or outliers, if any.</p>
+<pre><code># loading psych package
+library(psych)
+psych::describe(housing)
+</code></pre><pre><code># Output
+                     vars    n       mean        sd     median    trimmed       mad      min        max      range
+AreaIncome              1 5000   68583.11  10657.99   68804.29   68611.84  10598.27 17796.63  107701.75   89905.12
+AreaHouse               2 5000       5.98      0.99       5.97       5.98      0.99     2.64       9.52       6.87
+AreaNumberofRooms       3 5000       6.99      1.01       7.00       6.99      1.01     3.24      10.76       7.52
+AreaNumberofBedrooms    4 5000       3.98      1.23       4.05       3.92      1.33     2.00       6.50       4.50
+AreaPopulation          5 5000   36163.52   9925.65   36199.41   36112.49   9997.21   172.61   69621.71   69449.10
+Price                   6 5000 1232072.65 353117.63 1232669.38 1232159.69 350330.42 15938.66 2469065.59 2453126.94
+                      skew kurtosis      se
+AreaIncome           -0.03     0.04  150.73
+AreaHouse            -0.01    -0.09    0.01
+AreaNumberofRooms    -0.04    -0.08    0.01
+AreaNumberofBedrooms  0.38    -0.70    0.02
+AreaPopulation        0.05    -0.01  140.37
+Price                 0.00    -0.06 4993.84
+</code></pre><p><strong>3. Checking Outliers Using Boxplots</strong> - As we have mentioned in the chapter [Analysing Outliers](../Identifying Outliers) that any point which lies beyond whispers is called as outliers.</p>
+<pre><code>library(reshape)
+meltData &lt;- melt(housing)
+p &lt;- ggplot(meltData, aes(factor(variable), value))
+p + geom_boxplot() + facet_wrap(~variable, scale=&quot;free&quot;)
+</code></pre><figure>
+  <img src = "/images/regression/boxplot1.jpeg" alt ="Building boxplot for checking the outliers">
+</figure>
+<p><em>Apart from Area of Number of Bedrooms all other variables seem to have outliers</em></p>
+<p><strong>4. Correlation Matrix Visualization</strong> - We will use <code>corrgram</code> plot package to visualize and analyse the correlation matrix.</p>
+<pre><code>require(corrgram)
+corrgram(housing, order=TRUE)
+</code></pre><figure>
+  <img src = "/images/regression/corrplot1.jpeg" alt ="Correlation plot for visualizing degree of association between variables">
+</figure>
+<h1 id="training-regression-model">Training Regression Model</h1>
+<p>To build a linear regression, we will be using <code>lm()</code> function. The function takes two main arguments.
+Formula stating the dependent and independent variables separated by <strong>~</strong>(tilder).
+The dataset name.
+There are other useful arguments and thus would request you to use <code>help(lm)</code> to read more from the documentation.</p>
+<h2 id="diving-data-into-train-and-test-subsets">Diving data into train and test subsets</h2>
+<p>The housing data is divided into 70:30 split of train and test. The 70:30 split is the most common and is mostly used during the training phase. 70% of the data is used for training, and the rest 30% is for testing how good we were able to learn the data behavior.</p>
+<pre><code>library(caret)
+# Split data into train and test
+index &lt;- createDataPartition(housing$Price, p = .70, list = FALSE)
+train &lt;- housing[index, ]
+test &lt;- housing[-index, ]
+</code></pre><pre><code># Checking the dim of train
+dim(train)
+</code></pre><pre><code># Output
+[1] 3500    6
+</code></pre><p>You can see we have 70% of the random observations in the training dataset.</p>
+<h2 id="building-model">Building Model</h2>
+<pre><code># Taining model
+lmModel &lt;- lm(Price ~ . , data = train)
+# Printing the model object
+print(lmModel)
+</code></pre><pre><code># Output
+Call:
+lm(formula = Price ~ ., data = housing)
+
+Coefficients:
+         (Intercept)            AreaIncome             AreaHouse  
+         -2637299.03                 21.58             165637.03  
+   AreaNumberofRooms  AreaNumberofBedrooms        AreaPopulation  
+           120659.95               1651.14                 15.20
+</code></pre><h1 id="interpreting-regression-coefficients">Interpreting Regression Coefficients</h1>
+<p>In the above output, <strong>Intercept</strong> represents that the minimum value of Price that will be received, if all the variables are constant or absent.</p>
+<blockquote class="book-hint danger">
+  Please note - intercept may not always make sense in business terms.
+</blockquote>
+
+<p><strong>Slope(represented by independent variables)</strong> tells us about the rate of change that the Price variable will witness, with every one unit change in the independent variable. For example – if <strong>AreaHouse</strong> of house increases by one more unit, the <strong>Price</strong> of the house will increase by 165,637.</p>
+<h1 id="validating-regression-coefficients-and-models">Validating Regression Coefficients and Models</h1>
+<p>We must ensure that the value of each beta coefficient is significant and has not come by chance. In R, the <code>lm</code> function runs a <strong>one-sample t-test</strong> against each beta coefficient to ensure that they are significant and have not come by chance. Similarly, we need to validate the overall model. Just like a one-sample t-test, <code>lm</code> function also generates three statistics, which help data scientists to validate the model. These statistics include <strong>R-Square</strong>, <strong>Adjusted R-Square</strong>, and <strong>F-test</strong>, also known as global testing.</p>
+<p>To view these statistics, we need to pass the <code>lmModel</code> object to the <code>summary()</code> function.</p>
+<pre><code># Checking model statistics
+summary(lmModel)
+</code></pre><pre><code># Output
+Call:
+lm(formula = Price ~ ., data = housing)
+
+Residuals:
+    Min      1Q  Median      3Q     Max
+-337020  -70236     320   69175  361870
+
+Coefficients:
+                          Estimate    Std. Error  t value            Pr(&gt;|t|)    
+(Intercept)          -2637299.0333    17157.8092 -153.708 &lt;0.0000000000000002 ***
+AreaIncome                 21.5780        0.1343  160.656 &lt;0.0000000000000002 ***
+AreaHouse              165637.0269     1443.4130  114.754 &lt;0.0000000000000002 ***
+AreaNumberofRooms      120659.9488     1605.1604   75.170 &lt;0.0000000000000002 ***
+AreaNumberofBedrooms     1651.1391     1308.6712    1.262               0.207    
+AreaPopulation             15.2007        0.1442  105.393 &lt;0.0000000000000002 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 101200 on 4994 degrees of freedom
+Multiple R-squared:  0.918,    Adjusted R-squared:  0.9179
+F-statistic: 1.119e+04 on 5 and 4994 DF,  p-value: &lt; 0.00000000000000022
+</code></pre><p>In the above output, <strong>Pr(&gt;|t|)</strong> represents the p-value, which can be compared against the alpha value of 0.05 to ensure if the corresponding beta coefficient is significant or not. The <code>lm</code> function here lends a helping hand. All values in the output that have (.) period or (*) astric against the variable names indicates that these values are significant. Based upon this, we now know that all variables are statistically significant except <strong>AreaNumberofBedrooms</strong>.</p>
+<p>For overall model accuracy, let&rsquo;s discuss statistics generated by <code>lm</code> function one by one.</p>
+<p><strong>1. Multiple R-squared:  0.918</strong> - The R-squared value is formally called a <strong>coefficient of determination</strong>. Here, 0.918 indicates that the intercept, AreaIncome, AreaHouse, AreaNumberofRooms, and AreaPopulation variables, when put together, are able to explain 91.8% of the variance in the Price variable. The value of R-squared lies between 0 to 1. In practical applications, if the R2 value is higher than 0.70, we consider it a good model.</p>
+<p><strong>2. Adjusted R-squared:  0.9179</strong> - The Adjusted R-squared value tells if the addition of new information ( variable )  brings significant improvement to the model or not. So as of now, this value does not provide much information. However, the increase in the adjusted R-squared value with the addition of a new variable will indicate that the variable is useful and brings significant improvement to the model.</p>
+<blockquote class="book-hint warning">
+  A large difference between the R-Squared and Adjusted R-squared is not appreciated and generally indicates that multicollinearity exists within the data.
+</blockquote>
+
+<p><strong>3. F-statistic: 1.119e+04 on 5 and 4994 DF,  p-value: &lt; 0.00000000000000022</strong> - This line talks about the global testing of the model. The <code>lm</code> function runs an ANOVA test to check the significance of the overall model. Here the null hypothesis is that the model is not significant, and the alternative is that the model is significant. According to the p-values &lt; 0.05, our model is significant.</p>
+<p>Albeit, looking at these statistics is enough to take a call on the model significance. But there are other validation methods for linear regression that can be of help while deciding how good or bad the model is. Some of them are mentioned below:</p>
+<p><strong>4. AIC and BIC values</strong> - The AIC(Akaike’s information criterion, 1974) and BIC(Bayesian information criterion, 1978) are penalized-likelihood criteria. Both these measures use a &ldquo;measure of fit + complexity penalty&rdquo;  to get the final values.</p>
+<p>AIC = - 2 * ln(likelihood) + 2 * p <br/>
+BIC = - 2 * ln(likelihood) + ln(N) * p</p>
+<p>Here p = number of estimated parameters and N = sample size.</p>
+<p>The AIC and BIC values can be used for choosing the best predictor subsets in regression and for comparing different models. When comparing different models, the model with minimum AIC and BIC values is considered the best model.</p>
+<blockquote class="book-hint warning">
+  <strong>Note</strong><br>
+AIC is likely to overfit the data, whereas BIC is susceptible to underfit the data.
+</blockquote>
+
+<pre><code># Using AIC function
+AIC(lmModel)
+# Using BIC function
+BIC(lmModel)  
+</code></pre><pre><code># Output AIC
+[1] 129441.3
+
+# Output BIC
+[1] 129486.9
+</code></pre><p><strong>5. Root Mean Square Error(RMSE)</strong> - By comparing the RMSE statistics of different models, we can decide which is a better model. The model with the lower RMSE value is considered a better model. There are other similar functions like MAE, MAPE, MSE, and so on that can be used. These functions can be found in 
+  <a href="https://cran.r-project.org/web/packages/Metrics/Metrics.pdf"><code>Metrics</code></a> R Package. These functions take majorly two arguments: One is the actual value and second, predicted values. So let&rsquo;s see how we can get these values. The actuals can be 100% found from the original dataset or the training data in our case. However, to find the fitted values, we need to explore the model object.</p>
+<pre><code># Checking model object for actual and predicted values
+names(lmModel)
+</code></pre><pre><code># Output
+  [1] &quot;coefficients&quot;  &quot;residuals&quot;    
+  [3] &quot;effects&quot;       &quot;rank&quot;         
+  [5] &quot;fitted.values&quot; &quot;assign&quot;       
+  [7] &quot;qr&quot;            &quot;df.residual&quot;  
+  [9] &quot;xlevels&quot;       &quot;call&quot;         
+  [11] &quot;terms&quot;         &quot;model&quot;
+</code></pre><p>The above vector presents the names of the object that constitute the model object. Here, fitted values are the predicted values. Now, we will use these values to generate the <strong>rmse</strong> values.</p>
+<pre><code>library(Metrics)
+rmse(actual = train$Price, predicted = lmModel$fitted.values)
+</code></pre><pre><code># Output
+[1] 493370.4
+</code></pre><h1 id="checking-assumptions-of-linear-regression">Checking Assumptions of Linear Regression</h1>
+<p>Linear regression is parametric, which means the algorithm makes some assumptions about the data.  A linear regression model is only deemed fit is these assumptions are met. There are about four assumptions and are mentioned below. If the model fails to meet these assumptions, then we simply cannot use this model.</p>
+<p><strong>1. Errors should follow normal distribution</strong> - This can be checked by drawing a histogram of residuals or by using <code>plot()</code> function. The <code>plot</code> function creates 4 different charts. One of which is an NPP plot. The chart confirms if the errors follow a normal distribution or not.</p>
+<h2 id="generating-histogram">Generating histogram</h2>
+<pre><code># Histogram to check the distribution of errors
+hist(lmModel$residuals, color = &quot;grey&quot;)
+</code></pre><center>![Histogram to check linear regression assumption](/images/regression/normalerror1.jpeg "Histogram - errors are normally distributed")</center>
+<p><strong>The above histogram of errors clearly states that errors are normally distributed.</strong></p>
+<h2 id="generating-npp-plot">Generating NPP plot</h2>
+<p>We except the points to be very close to the dotted line in an NPP plot. Points being close to the line means that errors follow a normal distribution.</p>
+<pre><code>plot(lmModel)
+</code></pre><center>![npp plot to check linear regression assumptions](/images/regression/nppplot.jpeg "npp plot - errors are normally distributed")</center>
+<p><strong>2. There should be no heteroscedasticity</strong> - This means that the variance of error terms should be constant. We shall not see any patterns when we draw a plot between residuals and fitted values. And the mean line should be close to Zero.</p>
+<h2 id="generating-the-scatterplot-between-residuals-and-fitted-values">Generating the scatterplot between residuals and fitted values</h2>
+<pre><code># Using plot function
+plot(lmModel)
+</code></pre><figure>
+  <img src="/images/regression/hetrosca.jpeg" alt="Checking for heteroscedasticity in R using plot function">
+<figure>
+<p><em>A straight red line closer to the zero value represents that we do not have heteroscedasticity problem in our data.</em></p>
+<p><strong>3. There should be no multicollinearity</strong> - The linear model assumes that the predictor variables do not correlate with each other. If they exhibit high correlation, it is a problem and is called <strong>multicollinearity</strong>.  A variation inflation factor test can help check for the multicollinearity assumption.</p>
+<p>VIF = 1/(1-R2)</p>
+<p>The R implementation of the below function can be found 
+  <a href="https://gist.github.com/fawda123/4717702">here</a>.</p>
+<blockquote class="book-hint info">
+  VIF is an iterative process. The function will remove one variable at a time, which is cause for multicollinearity and repeats the process until all problem causing variables are removed. So, finally, we are left with the list of variables that have no or very weak correlation between them.
+</blockquote>
+
+<pre><code>vif_func(housing[, 1:5])
+</code></pre><pre><code>var                  vif             
+ AreaIncome           1.00115868968647
+ AreaHouse            1.00057658981485
+ AreaNumberofRooms    1.27353508823836
+ AreaNumberofBedrooms 1.27441273719468
+ AreaPopulation       1.00126579728799
+
+All variables have VIF &lt; 10, max VIF 1.27
+
+[1] &quot;AreaIncome&quot;          
+[2] &quot;AreaHouse&quot;           
+[3] &quot;AreaNumberofRooms&quot;   
+[4] &quot;AreaNumberofBedrooms&quot;
+[5] &quot;AreaPopulation&quot;     
+</code></pre><p><em>There is no multicollinearity problem in the dataset. Generally, VIF values which are greater than 5 or 7 are the cause of multicollinearity.</em></p>
+<p><strong>3. There should be no auto serial correlation</strong> - The autocorrelation means that error terms should not be correlated with each other. To check this, we can run the Durbin-Watson test(dw test). The test returns a value between 0 and 4. If the value is two, we say there is no auto serial correlation. However, a value higher than 2 represents (-) ve correlation and value lower than 2 represents (+) ve correlation.</p>
+<pre><code>library(&quot;lmtest&quot;)
+dwtest(lmModel)
+</code></pre><pre><code># Output
+    Durbin-Watson test
+
+data:  lmModel
+DW = 1.9867, p-value = 0.3477
+alternative hypothesis: true autocorrelation is greater than 0
+</code></pre><p><em>We got a value of 1.9867 which suggests that there is no auto serial correlation.</em></p>
+<blockquote class="book-hint info">
+  Our model met all the four assumptions of linear regression.
+</blockquote>
+
+<h1 id="predicting-dependent-variabley-in-test-dataset">Predicting Dependent Variable(Y) in Test Dataset</h1>
+<p>We test the model performance on test data set to ensure that our model is stable, and we get the same or closer enough results to use this trained model to predict and forecast future values of dependent variables. To predict, we use <code>predict</code> function, and then we generate R-Squared value to see if we get the same result as we got in the training dataset or not.</p>
+<pre><code># Predicting Price in test dataset
+test$PreditedPrice &lt;- predict(lmModel, test)
+# Priting top 6 rows of actual and predited price
+head(test[ , c(&quot;Price&quot;, &quot;PreditedPrice&quot;)])
+</code></pre><pre><code># Output
+      Price   PreditedPrice
+2  1505890.9     1494997.3
+3  1058988.0     1253539.2
+8  1573936.6     1572965.3
+12  663732.4      629153.8
+23  718887.2      727497.8
+24  743999.8      991034.7
+</code></pre><h1 id="generating-r-squared-value-for-the-test-dataset">Generating R-Squared Value for the test dataset</h1>
+<p>We are using a user-defined formula to generate the R-Squared value here.</p>
+<pre><code>actual &lt;- test$Price
+preds &lt;- test$PreditedPrice
+rss &lt;- sum((preds - actual) ^ 2)
+tss &lt;- sum((actual - mean(actual)) ^ 2)
+rsq &lt;- 1 - rss/tss
+rsq
+</code></pre><pre><code># Output
+[1] 0.9140436
+</code></pre><p><em>Our model is performing fantastic</em>. <br/>
+<em>In test dataset, we got an accuracy of 0.9140436 and training data set, we got an accuracy of 0.918</em>.</p>
+<p>In this chapter, We learned many things related to linear regression from a practical and theoretical point of view. We learned when to use linear regression, how to use it, how to check the assumptions of linear regression, how to predict the target variable in test dataset using trained model object, and we also learned how to validate the linear regression model using different statistical methods. In the next chapter, we will learn about an advanced linear regression model called ridge regression.</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex justify-between">
+
+
+
+  <div><a class="flex align-center" href="https://github.com/DataScience86/rstatisticsblog/tree/master/content/docs/commit/fabb964f9c6102dfd12c195a35f45ae618bd98a2" title='Last modified by datasciencebeginner | April 30, 2020' target="_blank" rel="noopener">
+      <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
+      <span>April 30, 2020</span>
+    </a>
+  </div>
+
+
+
+</div>
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#overview---linear-regression">Overview - Linear Regression</a></li>
+    <li><a href="#glimpse-of-exploratory-data-analysis">Glimpse of Exploratory Data Analysis</a></li>
+    <li><a href="#training-regression-model">Training Regression Model</a>
+      <ul>
+        <li><a href="#diving-data-into-train-and-test-subsets">Diving data into train and test subsets</a></li>
+        <li><a href="#building-model">Building Model</a></li>
+      </ul>
+    </li>
+    <li><a href="#interpreting-regression-coefficients">Interpreting Regression Coefficients</a></li>
+    <li><a href="#validating-regression-coefficients-and-models">Validating Regression Coefficients and Models</a></li>
+    <li><a href="#checking-assumptions-of-linear-regression">Checking Assumptions of Linear Regression</a>
+      <ul>
+        <li><a href="#generating-histogram">Generating histogram</a></li>
+        <li><a href="#generating-npp-plot">Generating NPP plot</a></li>
+        <li><a href="#generating-the-scatterplot-between-residuals-and-fitted-values">Generating the scatterplot between residuals and fitted values</a></li>
+      </ul>
+    </li>
+    <li><a href="#predicting-dependent-variabley-in-test-dataset">Predicting Dependent Variable(Y) in Test Dataset</a></li>
+    <li><a href="#generating-r-squared-value-for-the-test-dataset">Generating R-Squared Value for the test dataset</a></li>
+  </ul>
+</nav>
+
+ 
+    </aside>
+    
+  </main>
+
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

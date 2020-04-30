@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head><script src="/livereload.js?port=1313&mindelay=10&v=2" data-no-instant defer></script>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Overview Having missing values in a data set is a very common phenomenon. There are many reasons due to which a missing value occurs in a dataset. It is vital to figure out the reason for missing values. However, in this article, we will only focus on how to identify and impute the missing values.
+Before we start, let us first, randomly add some missing values to the iris dataset."><meta property="og:title" content="Missing Value Imputation" />
+<meta property="og:description" content="Overview Having missing values in a data set is a very common phenomenon. There are many reasons due to which a missing value occurs in a dataset. It is vital to figure out the reason for missing values. However, in this article, we will only focus on how to identify and impute the missing values.
+Before we start, let us first, randomly add some missing values to the iris dataset." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="//localhost:1313/docs/pre-processing-tasks/Missing-Value-Imputation/" />
+<meta property="article:published_time" content="2019-12-22T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-04-30T10:51:20+05:30" />
+<title>Missing Value Imputation | R Statistics Blog</title>
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.6df681b0bb21155cba49f6078e3559216772d8e03e780d240c73ea21817ed5e5.css" integrity="sha256-bfaBsLshFVy6SfYHjjVZIWdy2OA&#43;eA0kDHPqIYF&#43;1eU=">
+<script defer src="/en.search.min.d57240dc8b064f390ea28d6a2ec3d38165e5dfc8433d2a750739a6c9c766d392.js" integrity="sha256-1XJA3IsGTzkOoo1qLsPTgWXl38hDPSp1Bzmmycdm05I="></script>
+
+<script defer src="/sw.min.74a8bb07f0bee86d6bb9a2750f073f14d93c7e4512f28860370cfd879e9719b4.js" integrity="sha256-dKi7B/C&#43;6G1ruaJ1Dwc/FNk8fkUS8ohgNwz9h56XGbQ="></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body>
+  <input type="checkbox" class="hidden" id="menu-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      
+  <nav>
+<h2 class="book-brand">
+  <a href="//localhost:1313/"><span>R Statistics Blog</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="" target="_blank" rel="noopener">
+        
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+
+  
+
+
+
+  
+  
+  
+  
+
+  
+  <ul>
+    
+      
+        <li class="book-section-flat" >
+          
+  
+    <span>Quick R Tutorial</span>
+  
+
+          
+  
+  
+  
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+    <a href="/docs/quick-r-tutorial/introduction-to-r/" class="">Getting Started</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/quick-r-tutorial/r-basics/" class="">R Basics</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/quick-r-tutorial/using-conditional-statements-and-loops/" class="">Conditions &amp; Loops</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/quick-r-tutorial/functions-and-apply-family/" class="">Its All About Functions</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/quick-r-tutorial/dataframe-manipulations/" class="">Data Frame Manipulations</a>
+  
+
+        </li>
+      
+    
+  </ul>
+  
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+    <span>Useful R Packages</span>
+  
+
+          
+  
+  
+  
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+    <a href="/docs/useful-r-packages/Quick-ggplot2-Tutorial/" class="">Tutorial ggplot2 Package</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/useful-r-packages/R-Tutorial-datatable-With-Examples/" class="">Tutorial data.table Package</a>
+  
+
+        </li>
+      
+    
+  </ul>
+  
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+    <span>Pre Processing Tasks</span>
+  
+
+          
+  
+  
+  
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+    <a href="/docs/pre-processing-tasks/Identifying-Outliers/" class="">Analysing Outliers</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/pre-processing-tasks/Missing-Value-Imputation/" class="active">Missing Value Imputation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/pre-processing-tasks/Summarizing-Data/" class="">Summarizing data</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/pre-processing-tasks/Hypothesis-Testing/" class="">Hypothesis Testing</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/pre-processing-tasks/Correlation/" class="">Correlation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/pre-processing-tasks/Analysing-zero-variance-predictor/" class="">Analysing zero variance predictor</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/pre-processing-tasks/Standardization-MinMax-Scaling/" class="">Standardization And Scaling</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/pre-processing-tasks/Principal-Component-Analysis/" class="">Principal Component Analysis</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/pre-processing-tasks/Splitting-Data/" class="">Splitting Data</a>
+  
+
+        </li>
+      
+    
+  </ul>
+  
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+    <span>Foundational Algorithms</span>
+  
+
+          
+  
+  
+  
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+    <a href="/docs/foundational-algorithms/Linear-Regression/" class="">Linear Regression</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/foundational-algorithms/Ridge-Regression/" class="">Ridge Regression</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/foundational-algorithms/Lasso-Regression/" class="">Lasso Regression</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/foundational-algorithms/Binary-Logistics-Regression/" class="">Binary Logistic Regression</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/foundational-algorithms/Multinomial-Logistic-Regressions/" class="">Multinomial Logistic Regression</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/foundational-algorithms/k-means-clustering/" class="">k-Mean Clustering</a>
+  
+
+        </li>
+      
+    
+  </ul>
+  
+
+        </li>
+      
+    
+  </ul>
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/posts/" >
+        Blog
+      </a>
+  </li>
+  
+  <li>
+    <a href="https://github.com/DataScience86/rstatisticsblog/tree/master/content" target="_blank" rel="noopener">
+        Github
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+
+
+ 
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Missing Value Imputation</strong>
+
+  <label for="toc-control">
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+  </label>
+</div>
+
+
+  
+    <input type="checkbox" class="hidden" id="toc-control" />
+    <aside class="hidden clearfix">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#overview">Overview</a></li>
+    <li><a href="#how-to-identify-missing-values">How to identify missing values</a></li>
+    <li><a href="#how-to-delete-missing-observations">How to delete missing observations</a></li>
+    <li><a href="#how-to-delete-variables-with-missing-values">How to delete variables with missing values</a></li>
+    <li><a href="#imputing-missing-values">Imputing missing values</a>
+      <ul>
+        <li><a href="#using-meanmedianmode">Using mean/median/mode</a></li>
+        <li><a href="#multivariate-imputation-by-chained-equationsmice-r-package">Multivariate Imputation By Chained Equations(mice R Package)</a></li>
+        <li><a href="#using-machine-learning-algorithms">Using Machine Learning Algorithms</a>
+          <ul>
+            <li><a href="#using-knn-to-fill-the-missing-values">Using KNN to fill the missing values</a></li>
+            <li><a href="#using-random-forest-to-fill-the-missing-values">Using random forest to fill the missing values</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#analysing-imputed-values-using-graphical-methods">Analysing imputed values using graphical methods</a>
+      <ul>
+        <li><a href="#generating-boxplot-comparing-distribution-of-all-observations-with-imputed-values">Generating boxplot comparing distribution of all observations with imputed values</a></li>
+        <li><a href="#generating-a-graph-show-cashing-scatter-and-box-plot-in-one-graph">Generating a graph show cashing scatter and box plot in one graph</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+    </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="overview">Overview</h1>
+<p>Having <strong>missing values</strong> in a data set is a very common phenomenon. There are many reasons due to which a missing value occurs in a dataset. It is vital to figure out the reason for missing values. However, in this article, we will only focus on how to <strong>identify and impute the missing values</strong>.</p>
+<p>Before we start, let us first, randomly add some missing values to the iris dataset.</p>
+<pre><code># Injecting missing value
+set.seed(86)
+iris[sample(1:nrow(iris), 5), &quot;Sepal.Width&quot;] &lt;- NA
+iris[sample(1:nrow(iris), 10), &quot;Petal.Length&quot;] &lt;- NA
+iris[sample(1:nrow(iris), 8), &quot;Sepal.Length&quot;] &lt;- NA
+</code></pre><p>Now that we have added few missing values in the dataset let&rsquo;s proceed further to see how a data analyst or a data scientist deals with this problem of missing values.</p>
+<h1 id="how-to-identify-missing-values">How to identify missing values</h1>
+<ul>
+<li>The very first thing is to determine if a dataset has a missing value. We can check this using functions like <code>is.na</code> or <code>complete.cases</code>.</li>
+</ul>
+<pre><code># Using is.na() function
+any(is.na(iris))
+</code></pre><pre><code># Output
+[1] TRUE
+</code></pre><p><em>Yes, we have missing values in the iris data</em></p>
+<pre><code># Using complete.cases() function to get percentage of missing value
+nrow(iris[!complete.cases(iris), ])/nrow(iris)*100
+</code></pre><pre><code># Output
+[1] 14
+</code></pre><p><em>Overall 14% of the data is missing</em></p>
+<ul>
+<li>Next is to identify which variables and what percentage of observations from each variable are missing. To achieve this we can use <code>md.pattern</code> function from <code>mice</code> package in R.</li>
+</ul>
+<pre><code># Looking at the missing data pattern
+library(mice)
+md.pattern(iris)
+</code></pre><pre><code># Output
+            Petal.Width Species Sepal.Width Sepal.Length Petal.Length   
+129           1       1           1            1            1       0
+8             1       1           1            1            0       1
+7             1       1           1            0            1       1
+1             1       1           1            0            0       2
+4             1       1           0            1            1       1
+1             1       1           0            1            0       2
+              0       0           5            8           10       23
+</code></pre><p>The above table states that there are <strong>5</strong> missing values in <strong>Sepal.Width</strong>, <strong>8</strong> missing values in <strong>Sepal.Length</strong>, and <strong>10</strong> missing values in <strong>Petal.Length</strong>. In the last column, it is mentioned that overall, 23 values are missing.</p>
+<h1 id="how-to-delete-missing-observations">How to delete missing observations</h1>
+<p>When the total number of missing observations is significant, then we can think of removing those observations from the data. Imputing too many missing observations can lead to bias in the dataset. Also, it can result in poor statistical models. We can delete the missing values at the data preparation stage or at the time of building the model. However, not all algorithms provide this option of deleting missing values while we train the model.</p>
+<pre><code># Deleting missing observations
+iris &lt;- iris[complete.cases(iris), ]
+# or we can use na.omit() function
+iris &lt;- na.omit(iris)
+
+# Ignoring missing values while building lm model
+lm(mpg ~ cyl + disp, data=mtcars, na.action=na.omit)
+</code></pre><p><em>For showcasing linear regression example we used mtcars dataset</em></p>
+<h1 id="how-to-delete-variables-with-missing-values">How to delete variables with missing values</h1>
+<p>Sometimes one or two variables contribute to the most number of missing values. In such cases, deleting these variables with a high percentage of missing values will help save lots of observations. According to one thumb rule we delete all variable which has more than 30% of missing values.</p>
+<pre><code>## Removing columns with more than 30% NA
+iris[, -which(colMeans(is.na(iris)) &gt; 0.3)]
+</code></pre><h1 id="imputing-missing-values">Imputing missing values</h1>
+<p>Replacing missing values with a rough approximate value is acceptable and could result in a satisfactory result. Let us look at some of the ways in which we can replace the missing values.</p>
+<h2 id="using-meanmedianmode">Using mean/median/mode</h2>
+<p>To replace missing values with mean, median, or mode, we can use <code>impute</code> function from <code>Hmisc</code> package. This can also be achieved by using <strong>square brackets[]</strong> or <code>ifelse</code> statement.</p>
+<pre><code># Using impute function from Hmisc package
+library(Hmisc)
+impute(iris$Sepal.Length, mean)  # replace with mean
+impute(iris$Sepal.Length, median)  # median
+</code></pre><p>Other ways are using which we can replace missing values.</p>
+<pre><code># Filling missing values with Mean
+iris$Sepal.Length[is.na(iris$Sepal.Length)] = mean(iris$Sepal.Length, na.rm=TRUE)
+# alternative way is to use ifelse
+iris = transform(iris, y = ifelse(is.na(iris), mean(iris, na.rm=TRUE), Sepal.Length))
+</code></pre><h2 id="multivariate-imputation-by-chained-equationsmice-r-package">Multivariate Imputation By Chained Equations(mice R Package)</h2>
+<p>The <code>mice</code> function from the package automatically detects the variables which have missing values. Once identified, the missing values are then replaced by Predictive Mean Matching (PMM). The other methods which mice support are listed below:</p>
+<ul>
+<li>logreg(Logistic Regression) – Used For Binary Variables</li>
+<li>Proportional odds model – Used For ordered levels &gt;= 2</li>
+<li>polyreg(Bayesian polytomous regression) – Used For unordered levels&gt;= 2</li>
+</ul>
+<p>Let us look at an example:</p>
+<pre><code>library(mice)
+# Imputing the values using mice
+imputed_iris &lt;- mice(iris, m=5, method = 'pmm', seed = 101)
+# checking the summary
+summary(imputed_iris)
+</code></pre><pre><code># Output
+Class: mids
+Number of multiple imputations:  5
+Imputation methods:
+Sepal.Length  Sepal.Width Petal.Length  Petal.Width      Species
+       &quot;pmm&quot;        &quot;pmm&quot;        &quot;pmm&quot;           &quot;&quot;           &quot;&quot;
+PredictorMatrix:
+             Sepal.Length Sepal.Width Petal.Length Petal.Width Species
+Sepal.Length            0           1            1           1       1
+Sepal.Width             1           0            1           1       1
+Petal.Length            1           1            0           1       1
+Petal.Width             1           1            1           0       1
+Species                 1           1            1           1       0
+</code></pre><p><em>You can also look at the imputed values by using the following code</em></p>
+<pre><code># Checking imputed values of sleep variable
+imputed_iris$imp
+</code></pre><pre><code># Output
+$`Sepal.Length`
+      1   2   3   4   5
+29  4.6 4.7 4.6 5.1 4.9
+32  4.6 5.0 5.0 4.9 4.9
+65  5.7 5.6 4.8 5.7 5.7
+73  6.9 6.4 6.4 6.8 6.8
+81  4.8 5.1 5.5 5.1 5.5
+91  5.8 5.8 6.3 6.2 6.0
+108 7.2 7.4 7.2 7.2 7.2
+123 7.6 7.4 7.9 7.7 7.7
+
+$Sepal.Width
+      1   2   3   4   5
+33  3.2 3.8 3.8 3.1 3.4
+68  3.0 2.5 2.2 2.2 2.4
+74  3.0 2.2 3.0 3.0 2.6
+115 3.0 2.8 2.5 3.1 2.8
+134 3.0 2.6 2.5 2.5 2.5
+
+$Petal.Length
+      1   2   3   4   5
+32  1.4 1.6 1.5 1.5 1.5
+33  1.5 1.5 1.5 1.4 1.2
+41  1.5 1.5 1.5 1.4 1.4
+48  1.6 1.6 1.5 1.4 1.4
+50  1.4 1.5 1.6 1.4 1.6
+60  3.5 4.5 3.9 3.5 4.2
+82  3.0 3.5 4.1 4.1 3.5
+106 6.4 6.4 6.7 6.4 6.1
+109 5.8 5.8 5.6 6.0 5.1
+133 5.3 5.6 6.0 6.0 5.1
+
+$Petal.Width
+[1] 1 2 3 4 5
+&lt;0 rows&gt; (or 0-length row.names)
+
+$Species
+[1] 1 2 3 4 5
+&lt;0 rows&gt; (or 0-length row.names)
+</code></pre><blockquote class="book-hint info">
+  Each missing value is filled with 5 different numbers and is represented by columns
+</blockquote>
+
+<h2 id="using-machine-learning-algorithms">Using Machine Learning Algorithms</h2>
+<p>There are actually a couple of nice and very popular machine learning algorithms that we can use to fill the missing values. Algorithms like KNN and random forest are some such popular algorithms.</p>
+<h3 id="using-knn-to-fill-the-missing-values">Using KNN to fill the missing values</h3>
+<pre><code>library(bnstruct)
+knn.impute(iris, k = 5, cat.var = 1:ncol(iris), to.impute = 1:nrow(iris),
+  using = 1:nrow(iris))
+</code></pre><h3 id="using-random-forest-to-fill-the-missing-values">Using random forest to fill the missing values</h3>
+<pre><code># Imputing values using Random forest
+set.seed(86)
+iris &lt;- rfImpute(Species ~ ., iris.na)
+</code></pre><h1 id="analysing-imputed-values-using-graphical-methods">Analysing imputed values using graphical methods</h1>
+<p>When it comes to visualizing the missing and imputed values, my personal favorite is <strong>VIM</strong> package in R. The package is very useful in identifying the underlying mechanism responsible for missing values. It has many built-in functions to visualize the missing and imputed values. Also, this package has some nice functions for the imputation of missing values. Below I am providing a few examples on how to generate some beautiful visualizations. However, I would encourage you to read the 
+  <a href="https://cran.r-project.org/web/packages/VIM/VIM.pdf">documentation</a> or for quick in-depth reference read this article 
+  <a href="https://datasciencebeginners.com/2018/11/07/visualization-of-imputed-values-using-vim/">visualization of imputed values using vim</a></p>
+<h2 id="generating-boxplot-comparing-distribution-of-all-observations-with-imputed-values">Generating boxplot comparing distribution of all observations with imputed values</h2>
+<pre><code>library(VIM)
+# imputting values in iris dataset using knn
+iris_imputed &lt;- kNN(iris[, c(&quot;Petal.Length&quot;, &quot;Sepal.Width&quot;, &quot;Sepal.Length&quot;)])
+# Using pbox function to draw boxplot
+pbox(iris_imputed, delimiter=&quot;imp&quot;, selection=&quot;any&quot;)
+</code></pre><h2 id="generating-a-graph-show-cashing-scatter-and-box-plot-in-one-graph">Generating a graph show cashing scatter and box plot in one graph</h2>
+<pre><code>library(VIM)
+# imputting values in iris dataset using knn
+iris_imputed &lt;- kNN(iris[, c(&quot;Petal.Length&quot;, &quot;Sepal.Width&quot;)])
+# Using tao dataset to draw the margin plot
+marginplot(iris_imputed, delimiter=&quot;imp&quot;,
+            alpha = 0.8)
+</code></pre><figure>
+  <img src= "/images/missingValues/vim2.jpeg" alt = "Changing from default theme to other in ggplot2">
+</figure>
+<p>The above graph is fascinating and provides a detailed insight into the actual and imputed values. There are many other types of visualization that VIM package supports. It is undoubtedly helpful to spend some time on learning and exploring this powerful R Package.</p>
+<blockquote class="book-hint info">
+  <strong>Which is the best imputation method?</strong>
+It is a very frequently asked question, and although there are many ways in which we can impute missing values, one cannot say with certainty that a particular method provides the best result. Therefore, it is advised to test out some of these methods and see which one is providing the best result. As we know, statistics is all about trial and error.
+</blockquote>
+
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex justify-between">
+
+
+
+  <div><a class="flex align-center" href="https://github.com/DataScience86/rstatisticsblog/tree/master/content/docs/commit/fabb964f9c6102dfd12c195a35f45ae618bd98a2" title='Last modified by datasciencebeginner | April 30, 2020' target="_blank" rel="noopener">
+      <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
+      <span>April 30, 2020</span>
+    </a>
+  </div>
+
+
+
+</div>
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#overview">Overview</a></li>
+    <li><a href="#how-to-identify-missing-values">How to identify missing values</a></li>
+    <li><a href="#how-to-delete-missing-observations">How to delete missing observations</a></li>
+    <li><a href="#how-to-delete-variables-with-missing-values">How to delete variables with missing values</a></li>
+    <li><a href="#imputing-missing-values">Imputing missing values</a>
+      <ul>
+        <li><a href="#using-meanmedianmode">Using mean/median/mode</a></li>
+        <li><a href="#multivariate-imputation-by-chained-equationsmice-r-package">Multivariate Imputation By Chained Equations(mice R Package)</a></li>
+        <li><a href="#using-machine-learning-algorithms">Using Machine Learning Algorithms</a>
+          <ul>
+            <li><a href="#using-knn-to-fill-the-missing-values">Using KNN to fill the missing values</a></li>
+            <li><a href="#using-random-forest-to-fill-the-missing-values">Using random forest to fill the missing values</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#analysing-imputed-values-using-graphical-methods">Analysing imputed values using graphical methods</a>
+      <ul>
+        <li><a href="#generating-boxplot-comparing-distribution-of-all-observations-with-imputed-values">Generating boxplot comparing distribution of all observations with imputed values</a></li>
+        <li><a href="#generating-a-graph-show-cashing-scatter-and-box-plot-in-one-graph">Generating a graph show cashing scatter and box plot in one graph</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+ 
+    </aside>
+    
+  </main>
+
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

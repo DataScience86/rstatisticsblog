@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>R Statistics Blog</title>
+    <link>//localhost:1313/docs/foundational-algorithms/</link>
+    <description>Recent content on R Statistics Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	<atom:link href="//localhost:1313/docs/foundational-algorithms/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Linear Regression</title>
+      <link>//localhost:1313/docs/foundational-algorithms/Linear-Regression/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/docs/foundational-algorithms/Linear-Regression/</guid>
+      <description>Linear regression is a supervised machine learning algorithm that is used to predict the continuous variable. The algorithm assumes that the relation between the dependent variable(Y) and independent variables(X), is linear and is represented by a line of best fit. In this chapter, we will learn how to execute linear regression in R using some select functions and test its assumptions before we use it for a final prediction on test data.</description>
+    </item>
+    
+    <item>
+      <title>Ridge Regression</title>
+      <link>//localhost:1313/docs/foundational-algorithms/Ridge-Regression/</link>
+      <pubDate>Sun, 29 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/docs/foundational-algorithms/Ridge-Regression/</guid>
+      <description>Ridge Regression is a variation of linear regression. We use ridge regression to tackle the multicollinearity problem. Due to multicollinearity, the model estimates (least square) see a large variance. Ridge regression is a method by which we add a degree of bias to the regression estimates.
+ Overview - Ridge Regression Ridge regression is a parsimonious model that performs L2 regularization. The L2 regularization adds a penalty equivalent to the square of the magnitude of regression coefficients and tries to minimize them.</description>
+    </item>
+    
+    <item>
+      <title>Lasso Regression</title>
+      <link>//localhost:1313/docs/foundational-algorithms/Lasso-Regression/</link>
+      <pubDate>Sun, 16 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/docs/foundational-algorithms/Lasso-Regression/</guid>
+      <description>LASSO stands for Least Absolute Shrinkage and Selection Operator. The algorithm is another variation of linear regression, just like ridge regression. We use lasso regression when we have a large number of predictor variables.
+ Overview - Lasso Regression Lasso regression is a parsimonious model that performs L1 regularization. The L1 regularization adds a penalty equivalent to the absolute magnitude of regression coefficients and tries to minimize them. The equation of lasso is similar to ridge regression and looks like as given below.</description>
+    </item>
+    
+    <item>
+      <title>Binary Logistic Regression</title>
+      <link>//localhost:1313/docs/foundational-algorithms/Binary-Logistics-Regression/</link>
+      <pubDate>Mon, 10 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/docs/foundational-algorithms/Binary-Logistics-Regression/</guid>
+      <description>Logistics Regression is used to explain the relationship between the categorical dependent variable and one or more independent variables. When the dependent variable is dichotomous, we use binary logistic regression. However, by default, a binary logistic regression is almost always called logistics regression.
+ Overview - Logistic Regression The logistic regression model is used to model the relationship between a binary target variable and a set of independent variables. These independent variables can be either qualitative or quantitative.</description>
+    </item>
+    
+    <item>
+      <title>Multinomial Logistic Regression</title>
+      <link>//localhost:1313/docs/foundational-algorithms/Multinomial-Logistic-Regressions/</link>
+      <pubDate>Sat, 22 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/docs/foundational-algorithms/Multinomial-Logistic-Regressions/</guid>
+      <description>Multinomial logistic regression is used when the target variable is categorical with more than two levels. It is an extension of binomial logistic regression.
+ Overview - Multinomial Regression Multinomial regression is used to predict the nominal target variable. In case the target variable is of ordinal type, then we need to use ordinal logistic regression. In this tutorial, we will see how we can run multinomial logistic regression. As part of data preparation, ensure that data is free of multicollinearity, outliers, and high influential leverage points.</description>
+    </item>
+    
+    <item>
+      <title>k-Mean Clustering</title>
+      <link>//localhost:1313/docs/foundational-algorithms/k-means-clustering/</link>
+      <pubDate>Sat, 14 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/docs/foundational-algorithms/k-means-clustering/</guid>
+      <description>What is k-means clustering Clustering is one of the most popular and widespread unsupervised machine learning method used for data analysis and mining patterns. At its core clustering is grouping similar observations based upon the characteristics of each observations. There are multiple approaches for generating clusters of similar objects. However, in this section, you will learn how to build clusters based on k-Means algorithm.
+How does k means algorithm works In simple words, k-means clustering is a technique which aims to divide the data into k number of clusters.</description>
+    </item>
+    
+  </channel>
+</rss>
