@@ -177,7 +177,7 @@ ggplot(adult, aes(Age)) +
   <img src="/images/regression/classAge.jpeg" alt= "Distribution of age by class variable using histogram">
 <figure>
 
-*Data looks much more skewed for the lower-income people as compared to the high-income group*.
+Data looks much more skewed for the lower-income people as compared to the high-income group.
 
 # Building the Model
 We will be splitting the data into the test and train using the `createDataPartition()` function from the `caret` package in R. We will train the model using the training dataset and predict the values on the test dataset. To train the logistic model, we will be using `glm()` function.
@@ -315,7 +315,8 @@ accuracy_train
 #Output
 [1] 74.7355
 ```
-*Our logistics model is able to classify 74.7% of all the observations correctly in training dataset.*
+
+Our logistics model is able to classify 74.7% of all the observations correctly in training dataset.
 
 ```
 # Accuracy in Test dataset
@@ -326,7 +327,7 @@ accuracy_test
 #Output
 [1] 74.94932
 ```
-*The over all correct classification accuracy in test dataset is 74.9% which is comparable to train dataset. This shows that our model is perfomring good.*
+The over all correct classification accuracy in test dataset is 74.9% which is comparable to train dataset. This shows that our model is performing good.
 
 > A model is considered fairly good if the model accuracy is greater than 70%.
 
