@@ -6,7 +6,7 @@ weight: 6
 
 > **Clustering** is one of the most popular and widespread unsupervised machine learning methods used for data analysis and mining patterns. At its core, clustering is the grouping of similar observations based upon the characteristics. There are multiple approaches for generating clusters of similar objects. However, in this section, you will learn how to build groups based on the **k-Means** algorithm.
 
-## What is k-means clustering?
+# What is k-means clustering?
 In simple words, k-means clustering is a technique that aims to divide the data into **k** number of clusters. The method is relatively simple. The principal idea is to define k centers, one representing each cluster. Below is the explanation of the working of the algorithm:
 
 1. Randomly place k points (also known as centroids) in data space. The placement of these points can severely impact the final results. Considering that a better choice is to place these points as far as possible.
@@ -15,10 +15,10 @@ In simple words, k-means clustering is a technique that aims to divide the data 
 4. At this point, we re-calculate new centroid as recalibrated centers based on the points within the group.
 5. Now the steps from 2 to 4 are repeated in a loop. At each step, the centroid changes its position step by step, and the algorithm stops when centers do not move any further.
 
-## What is the objective function
+# What is the objective function
 The object of the k-means clustering is to minimize the total variance within the clusters and have high variance between the clusters. The total intra-cluster variance objective function (which is also known as the squared error function) is calculated using the following formula:
 
-## Animated illustration of how the clustering algorithm works
+# Animated illustration of how the clustering algorithm works
 <video controls="controls" src="/images/kmeans/Cluster Animation.mp4" width="500px" height="300px">
 Illustrating k-means algorithm
 </video>
