@@ -19,7 +19,7 @@ In simple words, k-means clustering is a technique that aims to divide the data 
 The object of the k-means clustering is to minimize the total variance within the clusters and have high variance between the clusters. The total intra-cluster variance objective function (which is also known as the squared error function) is calculated using the following formula:
 
 # Animated illustration of how the clustering algorithm works
-<video controls="controls" src="/images/kmeans/Cluster Animation.mp4" width="500px" height="300px">
+<video controls="controls" src="/images/kmeans/Cluster Animation1.mp4" width="500px" height="300px">
 Illustrating k-means algorithm
 </video>
 
