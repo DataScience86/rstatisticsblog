@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head><script src="/livereload.js?port=1313&mindelay=10&v=2" data-no-instant defer></script>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Introduction An interactive chart gives a lot of freedom to both presenter and the audience. Interactive graphs allow you to share complex ideas in a more engaging way. Using interactive charts allows users to perform actions like choosing a variable, zoom-in, zoom-out, hover to get tooltip, take a snapshot, and more. In this section, I will walk you through some of the packages and functions which we can use to plot different types of interactive plots."><meta property="og:title" content="7 Useful Interactive Charts in R (with sample code)" />
+<meta property="og:description" content="Introduction An interactive chart gives a lot of freedom to both presenter and the audience. Interactive graphs allow you to share complex ideas in a more engaging way. Using interactive charts allows users to perform actions like choosing a variable, zoom-in, zoom-out, hover to get tooltip, take a snapshot, and more. In this section, I will walk you through some of the packages and functions which we can use to plot different types of interactive plots." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="//localhost:1313/posts/7-Useful-Interactive-Charts-in-R-with-sample-code/" />
+<meta property="article:published_time" content="2020-05-02T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-05-02T14:38:39+05:30" />
+<title>7 Useful Interactive Charts in R (with sample code) | R Statistics Blog</title>
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.6df681b0bb21155cba49f6078e3559216772d8e03e780d240c73ea21817ed5e5.css" integrity="sha256-bfaBsLshFVy6SfYHjjVZIWdy2OA&#43;eA0kDHPqIYF&#43;1eU=">
+<script defer src="/en.search.min.e51d0ec2e01a9fe7b062e58f4538d09b6c3e781d8097b67513928da11fc6dd21.js" integrity="sha256-5R0OwuAan&#43;ewYuWPRTjQm2w&#43;eB2Al7Z1E5KNoR/G3SE="></script>
+
+<script defer src="/sw.min.74a8bb07f0bee86d6bb9a2750f073f14d93c7e4512f28860370cfd879e9719b4.js" integrity="sha256-dKi7B/C&#43;6G1ruaJ1Dwc/FNk8fkUS8ohgNwz9h56XGbQ="></script>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-131766057-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body>
+  <input type="checkbox" class="hidden" id="menu-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      
+  <nav>
+<h2 class="book-brand">
+  <a href="//localhost:1313/"><span>R Statistics Blog</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="" target="_blank" rel="noopener">
+        
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+
+  
+
+
+
+  
+  
+  
+  
+
+  
+  <ul>
+    
+      
+        <li class="book-section-flat" >
+          
+  
+    <a href="/docs/subscribe/" class="">Subscribe</a>
+  
+
+          
+  
+  
+  
+
+  
+  <ul>
+    
+  </ul>
+  
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+    <span>Quick R Tutorial</span>
+  
+
+          
+  
+  
+  
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+    <a href="/docs/quick-r-tutorial/introduction-to-r/" class="">Getting Started</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/quick-r-tutorial/r-basics/" class="">R Basics</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/quick-r-tutorial/using-conditional-statements-and-loops/" class="">Conditions &amp; Loops</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/quick-r-tutorial/functions-and-apply-family/" class="">Its All About Functions</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/quick-r-tutorial/dataframe-manipulations/" class="">Data Frame Manipulations</a>
+  
+
+        </li>
+      
+    
+  </ul>
+  
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+    <span>Useful R Packages</span>
+  
+
+          
+  
+  
+  
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+    <a href="/docs/useful-r-packages/ggplot2-tutorial/" class="">ggplot2</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/useful-r-packages/datatable-tutorial-data-manipulation/" class="">data.table</a>
+  
+
+        </li>
+      
+    
+      
+    
+  </ul>
+  
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+    <span>Pre Processing Tasks</span>
+  
+
+          
+  
+  
+  
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+    <a href="/docs/pre-processing-tasks/Identifying-Outliers/" class="">Analysing Outliers</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/pre-processing-tasks/Missing-Value-Imputation/" class="">Missing Value Imputation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/pre-processing-tasks/Summarizing-Data/" class="">Summarizing data</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/pre-processing-tasks/Hypothesis-Testing/" class="">Hypothesis Testing</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/pre-processing-tasks/Correlation/" class="">Correlation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/pre-processing-tasks/Analysing-zero-variance-predictor/" class="">Analysing zero variance predictor</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/pre-processing-tasks/Standardization-MinMax-Scaling/" class="">Standardization And Scaling</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/pre-processing-tasks/Principal-Component-Analysis/" class="">Principal Component Analysis</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/pre-processing-tasks/Splitting-Data/" class="">Splitting Data</a>
+  
+
+        </li>
+      
+    
+  </ul>
+  
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+    <span>Foundational Algorithms</span>
+  
+
+          
+  
+  
+  
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+    <a href="/docs/foundational-algorithms/Linear-Regression/" class="">Linear Regression</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/foundational-algorithms/Ridge-Regression/" class="">Ridge Regression</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/foundational-algorithms/Lasso-Regression/" class="">Lasso Regression</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/foundational-algorithms/Binary-Logistics-Regression/" class="">Binary Logistic Regression</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/foundational-algorithms/Multinomial-Logistic-Regressions/" class="">Multinomial Logistic Regression</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/foundational-algorithms/k-means-clustering/" class="">k-Mean Clustering</a>
+  
+
+        </li>
+      
+    
+  </ul>
+  
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+    <span>Text Mining</span>
+  
+
+          
+  
+  
+  
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+    <a href="/docs/text-mining/text-processing/" class="">Text Processing</a>
+  
+
+        </li>
+      
+    
+      
+    
+      
+    
+  </ul>
+  
+
+        </li>
+      
+    
+  </ul>
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/posts/" >
+        Blog
+      </a>
+  </li>
+  
+  <li>
+    <a href="https://github.com/DataScience86/rstatisticsblog/tree/master/content" target="_blank" rel="noopener">
+        Github
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+
+
+ 
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>7 Useful Interactive Charts in R (with sample code)</strong>
+
+  <label for="toc-control">
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+  </label>
+</div>
+
+
+  
+    <input type="checkbox" class="hidden" id="toc-control" />
+    <aside class="hidden clearfix">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#introduction">Introduction</a></li>
+    <li><a href="#interactive-dendrogram-with-collapsible-tree">Interactive dendrogram with collapsible tree</a></li>
+    <li><a href="#interactive-time-series-charts">Interactive time series charts</a></li>
+    <li><a href="#interactive-scatter-plot">Interactive scatter plot</a></li>
+    <li><a href="#interactive-area-plot">Interactive area plot</a></li>
+    <li><a href="#interactive-bubble-plot">Interactive bubble plot</a></li>
+    <li><a href="#interactive-heatmaps">Interactive heatmaps</a></li>
+    <li><a href="#interactive-network">Interactive network</a></li>
+  </ul>
+</nav>
+
+
+    </aside>
+  
+ 
+      </header>
+
+      
+      
+<article class="markdown">
+  <h1>
+    <a href="/posts/7-Useful-Interactive-Charts-in-R-with-sample-code/">7 Useful Interactive Charts in R (with sample code)</a>
+  </h1>
+  
+  <h5>May 2, 2020</h5>
+
+
+
+  
+  <div>
+    
+      <a href="/categories/R/">R</a>, 
+      <a href="/categories/Visualization/">Visualization</a>
+  </div>
+  
+
+  
+  <div>
+    
+      <a href="/tags/area-plot/">area plot</a>, 
+      <a href="/tags/bubble-plot/">bubble plot</a>, 
+      <a href="/tags/collapsible-tree/">collapsible tree</a>, 
+      <a href="/tags/dendrogram/">dendrogram</a>, 
+      <a href="/tags/interactive-charts/">interactive charts</a>, 
+      <a href="/tags/network-graph/">network graph</a>, 
+      <a href="/tags/scatter-plot/">scatter plot</a>, 
+      <a href="/tags/timeseries-plot/">timeseries plot</a>
+  </div>
+  
+
+
+  <p><h1 id="introduction">Introduction</h1>
+<p>An interactive chart gives a lot of freedom to both presenter and the audience. Interactive graphs allow you to share complex ideas in a more engaging way. Using interactive charts allows users to perform actions like choosing a variable, zoom-in, zoom-out, hover to get tooltip, take a snapshot, and more. In this section, I will walk you through some of the packages and functions which we can use to plot different types of interactive plots.</p>
+<h1 id="interactive-dendrogram-with-collapsible-tree">Interactive dendrogram with collapsible tree</h1>
+<p>A collapsible dendrogram is an interactive tree-like chart where when you can click on a node to either reveal the following branch or collapse the current node. Click the button to see an example.</p>
+
+
+
+  
+  
+
+
+<a  href="https://bl.ocks.org/d3noob/43a860bc0024792f8803bba8ca0d5ecd"   target="_blank"  class="book-btn">
+  Interactive Dendrogram Example
+</a>
+
+<p>You can use the <code>collapsibleTree</code> package to generate hierarchical visualization from a data frame object without worrying about the nested lists or JSON objects. Here we will use geography data from data.world.</p>
+
+
+
+  
+  
+
+
+<a  href="https://data.world/glx/geography-table"   target="_blank"  class="book-btn">
+  Download
+</a>
+
+<pre><code>library(&quot;collapsibleTree&quot;)
+
+geo &lt;- read.csv(&quot;M:/DSB/datasets/Machine-Learning/Geography.csv&quot;)
+dendo  &lt;- collapsibleTree(
+    geo,
+    hierarchy = c(&quot;region&quot;, &quot;sub_region&quot;),
+    width = 700,
+    zoomable = TRUE
+  )
+dendo
+</code></pre><iframe src="/images/post/interactive-charts/dendo_collapsible.html" height="500" width="700" style="border:2px solid grey;">
+</iframe>
+<h1 id="interactive-time-series-charts">Interactive time series charts</h1>
+<p>I find interactive time series charts of particular interest. The Time series graphs provide information about the evolution of one or multiple variables through time. Here we will use the <code>dygraphs</code> package to generate impressive time series charts.</p>
+<pre><code>library(dygraphs)
+chart &lt;- dygraph(AirPassengers)
+chart
+</code></pre><p><strong>Encourage you to select a section of the chart and zoom in</strong></p>
+<iframe src="/images/post/interactive-charts/timeseries.html" height="500" width="700" style="border:2px solid grey;">
+</iframe>
+<blockquote class="book-hint danger">
+  Due to some technical challenges for some charts I am sharing video clippings for now..
+</blockquote>
+
+<h1 id="interactive-scatter-plot">Interactive scatter plot</h1>
+<p>The best way to build an interactive scatter plot from <code>plotly</code> in R is through the use of <code>plot_ly</code> function. Here we are using <code>iris</code> data for creating a scatter plot between <code>Sepal.Length</code> and <code>Petal.width</code> variables.</p>
+<pre><code>library(plotly)
+fig &lt;- plot_ly(data = iris, x = ~Sepal.Length, y = ~Petal.Length)
+fig
+</code></pre><video controls="controls" src="/images/post/interactive-charts/scatter_plot.mp4" width="500px" height="300px">
+Illustrating k-means algorithm
+</video>
+<h1 id="interactive-area-plot">Interactive area plot</h1>
+<p>An area chart is very close to a line plot. We can build an interactive area plot in <code>plotly</code> using two different functions, <code>plot_ly()</code> and <code>ggplotyly()</code>. Here we will build an area chart showing the density of <code>AirPassengers</code> data using <code>plot_ly()</code> function.</p>
+<pre><code>density &lt;- density(AirPassengers)
+fig &lt;- plot_ly(x = ~density$x, y = ~density$y ,
+               type = 'scatter', mode = 'lines', fill = &quot;tozeroy)
+fig
+</code></pre><video controls="controls" src="/images/post/interactive-charts/area_plotly.mp4" width="500px" height="300px">
+Illustrating scatter plot
+</video>
+<p>Once again, we will draw an interactive area chart using the <code>ggplotly()</code> function from the <code>plotly</code> package. The <code>ggplotly()</code> function is a special one as it turns a <code>ggplot2</code> design version interactive. So if you have a <code>ggplot2</code> graph already created, the <code>ggplotly()</code> can be very handy. Now, we will first create a static area chart using <code>ggplot</code> function and then will add interactive features to it using <code>ggplotly()</code>.</p>
+<pre><code>library(plotly)
+library(ggplot2)
+fig &lt;- ggplot(diamonds, aes(x=carat)) +
+  geom_area(stat = &quot;bin&quot;) +
+  theme_minimal()
+
+# Turn figure interactive with ggplotly
+fig &lt;- ggplotly(fig)
+fig
+</code></pre><video controls="controls" src="/images/post/interactive-charts/area_ggplotly.mp4" width="500px" height="300px">
+interactive area chart
+</video>
+<h1 id="interactive-bubble-plot">Interactive bubble plot</h1>
+<p>Again, the easiest way to draw an interactive bubble plot would be first to use <code>geom_point()</code> function from <code>ggplot2</code> package to draw the chart and then render the graph to get the interactive version of it.</p>
+<pre><code>library(ggplot2)
+library(plotly)
+
+mtcars$cyl &lt;- as.factor(mtcars$cyl)
+fig  &lt;- ggplot(mtcars ,aes(mpg, wt, size = disp, color=cyl)) +
+  geom_point() +
+  theme_bw()
+
+fig &lt;- ggplotly(fig)
+fig
+</code></pre><video controls="controls" src="/images/post/interactive-charts/bubble.mp4" width="500px" height="300px">
+interactive bubble chart
+</video>
+<h1 id="interactive-heatmaps">Interactive heatmaps</h1>
+<p>Heatmaps are a great visualization tool to show the magnitude of information. The graph uses colors to depict the information stored in a matrix. Here we will see how we can use <code>plotly</code> and <code>d3heatmap</code> package to generate heatmaps. The <code>d3heatmap</code> package creates a <strong>D3.js-based heatmap widget.</strong></p>
+<pre><code>library(d3heatmap)
+fig &lt;- d3heatmap(mtcars, scale = &quot;column&quot;, colors = &quot;Greens&quot;)
+fig
+</code></pre><video controls="controls" src="/images/post/interactive-charts/d3heatmap.mp4" width="500px" height="300px">
+interactive d3 heatmap chart
+</video>
+<p>To generate heatmap with <code>plotly</code> is simple. Generate heatmap using <code>ggplot2</code> and render that to the interactive version using <code>ggplotly</code> function. Here we first generate the correlation matrix using <code>cor</code> function. We then use the <code>melt()</code> function from the <code>reshape2</code> package to bring the correlation matrix into the desired format. It&rsquo;s a little tricky, but worth the shot.</p>
+<pre><code>library(ggplot)
+library(reshape2)
+matrix &lt;- cor(mtcars)
+melted_cor_mat &lt;- melt(matrix)
+
+
+fig &lt;- ggplot(melted_cor_mat,
+              aes(x=Var1, y=Var2, fill=value))+
+  geom_tile()+
+  theme_minimal()
+
+fig &lt;- ggplotly(fig + theme(legend.position = &quot;none&quot;))
+
+fig
+</code></pre><video controls="controls" src="/images/post/interactive-charts/ggplot_heatmap.mp4" width="500px" height="300px">
+interactive ggplot heatmap chart
+</video>
+<h1 id="interactive-network">Interactive network</h1>
+<p>Building a network graph is kind of complicated. The primary reason for complexity comes from the fact that there can be many different input formats.  There are also other parameters that you should be aware of, like whether the network you are trying to build is weighted or unweighted, and if it is directed or undirected. We will have a dedicated article on the input formats and talk more about it. Here we will use one of the rather simple forms of data where we have just two columns - Source and Target. Now to build the network graph, we will use the <code>simpleNetwork()</code> function from the <code>networkD3</code> package in R.</p>
+<pre><code>library(networkD3)
+network &lt;- read.csv(&quot;M:/DSB/datasets/Machine-Learning/network_dummy.csv&quot;)
+
+# create the network object
+# Plot
+p &lt;- simpleNetwork(network, height=&quot;200px&quot;, width=&quot;200px&quot;,        
+                   Source = 1,
+                   Target = 2,
+                   fontSize = 18,                    
+                   linkColour = &quot;#777&quot;,   
+                   nodeColour = &quot;#F47E5E&quot;,    
+                   opacity = 0.7,             
+                   zoom = T)
+</code></pre><p align="center">
+<iframe src="/images/post/interactive-charts/networkGraph.html" height="300" width="400" style="border:2px solid grey;">
+</iframe>
+</p>
+<p>We hope you learned something new with this article. If so, please leave comment, like or share. You can also let us know what topics you would like us to write and share.</p>
+</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex justify-between">
+
+
+
+  <div><a class="flex align-center" href="https://github.com/DataScience86/rstatisticsblog/tree/master/content/docs/commit/2cd3628b827ff9762e7f1df98dfcb89c244652c4" title='Last modified by datasciencebeginner | May 2, 2020' target="_blank" rel="noopener">
+      <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
+      <span>May 2, 2020</span>
+    </a>
+  </div>
+
+
+
+</div>
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+<div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "rstatisticsblog-com" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#introduction">Introduction</a></li>
+    <li><a href="#interactive-dendrogram-with-collapsible-tree">Interactive dendrogram with collapsible tree</a></li>
+    <li><a href="#interactive-time-series-charts">Interactive time series charts</a></li>
+    <li><a href="#interactive-scatter-plot">Interactive scatter plot</a></li>
+    <li><a href="#interactive-area-plot">Interactive area plot</a></li>
+    <li><a href="#interactive-bubble-plot">Interactive bubble plot</a></li>
+    <li><a href="#interactive-heatmaps">Interactive heatmaps</a></li>
+    <li><a href="#interactive-network">Interactive network</a></li>
+  </ul>
+</nav>
+
+ 
+    </aside>
+    
+  </main>
+
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

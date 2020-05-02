@@ -1,5 +1,5 @@
 ---
-title: "Tutorial data.table Package"
+title: "data.table"
 date: 2020-04-30
 weight: 2
 tags: ["data.table", "R Code"]

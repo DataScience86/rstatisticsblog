@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>univariate methods on R Statistics Blog</title>
+    <link>//localhost:1313/tags/univariate-methods/</link>
+    <description>Recent content in univariate methods on R Statistics Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Wed, 18 Dec 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="//localhost:1313/tags/univariate-methods/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Analysing Outliers</title>
+      <link>//localhost:1313/docs/pre-processing-tasks/Identifying-Outliers/</link>
+      <pubDate>Wed, 18 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/docs/pre-processing-tasks/Identifying-Outliers/</guid>
+      <description>Outlier is a value that does not follow the usual norms of the data. For almost all the statistical methods, outliers present a particular challenge, and so it becomes crucial to identify and treat them. Let&amp;rsquo;s see which all packages and functions can be used in R to deal with outliers.
+ Overview The presence of outliers in the dataset can be a result of an error, or it can be a real value present in the data as a result of the actual distribution of the data.</description>
+    </item>
+    
+  </channel>
+</rss>

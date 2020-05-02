@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Principal Component Analysis on R Statistics Blog</title>
+    <link>//localhost:1313/tags/Principal-Component-Analysis/</link>
+    <description>Recent content in Principal Component Analysis on R Statistics Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sat, 28 Dec 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="//localhost:1313/tags/Principal-Component-Analysis/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Principal Component Analysis</title>
+      <link>//localhost:1313/docs/pre-processing-tasks/Principal-Component-Analysis/</link>
+      <pubDate>Sat, 28 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/docs/pre-processing-tasks/Principal-Component-Analysis/</guid>
+      <description>Principal component analysis(PCA) is an unsupervised machine learning technique that is used to reduce the dimensions of a large multi-dimensional dataset without losing much of the information. It is often also used to visualize and explore these high dimensional datasets.
+ Overview One of the challenges among others that large datasets present is the time to model or learn the relationship between independent variables and the target variables. Thus it becomes essential for us to reduce the number of variables that we want to pass into the model to predict the target variable.</description>
+    </item>
+    
+  </channel>
+</rss>

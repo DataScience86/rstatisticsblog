@@ -10,22 +10,31 @@
     
     
     <item>
-      <title>Tutorial ggplot2 Package</title>
-      <link>//localhost:1313/docs/useful-r-packages/Quick-ggplot2-Tutorial/</link>
+      <title>ggplot2</title>
+      <link>//localhost:1313/docs/useful-r-packages/ggplot2-tutorial/</link>
       <pubDate>Wed, 15 Apr 2020 00:00:00 +0000</pubDate>
       
-      <guid>//localhost:1313/docs/useful-r-packages/Quick-ggplot2-Tutorial/</guid>
+      <guid>//localhost:1313/docs/useful-r-packages/ggplot2-tutorial/</guid>
       <description>Overview The ggplot2 package in R provides a reliable system for describing and building graphs. The package is capable of creating elegant and aesthetically pleasing graphics. The framework of ggplot2 is quite different (in comparison to graphics package) and is based on the grammar of graphics(introduced initially by Leland Wilkinson). At first, you may not find it intuitive, but don&amp;rsquo;t worry, we are here to help. Together, we will master it to the core.</description>
     </item>
     
     <item>
-      <title>Tutorial data.table Package</title>
-      <link>//localhost:1313/docs/useful-r-packages/R-Tutorial-datatable-With-Examples/</link>
+      <title>data.table</title>
+      <link>//localhost:1313/docs/useful-r-packages/datatable-tutorial-data-manipulation/</link>
       <pubDate>Thu, 30 Apr 2020 00:00:00 +0000</pubDate>
       
-      <guid>//localhost:1313/docs/useful-r-packages/R-Tutorial-datatable-With-Examples/</guid>
+      <guid>//localhost:1313/docs/useful-r-packages/datatable-tutorial-data-manipulation/</guid>
       <description>Overview If you are looking for fast execution of your code on large datasets, then you must read through this tutorial. Data manipulation tasks such as aggregations, add/remove/update of columns, joins, reading large files, etc., are all very important for any data science-related project. Keeping all these operations into mind, Matt Dowle and Arun Shrinivasan created a package called data.table.
 data.table package is an extension of data.frame package in R. It is one of the first choices for data scientists while they work on large datasets.</description>
+    </item>
+    
+    <item>
+      <title>Leaftlet</title>
+      <link>//localhost:1313/docs/useful-r-packages/Leaftlet-Package-for-Maps/</link>
+      <pubDate>Thu, 30 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/docs/useful-r-packages/Leaftlet-Package-for-Maps/</guid>
+      <description></description>
     </item>
     
   </channel>

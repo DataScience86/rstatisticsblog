@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Zero Variance on R Statistics Blog</title>
+    <link>//localhost:1313/tags/Zero-Variance/</link>
+    <description>Recent content in Zero Variance on R Statistics Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sun, 01 Dec 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="//localhost:1313/tags/Zero-Variance/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Analysing zero variance predictor</title>
+      <link>//localhost:1313/docs/pre-processing-tasks/Analysing-zero-variance-predictor/</link>
+      <pubDate>Sun, 01 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/docs/pre-processing-tasks/Analysing-zero-variance-predictor/</guid>
+      <description>Some variables in the dataset contain very little information because they mostly consist of a single value (e.g. zero). These variables are called a zero variance variable.
+ Overview Many a time it happens that in the dataset, we have variables which either have unique values or have only a handful of unique values. The variables with only one exceptional value, when passed to fit the model, can cause problems like unstable models or, in some cases, can also cause the model to crash.</description>
+    </item>
+    
+  </channel>
+</rss>

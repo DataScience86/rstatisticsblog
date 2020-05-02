@@ -11,10 +11,10 @@
     
     <item>
       <title>7 Useful Interactive Charts in R (with sample code)</title>
-      <link>//localhost:1313/posts/create-7-amazing-interactive-charts/</link>
+      <link>//localhost:1313/posts/7-Useful-Interactive-Charts-in-R-with-sample-code/</link>
       <pubDate>Sat, 02 May 2020 00:00:00 +0000</pubDate>
       
-      <guid>//localhost:1313/posts/create-7-amazing-interactive-charts/</guid>
+      <guid>//localhost:1313/posts/7-Useful-Interactive-Charts-in-R-with-sample-code/</guid>
       <description>Introduction An interactive chart gives a lot of freedom to both presenter and the audience. Interactive graphs allow you to share complex ideas in a more engaging way. Using interactive charts allows users to perform actions like choosing a variable, zoom-in, zoom-out, hover to get tooltip, take a snapshot, and more. In this section, I will walk you through some of the packages and functions which we can use to plot different types of interactive plots.</description>
     </item>
     

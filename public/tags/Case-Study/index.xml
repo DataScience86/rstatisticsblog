@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Case Study on R Statistics Blog</title>
+    <link>//localhost:1313/tags/Case-Study/</link>
+    <description>Recent content in Case Study on R Statistics Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sun, 29 Mar 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="//localhost:1313/tags/Case-Study/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Ridge Regression</title>
+      <link>//localhost:1313/docs/foundational-algorithms/Ridge-Regression/</link>
+      <pubDate>Sun, 29 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/docs/foundational-algorithms/Ridge-Regression/</guid>
+      <description>Ridge Regression is a variation of linear regression. We use ridge regression to tackle the multicollinearity problem. Due to multicollinearity, the model estimates (least square) see a large variance. Ridge regression is a method by which we add a degree of bias to the regression estimates.
+ Overview - Ridge Regression Ridge regression is a parsimonious model that performs L2 regularization. The L2 regularization adds a penalty equivalent to the square of the magnitude of regression coefficients and tries to minimize them.</description>
+    </item>
+    
+    <item>
+      <title>Multinomial Logistic Regression</title>
+      <link>//localhost:1313/docs/foundational-algorithms/Multinomial-Logistic-Regressions/</link>
+      <pubDate>Sat, 22 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/docs/foundational-algorithms/Multinomial-Logistic-Regressions/</guid>
+      <description>Multinomial logistic regression is used when the target variable is categorical with more than two levels. It is an extension of binomial logistic regression.
+ Overview - Multinomial Regression Multinomial regression is used to predict the nominal target variable. In case the target variable is of ordinal type, then we need to use ordinal logistic regression. In this tutorial, we will see how we can run multinomial logistic regression. As part of data preparation, ensure that data is free of multicollinearity, outliers, and high influential leverage points.</description>
+    </item>
+    
+  </channel>
+</rss>

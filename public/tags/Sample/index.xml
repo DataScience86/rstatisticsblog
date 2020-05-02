@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Sample on R Statistics Blog</title>
+    <link>//localhost:1313/tags/Sample/</link>
+    <description>Recent content in Sample on R Statistics Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Fri, 03 Jan 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="//localhost:1313/tags/Sample/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Splitting Data</title>
+      <link>//localhost:1313/docs/pre-processing-tasks/Splitting-Data/</link>
+      <pubDate>Fri, 03 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/docs/pre-processing-tasks/Splitting-Data/</guid>
+      <description>To create the best model which generalizes well to new unseen data. You must ensure that your test set serves as a proxy for actual dataset IE it represents the new dataset.
+ Overview The very first step after pre-processing of the dataset is to split the data into training and test datasets. We usually split the data around 70%-30% between training and testing stages. The training set is the one that we use to learn the relationship between independent variables and the target variable.</description>
+    </item>
+    
+  </channel>
+</rss>
