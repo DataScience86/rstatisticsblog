@@ -32,7 +32,7 @@ library(plotly)
 fig <- plot_ly(data = iris, x = ~Sepal.Length, y = ~Petal.Length)
 fig
  ```
-<iframe  src="//images/post/interactive-charts/scatter_plot.html" height="400" width="600" style="border:2px solid grey;">
+<iframe  src="/images/post/interactive-charts/scatter_plot.html" height="400" width="600" style="border:2px solid grey;">
 </iframe>
 
 
