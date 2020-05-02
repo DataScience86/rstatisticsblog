@@ -32,7 +32,7 @@ library(plotly)
 fig <- plot_ly(data = iris, x = ~Sepal.Length, y = ~Petal.Length)
 fig
  ```
-<iframe src="/images/post/interactive-charts//scatter_plot.html" height="400" width="600" style="border:2px solid grey;">
+<iframe  src="//images/post/interactive-charts/scatter_plot.html" height="400" width="600" style="border:2px solid grey;">
 </iframe>
 
 
@@ -46,7 +46,7 @@ fig <- plot_ly(x = ~density$x, y = ~density$y ,
 fig
 ```
 
-<iframe src="/images/post/interactive-charts//area_plotly.html" height="400" width="600" style="border:2px solid grey;">
+<iframe src="/images/post/interactive-charts/area_plotly.html" height="400" width="600" style="border:2px solid grey;">
 </iframe>
 
 Once again, we will draw an interactive area chart using the `ggplotly()` function from the `plotly` package. The `ggplotly()` function is a special one as it turns a `ggplot2` design version interactive. So if you have a `ggplot2` graph already created, the `ggplotly()` can be very handy. Now, we will first create a static area chart using `ggplot` function and then will add interactive features to it using `ggplotly()`.
