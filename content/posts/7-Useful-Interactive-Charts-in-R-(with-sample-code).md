@@ -32,9 +32,8 @@ library(plotly)
 fig <- plot_ly(data = iris, x = ~Sepal.Length, y = ~Petal.Length)
 fig
  ```
-<iframe  src="/images/post/interactive-charts/scatter_plot.html" height="400" width="600" style="border:2px solid grey;">
+<iframe frameborder="0" scrolling="no" src="/images/post/interactive-charts/scatter_plot.html" height="400" width="600" style="border:2px solid grey;">
 </iframe>
-<div w3-include-html="/images/post/interactive-charts/scatter_plot.html"></div>
 
 
 # Interactive area plot
