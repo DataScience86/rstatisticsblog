@@ -2,6 +2,8 @@
 title: "Binary Logistic Regression"
 date: 2020-02-10
 weight: 4
+tags: ["logistic regression", "Recall", "Precision", "R Code"]
+category: ["R", "Supervised Algorithm", "Classification"]
 ---
 
 > **Logistics Regression** is used to explain the relationship between the categorical dependent variable and one or more independent variables. When the dependent variable is dichotomous, we use **binary logistic regression**. However, by default, a binary logistic regression is almost always called logistics regression.

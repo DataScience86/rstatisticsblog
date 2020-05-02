@@ -2,6 +2,8 @@
 title: "Multinomial Logistic Regression"
 date: 2020-02-22
 weight: 5
+tags: ["Multinomial Regression", "Case Study", "R Code"]
+category: ["R", "Supervised Algorithm", "Classification"]
 ---
 
 > **Multinomial logistic** regression is used when the target variable is categorical with more than two levels. It is an extension of binomial logistic regression.

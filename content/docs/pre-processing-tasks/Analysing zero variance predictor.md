@@ -2,6 +2,8 @@
 title: "Analysing zero variance predictor"
 date: 2019-12-01
 weight: 6
+tags: ["Zero Variance", "R Code"]
+category: ["R", "Statistics", "Machine Learning"]
 ---
 
 > Some variables in the dataset contain very little information because they mostly consist of a single value (e.g. zero). These variables are called a zero variance variable.

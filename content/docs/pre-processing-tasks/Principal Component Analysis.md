@@ -2,6 +2,8 @@
 title: "Principal Component Analysis"
 date: 2019-12-28
 weight: 8
+tags: ["PCA", "Principal Component Analysis", "dimensionality Reduction", "R Code"]
+category: ["R", "Unsupervised Algorithm", "Machine Learning"]
 ---
 
 

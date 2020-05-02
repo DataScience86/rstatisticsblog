@@ -2,6 +2,8 @@
 title: "Missing Value Imputation"
 date: 2019-12-22
 weight: 2
+tags: ["Missing value", "Missing imputation", "Chained imputation", "VIM", "R Code"]
+category: ["R", "Statistics"]
 ---
 
 # Overview

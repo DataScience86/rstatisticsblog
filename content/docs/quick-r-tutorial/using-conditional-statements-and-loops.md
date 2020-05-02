@@ -2,6 +2,7 @@
 title: "Conditions & Loops"
 date: 2019-10-01
 weight: 3
+category: ["R", "Programming"]
 ---
 
 # Conditions and Loops In R

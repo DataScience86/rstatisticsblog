@@ -2,6 +2,8 @@
 title: "Analysing Outliers"
 date: 2019-12-18
 weight: 1
+tags: ["Outliers", "univariate methods", "Cooks Distance", "DBSCAN", "R Code"]
+category: ["R", "Statistics"]
 ---
 
 > **Outlier** is a value that does not follow the usual norms of the data. For almost all the statistical methods, outliers present a particular challenge, and so it becomes crucial to identify and treat them. Let's see which all packages and functions can be used in R to deal with outliers.

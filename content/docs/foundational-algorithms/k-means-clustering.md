@@ -2,6 +2,8 @@
 title: "k-Mean Clustering"
 date: 2020-03-14
 weight: 6
+tags: ["Cluster", "K-Means", "Optimal Clusters", "R Code"]
+category: ["R", "Unsupervised Algorithm", "Classification"]
 ---
 
 > **Clustering** is one of the most popular and widespread unsupervised machine learning method used for data analysis and mining patterns. At its core, clustering is the grouping of similar observations based upon the characteristics. There are multiple approaches for generating clusters of similar objects. However, in this section, you will learn how to build groups based on the **k-Means** algorithm.

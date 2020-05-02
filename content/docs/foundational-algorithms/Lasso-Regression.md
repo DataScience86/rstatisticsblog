@@ -2,6 +2,8 @@
 title: "Lasso Regression"
 date: 2020-02-16
 weight: 3
+tags: ["Lasso", "L1 regularization", "R Code"]
+category: ["R", "Supervised Algorithm", "Regression"]
 ---
 
 > **LASSO** stands for **Least Absolute Shrinkage and Selection Operator**. The algorithm is another variation of linear regression, just like ridge regression. We use lasso regression when we have a large number of predictor variables.

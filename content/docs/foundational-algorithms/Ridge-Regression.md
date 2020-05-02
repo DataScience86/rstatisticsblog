@@ -2,6 +2,8 @@
 title: "Ridge Regression"
 date: 2020-03-29
 weight: 2
+tags: ["Ridge Regression", "L2 Regularization", "Case Study", "R Code"]
+category: ["R", "Supervised Algorithm", "Regression"]
 ---
 
 > **Ridge Regression** is a variation of linear regression. We use ridge regression to tackle the multicollinearity problem. Due to multicollinearity, the model estimates (least square) see a large variance. Ridge regression is a method by which we add a degree of bias to the regression estimates.

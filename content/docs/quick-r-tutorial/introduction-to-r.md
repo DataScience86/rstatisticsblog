@@ -3,6 +3,7 @@ weight: 1
 #bookFlatSection: true
 date: 2019-10-12
 title: "Getting Started"
+category: ["R", "Programming"]
 ---
 
 # Introduction
