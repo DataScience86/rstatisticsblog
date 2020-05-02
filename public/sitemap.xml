@@ -19,7 +19,7 @@
   
   <url>
     <loc>//localhost:1313/docs/foundational-algorithms/Linear-Regression/</loc>
-    <lastmod>2020-04-30T10:51:20+05:30</lastmod>
+    <lastmod>2020-05-01T21:46:57+05:30</lastmod>
   </url>
   
   <url>
@@ -29,7 +29,7 @@
   
   <url>
     <loc>//localhost:1313/docs/foundational-algorithms/Ridge-Regression/</loc>
-    <lastmod>2020-04-30T10:51:20+05:30</lastmod>
+    <lastmod>2020-05-01T21:46:57+05:30</lastmod>
   </url>
   
   <url>
@@ -44,7 +44,7 @@
   
   <url>
     <loc>//localhost:1313/docs/foundational-algorithms/Lasso-Regression/</loc>
-    <lastmod>2020-04-30T10:51:20+05:30</lastmod>
+    <lastmod>2020-05-01T21:46:57+05:30</lastmod>
   </url>
   
   <url>
@@ -59,7 +59,7 @@
   
   <url>
     <loc>//localhost:1313/docs/foundational-algorithms/Binary-Logistics-Regression/</loc>
-    <lastmod>2020-04-30T10:59:29+05:30</lastmod>
+    <lastmod>2020-05-01T21:46:57+05:30</lastmod>
   </url>
   
   <url>
@@ -74,7 +74,7 @@
   
   <url>
     <loc>//localhost:1313/docs/foundational-algorithms/Multinomial-Logistic-Regressions/</loc>
-    <lastmod>2020-04-30T10:51:20+05:30</lastmod>
+    <lastmod>2020-05-01T21:46:57+05:30</lastmod>
   </url>
   
   <url>
@@ -89,7 +89,7 @@
   
   <url>
     <loc>//localhost:1313/docs/foundational-algorithms/k-means-clustering/</loc>
-    <lastmod>2020-04-30T10:51:20+05:30</lastmod>
+    <lastmod>2020-05-01T21:46:57+05:30</lastmod>
   </url>
   
   <url>
@@ -129,12 +129,77 @@
   
   <url>
     <loc>//localhost:1313/docs/foundational-algorithms/</loc>
-    <lastmod>2020-04-28T22:05:20+05:30</lastmod>
+    <lastmod>2020-05-01T21:46:57+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>//localhost:1313/posts/create-7-amazing-interactive-charts/</loc>
+    <lastmod>2020-05-02T07:05:23+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>//localhost:1313/tags/area-plot/</loc>
+    <lastmod>2020-05-02T07:05:23+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>//localhost:1313/tags/bubble-plot/</loc>
+    <lastmod>2020-05-02T07:05:23+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>//localhost:1313/categories/</loc>
+    <lastmod>2020-05-02T07:05:23+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>//localhost:1313/tags/collapsible-tree/</loc>
+    <lastmod>2020-05-02T07:05:23+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>//localhost:1313/tags/dendrogram/</loc>
+    <lastmod>2020-05-02T07:05:23+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>//localhost:1313/tags/interactive-charts/</loc>
+    <lastmod>2020-05-02T07:05:23+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>//localhost:1313/tags/network-graph/</loc>
+    <lastmod>2020-05-02T07:05:23+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>//localhost:1313/categories/R/</loc>
+    <lastmod>2020-05-02T07:05:23+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>//localhost:1313/tags/scatter-plot/</loc>
+    <lastmod>2020-05-02T07:05:23+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>//localhost:1313/tags/</loc>
+    <lastmod>2020-05-02T07:05:23+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>//localhost:1313/tags/timeseries-plot/</loc>
+    <lastmod>2020-05-02T07:05:23+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>//localhost:1313/categories/Visualization/</loc>
+    <lastmod>2020-05-02T07:05:23+05:30</lastmod>
   </url>
   
   <url>
     <loc>//localhost:1313/docs/</loc>
-    <lastmod>2020-04-30T10:59:29+05:30</lastmod>
+    <lastmod>2020-05-01T21:46:57+05:30</lastmod>
   </url>
   
   <url>
@@ -143,16 +208,8 @@
   </url>
   
   <url>
-    <loc>//localhost:1313/categories/</loc>
-  </url>
-  
-  <url>
     <loc>//localhost:1313/</loc>
     <lastmod>2020-04-28T22:05:20+05:30</lastmod>
-  </url>
-  
-  <url>
-    <loc>//localhost:1313/tags/</loc>
   </url>
   
 </urlset>

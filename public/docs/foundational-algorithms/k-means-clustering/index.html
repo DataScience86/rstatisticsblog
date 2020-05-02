@@ -4,18 +4,18 @@
 <head><script src="/livereload.js?port=1313&mindelay=10&v=2" data-no-instant defer></script>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="What is k-means clustering Clustering is one of the most popular and widespread unsupervised machine learning method used for data analysis and mining patterns. At its core clustering is grouping similar observations based upon the characteristics of each observations. There are multiple approaches for generating clusters of similar objects. However, in this section, you will learn how to build clusters based on k-Means algorithm.
-How does k means algorithm works In simple words, k-means clustering is a technique which aims to divide the data into k number of clusters."><meta property="og:title" content="k-Mean Clustering" />
-<meta property="og:description" content="What is k-means clustering Clustering is one of the most popular and widespread unsupervised machine learning method used for data analysis and mining patterns. At its core clustering is grouping similar observations based upon the characteristics of each observations. There are multiple approaches for generating clusters of similar objects. However, in this section, you will learn how to build clusters based on k-Means algorithm.
-How does k means algorithm works In simple words, k-means clustering is a technique which aims to divide the data into k number of clusters." />
+<meta name="description" content="Clustering is one of the most popular and widespread unsupervised machine learning method used for data analysis and mining patterns. At its core, clustering is the grouping of similar observations based upon the characteristics. There are multiple approaches for generating clusters of similar objects. However, in this section, you will learn how to build groups based on the k-Means algorithm.
+ What is k-means clustering? In simple words, k-means clustering is a technique that aims to divide the data into k number of clusters."><meta property="og:title" content="k-Mean Clustering" />
+<meta property="og:description" content="Clustering is one of the most popular and widespread unsupervised machine learning method used for data analysis and mining patterns. At its core, clustering is the grouping of similar observations based upon the characteristics. There are multiple approaches for generating clusters of similar objects. However, in this section, you will learn how to build groups based on the k-Means algorithm.
+ What is k-means clustering? In simple words, k-means clustering is a technique that aims to divide the data into k number of clusters." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="//localhost:1313/docs/foundational-algorithms/k-means-clustering/" />
 <meta property="article:published_time" content="2020-03-14T00:00:00+00:00" />
-<meta property="article:modified_time" content="2020-04-30T10:51:20+05:30" />
+<meta property="article:modified_time" content="2020-05-01T21:46:57+05:30" />
 <title>k-Mean Clustering | R Statistics Blog</title>
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.6df681b0bb21155cba49f6078e3559216772d8e03e780d240c73ea21817ed5e5.css" integrity="sha256-bfaBsLshFVy6SfYHjjVZIWdy2OA&#43;eA0kDHPqIYF&#43;1eU=">
-<script defer src="/en.search.min.d57240dc8b064f390ea28d6a2ec3d38165e5dfc8433d2a750739a6c9c766d392.js" integrity="sha256-1XJA3IsGTzkOoo1qLsPTgWXl38hDPSp1Bzmmycdm05I="></script>
+<script defer src="/en.search.min.5dc6e0b87f9767d178b61fba7e4fcd2e3a48f2f9cd702768b8c079c2b74aec73.js" integrity="sha256-XcbguH&#43;XZ9F4th&#43;6fk/NLjpI8vnNcCdouMB5wrdK7HM="></script>
 
 <script defer src="/sw.min.74a8bb07f0bee86d6bb9a2750f073f14d93c7e4512f28860370cfd879e9719b4.js" integrity="sha256-dKi7B/C&#43;6G1ruaJ1Dwc/FNk8fkUS8ohgNwz9h56XGbQ="></script>
 
@@ -461,17 +461,16 @@ https://github.com/alex-shpak/hugo-book
       
   <nav id="TableOfContents">
   <ul>
-    <li><a href="#what-is-k-means-clustering">What is k-means clustering</a></li>
-    <li><a href="#how-does-k-means-algorithm-works">How does k means algorithm works</a>
-      <ul>
-        <li><a href="#animated-illustration-of-how-the-clustering-algorithm-works">Animated illustration of how the clustering algorithm works</a></li>
-      </ul>
-    </li>
+    <li><a href="#what-is-k-means-clustering">What is k-means clustering?</a></li>
     <li><a href="#what-is-the-objective-function">What is the objective function</a></li>
-    <li><a href="#how-to-select-the-initial-value-of-k-in-k-means">How to select the initial value of K in k-Means</a></li>
-    <li><a href="#how-to-select-optimal-number-of-clusters-in-k-means">How to select optimal number of clusters in k-Means</a></li>
+    <li><a href="#animated-illustration-of-how-the-clustering-algorithm-works">Animated illustration of how the clustering algorithm works</a></li>
     <li><a href="#advantages-of-k-means-clustering">Advantages of k-means clustering</a></li>
     <li><a href="#disadvantages-of-k-means-clustering">Disadvantages of k-means Clustering</a></li>
+    <li><a href="#k-means-clustering-in-r">k-means clustering in R</a></li>
+    <li><a href="#understanding-k-means-clustering-output">Understanding k-means clustering output</a></li>
+    <li><a href="#visualizing-the-output-of-k-means-clusters-in-r">Visualizing the output of k-means clusters in R</a></li>
+    <li><a href="#how-to-select-the-initial-value-of-k-in-k-means">How to select the initial value of K in k-Means</a></li>
+    <li><a href="#how-to-select-an-optimal-number-of-clusters-in-k-means">How to select an optimal number of clusters in k-Means</a></li>
   </ul>
 </nav>
 
@@ -483,22 +482,97 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown"><h1 id="what-is-k-means-clustering">What is k-means clustering</h1>
-<p><strong>Clustering</strong> is one of the most popular and widespread unsupervised machine learning method used for data analysis and mining patterns. At its core clustering is grouping similar observations based upon the characteristics of each observations. There are multiple approaches for generating clusters of similar objects. However, in this section, you will learn how to build clusters based on <strong>k-Means</strong> algorithm.</p>
-<h1 id="how-does-k-means-algorithm-works">How does k means algorithm works</h1>
-<p>In simple words, k-means clustering is a technique which aims to divide the data into <strong>k</strong> number of clusters. The technique is fairly simple and principal idea is to define k centers, one representing each cluster. Below is the pseudo code explaining working of algorithm:</p>
+  <article class="markdown"><blockquote>
+<p><strong>Clustering</strong> is one of the most popular and widespread unsupervised machine learning method used for data analysis and mining patterns. At its core, clustering is the grouping of similar observations based upon the characteristics. There are multiple approaches for generating clusters of similar objects. However, in this section, you will learn how to build groups based on the <strong>k-Means</strong> algorithm.</p>
+</blockquote>
+<h1 id="what-is-k-means-clustering">What is k-means clustering?</h1>
+<p>In simple words, k-means clustering is a technique that aims to divide the data into <strong>k</strong> number of clusters. The method is relatively simple. The principal idea is to define k centers, one representing each cluster. Below is the explanation of the working of the algorithm:</p>
 <ol>
-<li>Randomly place k points (also known as centroids) in data space. Placement of these points can severely impact the final results. Taking this into consideration the better choice is to place these points as far as possible.</li>
-<li>The next step is to calculate distance between each point and the k centers.</li>
-<li>Calculate the distance between each point and centroid. Based on shortest distance each point is associated to a particular centroid. Now that we have points assigned to a centroid, you can think of this as early groups.</li>
-<li>At this point, we re-calculate new centroid as recalibrated centers based on the points with in the group.</li>
-<li>Now the steps from 2 to 4 are repeated in a loop. At each step, the centroid changes its position step by step and the algorithm stops when centers do not move any further</li>
+<li>Randomly place k points (also known as centroids) in data space. The placement of these points can severely impact the final results. Considering that a better choice is to place these points as far as possible.</li>
+<li>The next step is to calculate the distance between each point and the k centers.</li>
+<li>Now calculate the distance between each point and centroid. Based on the shortest distance, each point is associated with a particular centroid. Now that we have points assigned to a centroid, you can think of this as early groups.</li>
+<li>At this point, we re-calculate new centroid as recalibrated centers based on the points within the group.</li>
+<li>Now the steps from 2 to 4 are repeated in a loop. At each step, the centroid changes its position step by step, and the algorithm stops when centers do not move any further.</li>
 </ol>
-<h2 id="animated-illustration-of-how-the-clustering-algorithm-works">Animated illustration of how the clustering algorithm works</h2>
 <h1 id="what-is-the-objective-function">What is the objective function</h1>
-<p>The object of the k-means clustering is to minimize the total variance within the clusters and have high variance between the clusters. The total intra cluster variance objective function which is also know as squared error function is calculated using the following formula:</p>
+<p>The object of the k-means clustering is to minimize the total variance within the clusters and have high variance between the clusters. The total intra-cluster variance objective function (which is also known as the squared error function) is calculated using the following formula:</p>
+<h1 id="animated-illustration-of-how-the-clustering-algorithm-works">Animated illustration of how the clustering algorithm works</h1>
+<video controls="controls" src="/images/kmeans/Cluster Animation1.mp4" width="500px" height="300px">
+Illustrating k-means algorithm
+</video>
+<h1 id="advantages-of-k-means-clustering">Advantages of k-means clustering</h1>
+<ol>
+<li>K- means clustering is simple to implement.</li>
+<li>It is relatively fast when compared to hierarchal methods.</li>
+<li>Algorithm scales to large datasets.</li>
+<li>The algorithm adapts to new examples reasonably easily.</li>
+</ol>
+<h1 id="disadvantages-of-k-means-clustering">Disadvantages of k-means Clustering</h1>
+<ol>
+<li>The final results of K-means are dependent on the initial values of K. Although this dependency is lower for small values of K, however, as the K increases, one may be required to figure out a better way of initializing centroids.</li>
+<li>K-means algorithm is influenced by outliers. The centroids in k-means can be dragged towards outliers, or you may get a complete cluster consisting of outliers instead of being ignored. To avoid that, you should remove or clip outliers before running the clustering.</li>
+<li>The effectiveness of the k-means algorithm to distinguish between examples decreases as the number of dimensions increases. It happens because of the decrease in the ratio of the standard deviation to the mean distance between examples.</li>
+<li>K-means is not good when it comes to cluster data with varying sizes and density. A better choice would be to use a gaussian mixture model.</li>
+</ol>
+<h1 id="k-means-clustering-in-r">k-means clustering in R</h1>
+<p>You can use <code>kmeans()</code> function to compute the clusters in R. The function returns a list containing different components. Here we are creating 3 clusters on the wine dataset. The data set is readily available in <code>rattle.data</code> package in R. For the illustration purpose, we are using only a few columns. The columns are on different scales, so we are also using <code>scale()</code> function to bring them on the same scales.</p>
+<p>The <code>kmeans()</code> function can take multiple arguments. For example, <code>centers = 3</code> or <code>k = 3</code> will group the data into 3 different groups. You can mention the maximum number of iterations for which algorithm should run before generating the final solution using <code>iter.max =</code>. One of the recommended argument is <code>nstart=</code>. In our case, we have mentioned <code>nstart = 25</code>, which means the algorithm will attempt 25 initial configurations before reporting the best one.</p>
+<pre><code>library(rattle.data)
+data(wine, package=&quot;rattle.data&quot;)
+wine_subset &lt;- scale(wine[ , c(2:4)])
+
+wine_cluster &lt;- kmeans(wine_subset, centers = 3,
+                       iter.max = 10,
+                       nstart = 25)
+</code></pre><h1 id="understanding-k-means-clustering-output">Understanding k-means clustering output</h1>
+<p>The output of k-means is an output of class <strong>kmeans</strong>.</p>
+<pre><code>&gt; wine_cluster
+K-means clustering with 3 clusters of sizes 60, 48, 70
+
+Cluster means:
+     Alcohol      Malic        Ash
+1  0.8914655 -0.4522073  0.5406223
+2  0.1470536  1.3907328  0.2534220
+3 -0.8649501 -0.5660390 -0.6371656
+
+Clustering vector:
+  [1] 1 3 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 2 1 2 1 1 1 1 1 3 1 1 1 1 1
+ [34] 1 1 1 1 1 3 2 1 2 1 2 3 2 2 1 1 1 3 1 1 1 1 1 1 1 1 3 3 3 3 3 3 3
+ [67] 3 3 1 3 3 1 1 1 3 3 3 3 3 2 3 3 3 2 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+[100] 3 3 3 3 3 3 3 3 3 3 3 3 3 2 3 3 3 3 3 2 3 3 1 2 2 2 3 3 3 3 2 3 2
+[133] 3 2 3 3 2 2 2 2 2 1 2 2 2 2 2 2 2 2 2 2 1 2 3 2 2 2 1 1 2 2 2 2 1
+[166] 2 2 2 1 2 3 3 1 2 2 2 1 2
+
+Within cluster sum of squares by cluster:
+[1]  67.98619  73.71460 111.63512
+ (between_SS / total_SS =  52.3 %)
+
+Available components:
+
+[1] &quot;cluster&quot;      &quot;centers&quot;      &quot;totss&quot;        &quot;withinss&quot;    
+[5] &quot;tot.withinss&quot; &quot;betweenss&quot;    &quot;size&quot;         &quot;iter&quot;        
+[9] &quot;ifault&quot;    
+</code></pre><p><strong>Printing the cluster object</strong> - We see that as expected, we have 3 clusters comprising of 60, 48, and 70 number of observations. You can also see that we have the average value of three groups by each variable. <code>Cluster vector</code> provides assignment information at the observation level. Here one observation is assigned to group 1, whereas 2nd observation is assigned to the 3rd group and so on. The next output is self-explanatory. It provides within cluster sum of squares value. In the end, we have a list consisting of multiple components. Some of them are explained below.</p>
+<ul>
+<li><code>cluster</code>    - A vector of integers (from 1:k) indicating the cluster to which each point is allocated.</li>
+<li><code>centers</code> - A matrix of cluster centres.</li>
+<li><code>totss</code>    - The total sum of squares.</li>
+<li><code>withinss</code> - Vector of within-cluster sum of squares, one component per cluster.</li>
+<li><code>tot.withinss</code> - Total within-cluster sum of squares, i.e. sum(withinss).</li>
+<li><code>betweenss</code>    - The between-cluster sum of squares, i.e. totss-tot.withinss.</li>
+<li><code>size</code> - The number of points in each cluster.</li>
+<li><code>iter</code> - The number of (outer) iterations.</li>
+</ul>
+<h1 id="visualizing-the-output-of-k-means-clusters-in-r">Visualizing the output of k-means clusters in R</h1>
+<p>To visualize the output of the three clusters, we will use <code>fviz_cluster()</code> from the <code>factoextra</code> package. The function not just provides a nice visualization but also converts the input information to PCA(principal components) if there are more than two variables. Once we have the principal components, a graph is generated between the first two components showing how much variance is explained by each component.</p>
+<pre><code>library(factoextra)
+fviz_cluster(wine_cluster, data = wine_subset)
+</code></pre><figure>
+  <img src="/images/kmeans/fig2.PNG" alt= "Visualizing clusters using fviz_cluster function">
+</figure>
+<p>Another useful way of visualizing clusters is to illustrate groups by the original variable. Here we will use <code>with()</code> and <code>pair()</code> function to generate a pairwise plot showing each group by color.</p>
 <figure>
-  <img src="/images/kmeans/fig1.PNG" alt= "k-means squared function error formula">
+  <img src="/images/kmeans/fig3.PNG" alt= "Visualizing clusters by original variables">
 </figure>
 <h1 id="how-to-select-the-initial-value-of-k-in-k-means">How to select the initial value of K in k-Means</h1>
 <p>The initial value of k can be selected using the below mentioned rule of thumb. If you have N number of observation in your dataset then the initial value of K can be selected using:</p>
@@ -510,25 +584,27 @@ https://github.com/alex-shpak/hugo-book
 K =  \sqrt{2/N}\)
 </span>
 </p>
-<h1 id="how-to-select-optimal-number-of-clusters-in-k-means">How to select optimal number of clusters in k-Means</h1>
-<p>To choose the optimal number of clusters we can use <strong>elbow method</strong>. The method comprises of plotting a graph explaining percentage of variance by each cluster. The expectation is that with-in group heterogeneity decreases as the number of clusters increases. The implementation of method involves fitting the k-means model for different values of K. The part of the chart which resembles an &ldquo;elbow&rdquo; is a good indication of best model.</p>
+<h1 id="how-to-select-an-optimal-number-of-clusters-in-k-means">How to select an optimal number of clusters in k-Means</h1>
+<p>To choose the optimal number of clusters, we can use <strong>elbow method</strong>. The method comprises of plotting a graph explaining the percentage of variance by each cluster. The expectation is that with-in group heterogeneity decreases as the number of clusters increases. The implementation of the method involves fitting k-means for different values of K. The part of the chart, which resembles an &ldquo;elbow&rdquo; is a good indication of the best model.</p>
 <figure>
-  <img src="/images/kmeans/elbow.PNG"alt= "An example of elbow plot">
+  <img src="/images/kmeans/elbow.PNG" alt= "An example of elbow plot">
 </figure>
-<h1 id="advantages-of-k-means-clustering">Advantages of k-means clustering</h1>
-<ol>
-<li>K- means clustering is simple to implement.</li>
-<li>It is relatively fast when compared to hierarchal methods.</li>
-<li>Algorithm scales to large datasets.</li>
-<li>Adopts to new examples fairly easily.</li>
-</ol>
-<h1 id="disadvantages-of-k-means-clustering">Disadvantages of k-means Clustering</h1>
-<ol>
-<li>Final results of K-means are dependent on the initial values of K. Although this dependency is lower for small values K but as the K increases one may be required to figure-out better ways of initial centroids.</li>
-<li>K-means algorithm is influenced by outliers. The centroids in k-means can get be dragged towards outlier, or you may get a complete cluster consisting of outliers instead of being ignored. You should remove or clip outliers before running the clustering.</li>
-<li>The effectiveness of k-means algorithm to distinguish between examples decreases as the number of dimensions increases. It happens because of the decrease in the ratio of standard deviation to the mean of distance between examples.</li>
-<li>K-means is not good when it comes to cluster data with varying sizes and density. A better choice would be to use gaussian mixture model.</li>
-</ol>
+<p>To generate the elbow plot, we are utilizing a user-defined function. I took this function from the stack overflow along time back.</p>
+<pre><code># Function to compute total within-cluster sum of square
+wssplot &lt;- function(data, nc=15, seed=1234){
+  wss &lt;- (nrow(data)-1)*sum(apply(data,2,var))
+  for (i in 2:nc){
+    set.seed(seed)
+    wss[i] &lt;- sum(kmeans(data, centers=i)$withinss)}
+  plot(1:nc, wss, type=&quot;b&quot;, xlab=&quot;Number of Clusters&quot;,
+       ylab=&quot;Within groups sum of squares&quot;)
+}
+
+# plotting values for each cluster starting from 1 to 9
+wssplot(wine_subset, nc = 9)
+</code></pre><figure>
+  <img src="/images/kmeans/fig4.PNG" alt= "An example of elbow plot for wine data">
+</figure>
 </article>
  
       
@@ -539,9 +615,9 @@ K =  \sqrt{2/N}\)
 
 
 
-  <div><a class="flex align-center" href="https://github.com/DataScience86/rstatisticsblog/tree/master/content/docs/commit/fabb964f9c6102dfd12c195a35f45ae618bd98a2" title='Last modified by datasciencebeginner | April 30, 2020' target="_blank" rel="noopener">
+  <div><a class="flex align-center" href="https://github.com/DataScience86/rstatisticsblog/tree/master/content/docs/commit/5489c2ce7f9af2b1bedd1419a44f61fa6725316d" title='Last modified by datasciencebeginner | May 1, 2020' target="_blank" rel="noopener">
       <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
-      <span>April 30, 2020</span>
+      <span>May 1, 2020</span>
     </a>
   </div>
 
@@ -556,7 +632,26 @@ K =  \sqrt{2/N}\)
       
   
   <div class="book-comments">
-
+<div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "rstatisticsblog-com" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 </div>
   
  
@@ -569,17 +664,16 @@ K =  \sqrt{2/N}\)
       
   <nav id="TableOfContents">
   <ul>
-    <li><a href="#what-is-k-means-clustering">What is k-means clustering</a></li>
-    <li><a href="#how-does-k-means-algorithm-works">How does k means algorithm works</a>
-      <ul>
-        <li><a href="#animated-illustration-of-how-the-clustering-algorithm-works">Animated illustration of how the clustering algorithm works</a></li>
-      </ul>
-    </li>
+    <li><a href="#what-is-k-means-clustering">What is k-means clustering?</a></li>
     <li><a href="#what-is-the-objective-function">What is the objective function</a></li>
-    <li><a href="#how-to-select-the-initial-value-of-k-in-k-means">How to select the initial value of K in k-Means</a></li>
-    <li><a href="#how-to-select-optimal-number-of-clusters-in-k-means">How to select optimal number of clusters in k-Means</a></li>
+    <li><a href="#animated-illustration-of-how-the-clustering-algorithm-works">Animated illustration of how the clustering algorithm works</a></li>
     <li><a href="#advantages-of-k-means-clustering">Advantages of k-means clustering</a></li>
     <li><a href="#disadvantages-of-k-means-clustering">Disadvantages of k-means Clustering</a></li>
+    <li><a href="#k-means-clustering-in-r">k-means clustering in R</a></li>
+    <li><a href="#understanding-k-means-clustering-output">Understanding k-means clustering output</a></li>
+    <li><a href="#visualizing-the-output-of-k-means-clusters-in-r">Visualizing the output of k-means clusters in R</a></li>
+    <li><a href="#how-to-select-the-initial-value-of-k-in-k-means">How to select the initial value of K in k-Means</a></li>
+    <li><a href="#how-to-select-an-optimal-number-of-clusters-in-k-means">How to select an optimal number of clusters in k-Means</a></li>
   </ul>
 </nav>
 

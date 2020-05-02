@@ -5,9 +5,28 @@
     <link>//localhost:1313/categories/</link>
     <description>Recent content in Categories on R Statistics Blog</description>
     <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sat, 02 May 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="//localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>R</title>
+      <link>//localhost:1313/categories/R/</link>
+      <pubDate>Sat, 02 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/categories/R/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Visualization</title>
+      <link>//localhost:1313/categories/Visualization/</link>
+      <pubDate>Sat, 02 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/categories/Visualization/</guid>
+      <description></description>
+    </item>
     
   </channel>
 </rss>

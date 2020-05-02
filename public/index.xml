@@ -184,8 +184,8 @@ Before, we start and dig into how to accomplish tasks mentioned above. Let&amp;r
       <pubDate>Sat, 14 Mar 2020 00:00:00 +0000</pubDate>
       
       <guid>//localhost:1313/docs/foundational-algorithms/k-means-clustering/</guid>
-      <description>What is k-means clustering Clustering is one of the most popular and widespread unsupervised machine learning method used for data analysis and mining patterns. At its core clustering is grouping similar observations based upon the characteristics of each observations. There are multiple approaches for generating clusters of similar objects. However, in this section, you will learn how to build clusters based on k-Means algorithm.
-How does k means algorithm works In simple words, k-means clustering is a technique which aims to divide the data into k number of clusters.</description>
+      <description>Clustering is one of the most popular and widespread unsupervised machine learning method used for data analysis and mining patterns. At its core, clustering is the grouping of similar observations based upon the characteristics. There are multiple approaches for generating clusters of similar objects. However, in this section, you will learn how to build groups based on the k-Means algorithm.
+ What is k-means clustering? In simple words, k-means clustering is a technique that aims to divide the data into k number of clusters.</description>
     </item>
     
     <item>
@@ -226,6 +226,15 @@ How does k means algorithm works In simple words, k-means clustering is a techni
       <guid>//localhost:1313/docs/pre-processing-tasks/Splitting-Data/</guid>
       <description>To create the best model which generalizes well to new unseen data. You must ensure that your test set serves as a proxy for actual dataset IE it represents the new dataset.
  Overview The very first step after pre-processing of the dataset is to split the data into training and test datasets. We usually split the data around 70%-30% between training and testing stages. The training set is the one that we use to learn the relationship between independent variables and the target variable.</description>
+    </item>
+    
+    <item>
+      <title>7 Useful Interactive Charts in R (with sample code)</title>
+      <link>//localhost:1313/posts/create-7-amazing-interactive-charts/</link>
+      <pubDate>Sat, 02 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/posts/create-7-amazing-interactive-charts/</guid>
+      <description>Introduction An interactive chart gives a lot of freedom to both presenter and the audience. Interactive graphs allow you to share complex ideas in a more engaging way. Using interactive charts allows users to perform actions like choosing a variable, zoom-in, zoom-out, hover to get tooltip, take a snapshot, and more. In this section, I will walk you through some of the packages and functions which we can use to plot different types of interactive plots.</description>
     </item>
     
   </channel>

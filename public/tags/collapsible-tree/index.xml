@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>collapsible tree on R Statistics Blog</title>
+    <link>//localhost:1313/tags/collapsible-tree/</link>
+    <description>Recent content in collapsible tree on R Statistics Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sat, 02 May 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="//localhost:1313/tags/collapsible-tree/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>7 Useful Interactive Charts in R (with sample code)</title>
+      <link>//localhost:1313/posts/create-7-amazing-interactive-charts/</link>
+      <pubDate>Sat, 02 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/posts/create-7-amazing-interactive-charts/</guid>
+      <description>Introduction An interactive chart gives a lot of freedom to both presenter and the audience. Interactive graphs allow you to share complex ideas in a more engaging way. Using interactive charts allows users to perform actions like choosing a variable, zoom-in, zoom-out, hover to get tooltip, take a snapshot, and more. In this section, I will walk you through some of the packages and functions which we can use to plot different types of interactive plots.</description>
+    </item>
+    
+  </channel>
+</rss>
