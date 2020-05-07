@@ -2,7 +2,6 @@
 title: "Its All About Functions"
 date: 2019-10-05
 weight: 4
-category: ["R", "Programming"]
 ---
 
 # Functions in R

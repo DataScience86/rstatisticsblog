@@ -1,8 +1,7 @@
 ---
-title: "Data Frame Manipulations"
+title: "Dataframe Manipulations"
 date: 2019-10-09
 weight: 5
-category: ["R", "Statistics", "Data Wrangling"]
 ---
 
 # Data Manipulation Tasks With Example Code

@@ -2,8 +2,6 @@
 title: "Standardization And Scaling"
 date: 2020-01-10
 weight: 7
-tags: ["Standardization", "Min Max Scaling", "Normalization", "R Code"]
-category: ["R", "Statistics", "Machine Learning"]
 ---
 
 > While building a Machine Learning model, do not throw away all of your information! Normalize your features.

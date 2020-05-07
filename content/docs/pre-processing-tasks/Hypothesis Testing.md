@@ -2,8 +2,6 @@
 title: "Hypothesis Testing"
 date: 2019-12-12
 weight: 4
-tags: ["T-test", "Two-sample", "Paired Test", "R Code"]
-category: ["R", "Statistics"]
 ---
 
 > Hypothesis testing uses concepts from statistics to determine the probability that a given assumption is valid. In this chapter, you will learn about several types of statistical tests, their practical applications, and how to interpret the results of hypothesis testing.

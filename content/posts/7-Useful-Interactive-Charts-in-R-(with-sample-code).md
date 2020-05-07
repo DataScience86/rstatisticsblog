@@ -1,24 +1,15 @@
-+++
-title = "7 Useful Interactive Charts in R (with sample code)"
-description = ""
-tags = [
-    "network graph",
-    "scatter plot",
-    "bubble plot",
-    "area plot",
-    "collapsible tree",
-    "dendrogram",
-    "timeseries plot",
-    "interactive charts"
-]
-date = "2020-05-02"
-categories = [
-    "R",
-    "Visualization",
-]
-menu = "main"
-+++
-
+---
+author: "Mohit Sharma"
+date: 2020-05-02
+linktitle: 7 Useful Interactive Charts in R (with sample code)
+menu:
+  main:
+    parent: tutorials
+next:
+prev:
+title: "7 Useful Interactive Charts in R (with sample code)"
+weight: 10
+---
 
 # Introduction
 

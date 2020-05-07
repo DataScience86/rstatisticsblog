@@ -2,8 +2,6 @@
 title: "Linear Regression"
 date: 2020-3-21
 weight: 1
-tags: ["Linear Regression", "Assumptions", "R Code"]
-category: ["R", "Supervised Algorithm", "Regression"]
 ---
 
 > Linear regression is a supervised machine learning algorithm that is used to predict the continuous variable. The algorithm assumes that the relation between the dependent variable(Y) and independent variables(X), is linear and is represented by a line of best fit. In this chapter, we will learn how to execute linear regression in R using some select functions and test its assumptions before we use it for a final prediction on test data.

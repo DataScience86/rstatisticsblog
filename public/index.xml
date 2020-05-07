@@ -10,20 +10,20 @@
     
     
     <item>
+      <title>Text Pre-Processing</title>
+      <link>//localhost:1313/docs/text-mining/text-pre-processing/</link>
+      <pubDate>Tue, 05 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/docs/text-mining/text-pre-processing/</guid>
+      <description>Overview It is not surprising to know that most of the information out in the world is available in an unstructured form. An unstructured data refers to the one that does not reside in a traditional relational database. Some of the examples include images, webpages, word documents, pdf documents, and reports. In this section, we will talk about some basic concepts and functions which you can use for text processing in R.</description>
+    </item>
+    
+    <item>
       <title>ggplot2</title>
       <link>//localhost:1313/docs/useful-r-packages/ggplot2-tutorial/</link>
       <pubDate>Wed, 15 Apr 2020 00:00:00 +0000</pubDate>
       
       <guid>//localhost:1313/docs/useful-r-packages/ggplot2-tutorial/</guid>
-      <description>Overview The ggplot2 package in R provides a reliable system for describing and building graphs. The package is capable of creating elegant and aesthetically pleasing graphics. The framework of ggplot2 is quite different (in comparison to graphics package) and is based on the grammar of graphics(introduced initially by Leland Wilkinson). At first, you may not find it intuitive, but don&amp;rsquo;t worry, we are here to help. Together, we will master it to the core.</description>
-    </item>
-    
-    <item>
-      <title>Text Processing</title>
-      <link>//localhost:1313/docs/text-mining/text-processing/</link>
-      <pubDate>Wed, 15 Apr 2020 00:00:00 +0000</pubDate>
-      
-      <guid>//localhost:1313/docs/text-mining/text-processing/</guid>
       <description>Overview The ggplot2 package in R provides a reliable system for describing and building graphs. The package is capable of creating elegant and aesthetically pleasing graphics. The framework of ggplot2 is quite different (in comparison to graphics package) and is based on the grammar of graphics(introduced initially by Leland Wilkinson). At first, you may not find it intuitive, but don&amp;rsquo;t worry, we are here to help. Together, we will master it to the core.</description>
     </item>
     
@@ -38,7 +38,7 @@
     </item>
     
     <item>
-      <title>Getting Started</title>
+      <title>Getting Started With R</title>
       <link>//localhost:1313/docs/quick-r-tutorial/introduction-to-r/</link>
       <pubDate>Sat, 12 Oct 2019 00:00:00 +0000</pubDate>
       
@@ -98,12 +98,12 @@ One of the major reasons for the popularity of R is that R and its packages are 
     </item>
     
     <item>
-      <title>Leaftlet</title>
+      <title>Leaftlet For Maps</title>
       <link>//localhost:1313/docs/useful-r-packages/Leaftlet-Package-for-Maps/</link>
       <pubDate>Thu, 30 Apr 2020 00:00:00 +0000</pubDate>
       
       <guid>//localhost:1313/docs/useful-r-packages/Leaftlet-Package-for-Maps/</guid>
-      <description></description>
+      <description>In progress</description>
     </item>
     
     <item>
@@ -112,7 +112,7 @@ One of the major reasons for the popularity of R is that R and its packages are 
       <pubDate>Thu, 30 Apr 2020 00:00:00 +0000</pubDate>
       
       <guid>//localhost:1313/docs/text-mining/sentiment-analysis/</guid>
-      <description></description>
+      <description>Under Construction</description>
     </item>
     
     <item>
@@ -126,7 +126,7 @@ One of the major reasons for the popularity of R is that R and its packages are 
     </item>
     
     <item>
-      <title>Summarizing data</title>
+      <title>Summarizing Data</title>
       <link>//localhost:1313/docs/pre-processing-tasks/Summarizing-Data/</link>
       <pubDate>Sun, 12 Jan 2020 00:00:00 +0000</pubDate>
       
@@ -147,12 +147,12 @@ Having knowledge and understanding of how the two work is extremely critical for
     </item>
     
     <item>
-      <title>Topic Modeling Using LDA</title>
+      <title>Topic Modeling</title>
       <link>//localhost:1313/docs/text-mining/topic-modeling-lda/</link>
       <pubDate>Thu, 30 Apr 2020 00:00:00 +0000</pubDate>
       
       <guid>//localhost:1313/docs/text-mining/topic-modeling-lda/</guid>
-      <description></description>
+      <description>Under Construction</description>
     </item>
     
     <item>
@@ -205,7 +205,7 @@ Typically hypothesis testing starts with an assumption or an assertion about a p
     </item>
     
     <item>
-      <title>Data Frame Manipulations</title>
+      <title>Dataframe Manipulations</title>
       <link>//localhost:1313/docs/quick-r-tutorial/dataframe-manipulations/</link>
       <pubDate>Wed, 09 Oct 2019 00:00:00 +0000</pubDate>
       
@@ -220,8 +220,8 @@ Before, we start and dig into how to accomplish tasks mentioned above. Let&amp;r
       <pubDate>Sat, 14 Mar 2020 00:00:00 +0000</pubDate>
       
       <guid>//localhost:1313/docs/foundational-algorithms/k-means-clustering/</guid>
-      <description>Clustering is one of the most popular and widespread unsupervised machine learning method used for data analysis and mining patterns. At its core, clustering is the grouping of similar observations based upon the characteristics. There are multiple approaches for generating clusters of similar objects. However, in this section, you will learn how to build groups based on the k-Means algorithm.
- What is k-means clustering? In simple words, k-means clustering is a technique that aims to divide the data into k number of clusters.</description>
+      <description>Overview Clustering is one of the most popular and widespread unsupervised machine learning method used for data analysis and mining patterns. At its core, clustering is the grouping of similar observations based upon the characteristics. There are multiple approaches for generating clusters of similar objects. However, in this section, you will learn how to build groups based on the k-Means algorithm.
+What is k-means clustering? In simple words, k-means clustering is a technique that aims to divide the data into k number of clusters.</description>
     </item>
     
     <item>

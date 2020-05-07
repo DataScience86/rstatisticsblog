@@ -2,8 +2,8 @@
 title: "data.table"
 date: 2020-04-30
 weight: 2
-tags: ["data.table", "R Code"]
-category: ["R", "Tutorial", "Data Wrangling"]
+#tags: ["data.table", "Tutorial"]
+#category: ["R", "Tutorial", "Data Wrangling"]
 ---
 
 

@@ -1,9 +1,7 @@
 ---
-title: "Summarizing data"
+title: "Summarizing Data"
 date: 2020-01-12
 weight: 3
-tags: ["Summary", "Mean", "Histogram", "standard Deviation",  "Skewness", "R Code"]
-category: ["R", "Statistics"]
 ---
 
 > The very first task in any project related to data modeling is to explore the data, formally known as,

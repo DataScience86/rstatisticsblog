@@ -1,17 +1,15 @@
 ---
-title: "Text Processing"
+title: "Text Pre-Processing"
 date: 2020-05-05
 weight: 1
-tags: ["stopwords", "text pre-processing" ,"text cleaning", "corpus", "stemming", "lemmatization", "text mining", "R Code"]
-category: ["R", "Text Mining"]
 ---
 
+# Overview
 It is not surprising to know that most of the information out in the world is available in an unstructured form. An unstructured data refers to the one that does not reside in a traditional relational database. Some of the examples include images, webpages, word documents, pdf documents, and reports. In this section, we will talk about some basic concepts and functions which you can use for text processing in R.
 
 Although R provides several packages to perform tasks related to text processing, we will be using the `tm`, `SnowballC`, `textstem`, and `stringr` to perform several tasks related to text processing.
 
 # How to obtain the text from different sources
-
 As you can imagine, the primary source of text data is webpages, pdfs, and other forms of documents. So it becomes vital for us to learn how to extract data from different sources and prepare it for feature extraction.
 
 ## Reading text file in R
@@ -43,11 +41,10 @@ file[7]
 ```
 
 ## Extracting text from the website
-
 The process of extracting data from the website is also called as web scraping. The method of web scraping consists of a couple of steps and can become complicated, depending on the type of site and variety of components you wish to extract from the site. Some of the packages which you can use to extract data from different websites are `rvest`, `RCurl` and `XML`.  For now, we will skip this part as it is beyond the scope of this article. But I encourage you to go and read more about these packages in R.
 
 # General text processing steps
-The different sets of actions we need to do as part of text cleaning or preprocess are as given below.
+The different sets of actions we need to do as part of text cleaning or pre-process are as given below.
 
 1. Convert to lower case
 2. Remove numbers
@@ -65,8 +62,6 @@ library(stringr)
 library(tm)
 library(SnowballC)
 library(textstem)
-
-
 ```
 
 ## Convert text to lower
@@ -192,5 +187,4 @@ Below we will create a VCorpus corpus.
 ```
 library(tm)
 Corpus_text = Corpus(VectorSource(text))
-
 ```

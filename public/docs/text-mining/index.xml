@@ -5,18 +5,17 @@
     <link>//localhost:1313/docs/text-mining/</link>
     <description>Recent content on R Statistics Blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 30 Apr 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="//localhost:1313/docs/text-mining/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Text Processing</title>
-      <link>//localhost:1313/docs/text-mining/text-processing/</link>
-      <pubDate>Wed, 15 Apr 2020 00:00:00 +0000</pubDate>
+      <title>Text Pre-Processing</title>
+      <link>//localhost:1313/docs/text-mining/text-pre-processing/</link>
+      <pubDate>Tue, 05 May 2020 00:00:00 +0000</pubDate>
       
-      <guid>//localhost:1313/docs/text-mining/text-processing/</guid>
-      <description>Overview The ggplot2 package in R provides a reliable system for describing and building graphs. The package is capable of creating elegant and aesthetically pleasing graphics. The framework of ggplot2 is quite different (in comparison to graphics package) and is based on the grammar of graphics(introduced initially by Leland Wilkinson). At first, you may not find it intuitive, but don&amp;rsquo;t worry, we are here to help. Together, we will master it to the core.</description>
+      <guid>//localhost:1313/docs/text-mining/text-pre-processing/</guid>
+      <description>Overview It is not surprising to know that most of the information out in the world is available in an unstructured form. An unstructured data refers to the one that does not reside in a traditional relational database. Some of the examples include images, webpages, word documents, pdf documents, and reports. In this section, we will talk about some basic concepts and functions which you can use for text processing in R.</description>
     </item>
     
     <item>
@@ -25,16 +24,16 @@
       <pubDate>Thu, 30 Apr 2020 00:00:00 +0000</pubDate>
       
       <guid>//localhost:1313/docs/text-mining/sentiment-analysis/</guid>
-      <description></description>
+      <description>Under Construction</description>
     </item>
     
     <item>
-      <title>Topic Modeling Using LDA</title>
+      <title>Topic Modeling</title>
       <link>//localhost:1313/docs/text-mining/topic-modeling-lda/</link>
       <pubDate>Thu, 30 Apr 2020 00:00:00 +0000</pubDate>
       
       <guid>//localhost:1313/docs/text-mining/topic-modeling-lda/</guid>
-      <description></description>
+      <description>Under Construction</description>
     </item>
     
   </channel>

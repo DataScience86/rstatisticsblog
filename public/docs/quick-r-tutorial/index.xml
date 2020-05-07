@@ -10,7 +10,7 @@
     
     
     <item>
-      <title>Getting Started</title>
+      <title>Getting Started With R</title>
       <link>//localhost:1313/docs/quick-r-tutorial/introduction-to-r/</link>
       <pubDate>Sat, 12 Oct 2019 00:00:00 +0000</pubDate>
       
@@ -50,7 +50,7 @@ Having knowledge and understanding of how the two work is extremely critical for
     </item>
     
     <item>
-      <title>Data Frame Manipulations</title>
+      <title>Dataframe Manipulations</title>
       <link>//localhost:1313/docs/quick-r-tutorial/dataframe-manipulations/</link>
       <pubDate>Wed, 09 Oct 2019 00:00:00 +0000</pubDate>
       

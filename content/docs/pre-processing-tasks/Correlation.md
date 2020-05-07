@@ -2,8 +2,6 @@
 title: "Correlation"
 date: 2019-12-07
 weight: 5
-tags: ["Correlation", "R Code"]
-category: ["R", "Statistics", "Visualization"]
 ---
 
 # Overview

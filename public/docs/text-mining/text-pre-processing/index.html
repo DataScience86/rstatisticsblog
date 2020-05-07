@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head><script src="/livereload.js?port=1313&mindelay=10&v=2" data-no-instant defer></script>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Overview It is not surprising to know that most of the information out in the world is available in an unstructured form. An unstructured data refers to the one that does not reside in a traditional relational database. Some of the examples include images, webpages, word documents, pdf documents, and reports. In this section, we will talk about some basic concepts and functions which you can use for text processing in R."><meta property="og:title" content="Text Pre-Processing" />
+<meta property="og:description" content="Overview It is not surprising to know that most of the information out in the world is available in an unstructured form. An unstructured data refers to the one that does not reside in a traditional relational database. Some of the examples include images, webpages, word documents, pdf documents, and reports. In this section, we will talk about some basic concepts and functions which you can use for text processing in R." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="//localhost:1313/docs/text-mining/text-pre-processing/" />
+<meta property="article:published_time" content="2020-05-05T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-05-05T09:05:55+05:30" />
+<title>Text Pre-Processing | R Statistics Blog</title>
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.6df681b0bb21155cba49f6078e3559216772d8e03e780d240c73ea21817ed5e5.css" integrity="sha256-bfaBsLshFVy6SfYHjjVZIWdy2OA&#43;eA0kDHPqIYF&#43;1eU=">
+<script defer src="/en.search.min.3d31721074493fbbf8ff42f1f894737445228593053b61f4321aa50a482e49d6.js" integrity="sha256-PTFyEHRJP7v4/0Lx&#43;JRzdEUihZMFO2H0MhqlCkguSdY="></script>
+
+<script defer src="/sw.min.74a8bb07f0bee86d6bb9a2750f073f14d93c7e4512f28860370cfd879e9719b4.js" integrity="sha256-dKi7B/C&#43;6G1ruaJ1Dwc/FNk8fkUS8ohgNwz9h56XGbQ="></script>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-131766057-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body>
+  <input type="checkbox" class="hidden" id="menu-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      
+  <nav>
+<h2 class="book-brand">
+  <a href="//localhost:1313/"><span>R Statistics Blog</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="" target="_blank" rel="noopener">
+        
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+
+  
+
+
+
+  
+  
+  
+  
+
+  
+  <ul>
+    
+      
+        <li class="book-section-flat" >
+          
+  
+    <a href="/docs/subscribe/" class="">Subscribe</a>
+  
+
+          
+  
+  
+  
+
+  
+  <ul>
+    
+  </ul>
+  
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+    <span>Quick R Tutorial</span>
+  
+
+          
+  
+  
+  
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+    <a href="/docs/quick-r-tutorial/introduction-to-r/" class="">Getting Started With R</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/quick-r-tutorial/r-basics/" class="">R Basics</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/quick-r-tutorial/using-conditional-statements-and-loops/" class="">Conditions &amp; Loops</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/quick-r-tutorial/functions-and-apply-family/" class="">Its All About Functions</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/quick-r-tutorial/dataframe-manipulations/" class="">Dataframe Manipulations</a>
+  
+
+        </li>
+      
+    
+  </ul>
+  
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+    <span>Useful R Packages</span>
+  
+
+          
+  
+  
+  
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+    <a href="/docs/useful-r-packages/ggplot2-tutorial/" class="">ggplot2</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/useful-r-packages/datatable-tutorial-data-manipulation/" class="">data.table</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/useful-r-packages/Leaftlet-Package-for-Maps/" class="">Leaftlet</a>
+  
+
+        </li>
+      
+    
+  </ul>
+  
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+    <span>Pre Processing Tasks</span>
+  
+
+          
+  
+  
+  
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+    <a href="/docs/pre-processing-tasks/Identifying-Outliers/" class="">Analysing Outliers</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/pre-processing-tasks/Missing-Value-Imputation/" class="">Missing Value Imputation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/pre-processing-tasks/Summarizing-Data/" class="">Summarizing Data</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/pre-processing-tasks/Hypothesis-Testing/" class="">Hypothesis Testing</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/pre-processing-tasks/Correlation/" class="">Correlation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/pre-processing-tasks/Analysing-zero-variance-predictor/" class="">Analysing zero variance predictor</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/pre-processing-tasks/Standardization-MinMax-Scaling/" class="">Standardization And Scaling</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/pre-processing-tasks/Principal-Component-Analysis/" class="">Principal Component Analysis</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/pre-processing-tasks/Splitting-Data/" class="">Splitting Data</a>
+  
+
+        </li>
+      
+    
+  </ul>
+  
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+    <span>Foundational Algorithms</span>
+  
+
+          
+  
+  
+  
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+    <a href="/docs/foundational-algorithms/Linear-Regression/" class="">Linear Regression</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/foundational-algorithms/Ridge-Regression/" class="">Ridge Regression</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/foundational-algorithms/Lasso-Regression/" class="">Lasso Regression</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/foundational-algorithms/Binary-Logistics-Regression/" class="">Binary Logistic Regression</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/foundational-algorithms/Multinomial-Logistic-Regressions/" class="">Multinomial Logistic Regression</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/foundational-algorithms/k-means-clustering/" class="">k-Mean Clustering</a>
+  
+
+        </li>
+      
+    
+  </ul>
+  
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+    <span>Text Mining</span>
+  
+
+          
+  
+  
+  
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+    <a href="/docs/text-mining/text-pre-processing/" class="active">Text Pre-Processing</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/text-mining/sentiment-analysis/" class="">Sentiment Analysis</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/text-mining/topic-modeling-lda/" class="">Topic Modeling</a>
+  
+
+        </li>
+      
+    
+  </ul>
+  
+
+        </li>
+      
+    
+  </ul>
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/posts/" >
+        Blog
+      </a>
+  </li>
+  
+  <li>
+    <a href="https://github.com/DataScience86/rstatisticsblog/tree/master/content" target="_blank" rel="noopener">
+        Github
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+
+
+ 
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Text Pre-Processing</strong>
+
+  <label for="toc-control">
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+  </label>
+</div>
+
+
+  
+    <input type="checkbox" class="hidden" id="toc-control" />
+    <aside class="hidden clearfix">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#overview">Overview</a></li>
+    <li><a href="#how-to-obtain-the-text-from-different-sources">How to obtain the text from different sources</a>
+      <ul>
+        <li><a href="#reading-text-file-in-r">Reading text file in R</a></li>
+        <li><a href="#reading-pdf-file-in-r">Reading pdf file in R</a></li>
+        <li><a href="#extracting-text-from-the-website">Extracting text from the website</a></li>
+      </ul>
+    </li>
+    <li><a href="#general-text-processing-steps">General text processing steps</a></li>
+    <li><a href="#preparation">Preparation</a>
+      <ul>
+        <li><a href="#convert-text-to-lower">Convert text to lower</a></li>
+        <li><a href="#remove-numbers">Remove numbers</a></li>
+        <li><a href="#remove-punctuations">Remove punctuations</a></li>
+        <li><a href="#removing-whitespaces">Removing whitespaces</a></li>
+        <li><a href="#remove-stop-words">Remove stop words</a></li>
+        <li><a href="#stemming">Stemming</a></li>
+        <li><a href="#lemmatization">Lemmatization</a></li>
+      </ul>
+    </li>
+    <li><a href="#bonus---create-a-corpus">Bonus - Create a corpus</a></li>
+  </ul>
+</nav>
+
+
+    </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="overview">Overview</h1>
+<p>It is not surprising to know that most of the information out in the world is available in an unstructured form. An unstructured data refers to the one that does not reside in a traditional relational database. Some of the examples include images, webpages, word documents, pdf documents, and reports. In this section, we will talk about some basic concepts and functions which you can use for text processing in R.</p>
+<p>Although R provides several packages to perform tasks related to text processing, we will be using the <code>tm</code>, <code>SnowballC</code>, <code>textstem</code>, and <code>stringr</code> to perform several tasks related to text processing.</p>
+<h1 id="how-to-obtain-the-text-from-different-sources">How to obtain the text from different sources</h1>
+<p>As you can imagine, the primary source of text data is webpages, pdfs, and other forms of documents. So it becomes vital for us to learn how to extract data from different sources and prepare it for feature extraction.</p>
+<h2 id="reading-text-file-in-r">Reading text file in R</h2>
+<p>Reading a text file is relatively simple in R. You can use <code>read.delim()</code> file to read any text file in R.</p>
+<pre><code>#reading text file
+my_data &lt;- read.delim(&quot;rstatisticsblog.txt&quot;)
+</code></pre><h2 id="reading-pdf-file-in-r">Reading pdf file in R</h2>
+<p>To read a pdf files we will be using <code>pdf_text()</code> function from <code>pdftools</code> package. A sample code is provided below:</p>
+<pre><code>install.packages(&quot;pdftools&quot;)
+library(pdftools)
+
+#setting the working directory
+setwd(&quot;C:/Users/EAOHSHM/Documents/Personal&quot;)
+
+# Reading pdf file
+file &lt;- pdf_text(&quot;Paradis-rdebuts_en.pdf&quot;)
+
+# Number of pages
+length(file)
+
+# Viewing 7th page
+file[7]
+</code></pre><h2 id="extracting-text-from-the-website">Extracting text from the website</h2>
+<p>The process of extracting data from the website is also called as web scraping. The method of web scraping consists of a couple of steps and can become complicated, depending on the type of site and variety of components you wish to extract from the site. Some of the packages which you can use to extract data from different websites are <code>rvest</code>, <code>RCurl</code> and <code>XML</code>.  For now, we will skip this part as it is beyond the scope of this article. But I encourage you to go and read more about these packages in R.</p>
+<h1 id="general-text-processing-steps">General text processing steps</h1>
+<p>The different sets of actions we need to do as part of text cleaning or pre-process are as given below.</p>
+<ol>
+<li>Convert to lower case</li>
+<li>Remove numbers</li>
+<li>Remove punctuations</li>
+<li>Remove whitespace</li>
+<li>Remove stop words</li>
+<li>Stemming</li>
+<li>Lemmatization</li>
+</ol>
+<h1 id="preparation">Preparation</h1>
+<p>Here We will go through all the basic text cleaning steps using some of the most popular text processing packages in R. List of packages used in this article is as given below:</p>
+<pre><code>library(stringr)
+library(tm)
+library(SnowballC)
+library(textstem)
+</code></pre><h2 id="convert-text-to-lower">Convert text to lower</h2>
+<p>It is always a good idea to convert all of your text to the same case. R is a case sensitive language, and having the same word in two different cases can result in a program reading it as two separate entities.</p>
+<pre><code>text &lt;- &quot;This is a TEXT which Has different Cases&quot;
+text_lower &lt;- tolower(text)
+</code></pre><pre><code>[1] &quot;this is a text which has different cases&quot;
+</code></pre><h2 id="remove-numbers">Remove numbers</h2>
+<p>In most cases, numbers present no real information, and thus it is a standard process to remove numerical values from the text. However, in some cases, you may be interested in extracting or collecting this information. We will be using a regular expression to remove the number. You can learn more about regular expressions here - <a href="https://regexone.com">https://regexone.com</a>.</p>
+<pre><code>text &lt;- &quot;I contain number like 223, 12, and 24&quot;
+gsub('[[:digit:]]+', '', text)
+</code></pre><pre><code>[1] &quot;I contain number like , , and &quot;
+</code></pre><h2 id="remove-punctuations">Remove punctuations</h2>
+<p>To remove punctuation marks from the string, we will again fall back on regular expressions.</p>
+<pre><code>text &lt;- &quot;This string contains punctuation ?, % $ @ and #&quot;
+gsub('[[:punct:]]', '', text)
+</code></pre><pre><code>[1] &quot;This string contains punctuation     and &quot;
+</code></pre><h2 id="removing-whitespaces">Removing whitespaces</h2>
+<p>You must have noticed that when we removed things like numbers or punctuations, than whitespace is created, and it is essential to remove those spaces else, they will be counted as empty strings.</p>
+<pre><code>text &lt;- &quot;This string contains punctuation     and &quot;
+gsub(' +',' ',text)
+</code></pre><pre><code>[1] &quot;This string contains punctuation and &quot;
+</code></pre><p>But with this approach, you can see that single whitespace is still left at the end. We can use the <code>str_trim()</code> function to get rid of the trailing whitespace.</p>
+<pre><code>text &lt;- &quot;This string contains punctuation and &quot;
+str_trim(text, side = &quot;both&quot;)
+</code></pre><pre><code>[1] &quot;This string contains punctuation and&quot;
+</code></pre><h2 id="remove-stop-words">Remove stop words</h2>
+<p>Stop words are a collection of common words that do not provide any information about the content of the text. Here <code>removeWords()</code> function is being used to get rid of predefined stop words under the tm package. Based on one&rsquo;s requirement, additional terms can be added to this list.</p>
+<pre><code>library(tm)
+
+text &lt;- &quot;The goal of the present document (created in 2012) is to give a starting point for people newly interested in R. I chose to emphasize 30 times on the understanding of how R works, with the aim of a beginner, rather than expert, use.&quot;
+
+text &lt;- tolower(text)
+removeWords(text, stopwords())
+
+</code></pre><pre><code>[1] &quot;goal   present document (created  2012)   give  starting point  people newly interested  r.  chose  emphasize 30 times   understanding   r works,   aim   beginner, rather  expert, use.&quot;
+</code></pre><p>It is good practice to remove whitespaces at the end. For now,  go ahead and clean the whitespaces from the above output string.</p>
+<h2 id="stemming">Stemming</h2>
+<p>The stemming algorithm is a collection of rules that work by cutting the end or beginning of the word. This chopping of the word can be helpful in some cases, but not always. There are different algorithms, but the most common one is <strong>Porter stemmer</strong>. However, the purpose of all the algorithms is to reduce the word to its root level. Here we will use <code>wordStem()</code> function for stemming from <code>SnowballC</code> package in R.</p>
+<pre><code>library(SnowballC)
+
+text &lt;- c('companies', 'authorized', 'learning', &quot;cooking&quot;)
+
+text &lt;- tolower(text)
+wordStem(text)
+
+</code></pre><pre><code>[1] &quot;compani&quot; &quot;author&quot;  &quot;learn&quot;   &quot;cook&quot;  
+</code></pre><p>You can see from the above output, stemming does not always return a word which makes sense, or we can agree that it is the word representing the root of the actual word.</p>
+<h2 id="lemmatization">Lemmatization</h2>
+<p>Just like stemming, lemmatization is also a process of finding a word&rsquo;s lemma meaning root. Lemmatization is generally more accurate as compared to stemming because it considers a morphological analysis of the word by going through the dictionaries to link back the word to its lemma. Here we use <code>lemmatize_words()</code> function from <code>textstem</code> package in R.</p>
+<pre><code>library(textstem)
+
+text &lt;- c('companies', 'authorized', 'learning', &quot;cooking&quot;)
+
+text &lt;- tolower(text)
+lemmatize_words(text)
+
+</code></pre><pre><code>[1] &quot;company&quot;   &quot;authorize&quot; &quot;learn&quot;     &quot;cook&quot;
+</code></pre><p>It is quite evident that lemmatization returns much better results when compared to that of stemming.</p>
+<h1 id="bonus---create-a-corpus">Bonus - Create a corpus</h1>
+<p>A corpus is a collection of text that has been put together with a certain set of predetermined criteria. The <code>tm</code> package provides two different implementations I.E. <strong>&ldquo;VCorpus&rdquo;</strong> and <strong>&ldquo;PCorpus&rdquo;</strong>. The default implementation is <code>VCorpus</code>(short for Volatile Corpus). It is called volatile since once the R object is destroyed, the whole corpus is gone, as it is stored in RAM. Another implementation is &ldquo;PCorpus&rdquo;,  here P is short for <strong>permanent corpus</strong>. You will not lose the documents even if the R object is destroyed as &lsquo;PCorpus` stores the documents in a physical form outside of R.</p>
+<p>Below we will create a VCorpus corpus.</p>
+<pre><code>library(tm)
+Corpus_text = Corpus(VectorSource(text))
+</code></pre></article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex justify-between">
+
+
+
+  <div><a class="flex align-center" href="https://github.com/DataScience86/rstatisticsblog/tree/master/content/docs/commit/152c6a983a2307e163daa408afdb371a6c566c0a" title='Last modified by datasciencebeginner | May 5, 2020' target="_blank" rel="noopener">
+      <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
+      <span>May 5, 2020</span>
+    </a>
+  </div>
+
+
+
+</div>
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+<div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "rstatisticsblog-com" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#overview">Overview</a></li>
+    <li><a href="#how-to-obtain-the-text-from-different-sources">How to obtain the text from different sources</a>
+      <ul>
+        <li><a href="#reading-text-file-in-r">Reading text file in R</a></li>
+        <li><a href="#reading-pdf-file-in-r">Reading pdf file in R</a></li>
+        <li><a href="#extracting-text-from-the-website">Extracting text from the website</a></li>
+      </ul>
+    </li>
+    <li><a href="#general-text-processing-steps">General text processing steps</a></li>
+    <li><a href="#preparation">Preparation</a>
+      <ul>
+        <li><a href="#convert-text-to-lower">Convert text to lower</a></li>
+        <li><a href="#remove-numbers">Remove numbers</a></li>
+        <li><a href="#remove-punctuations">Remove punctuations</a></li>
+        <li><a href="#removing-whitespaces">Removing whitespaces</a></li>
+        <li><a href="#remove-stop-words">Remove stop words</a></li>
+        <li><a href="#stemming">Stemming</a></li>
+        <li><a href="#lemmatization">Lemmatization</a></li>
+      </ul>
+    </li>
+    <li><a href="#bonus---create-a-corpus">Bonus - Create a corpus</a></li>
+  </ul>
+</nav>
+
+ 
+    </aside>
+    
+  </main>
+
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
