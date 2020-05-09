@@ -180,7 +180,7 @@ lemmatize_words(text)
 It is quite evident that lemmatization returns much better results when compared to that of stemming.
 
 # Bonus - Create a corpus
-A corpus is a collection of text that has been put together with a certain set of predetermined criteria. The `tm` package provides two different implementations I.E. **"VCorpus"** and **"PCorpus"**. The default implementation is `VCorpus`(short for Volatile Corpus). It is called volatile since once the R object is destroyed, the whole corpus is gone, as it is stored in RAM. Another implementation is "PCorpus",  here P is short for **permanent corpus**. You will not lose the documents even if the R object is destroyed as 'PCorpus` stores the documents in a physical form outside of R.
+A corpus is a collection of text that has been put together with a certain set of predetermined criteria. The `tm` package provides two different implementations I.E. **"VCorpus"** and **"PCorpus"**. The default implementation is `VCorpus`(short for Volatile Corpus). It is called volatile since once the R object is destroyed, the whole corpus is gone, as it is stored in RAM. Another implementation is "PCorpus",  here P is short for **permanent corpus**. You will not lose the documents even if the R object is destroyed as `PCorpus` stores the documents in a physical form outside of R.
 
 Below we will create a VCorpus corpus.
 
@@ -188,3 +188,11 @@ Below we will create a VCorpus corpus.
 library(tm)
 Corpus_text = Corpus(VectorSource(text))
 ```
+
+{{< hint info >}}
+**Important Notice**  
+Stay updated by subscribing to our newsletter.  
+We hate spam just like you.  
+{{< /hint>}}
+
+{{< button href="https://www.rstatisticsblog.com/docs/subscribe/" >}}Subscribe{{< /button >}}  

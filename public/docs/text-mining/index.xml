@@ -19,6 +19,15 @@
     </item>
     
     <item>
+      <title>Word &amp; Document Analysis</title>
+      <link>//localhost:1313/docs/text-mining/word-document-analysis/</link>
+      <pubDate>Sat, 09 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/docs/text-mining/word-document-analysis/</guid>
+      <description>Overview In the real world, the use of text analytics is growing at a swift pace. Organizations across the globe have started to realize that textual the analysis of textual data can reveal significant insights that can help with decision making. As of today, the text analytics field is seeing exponential growth and will continue to see this high growth rate, even for the coming years. The increase in text analysis use cases can be attributed to the continuous growth of unstructured data both within and outside of the organization.</description>
+    </item>
+    
+    <item>
       <title>Sentiment Analysis</title>
       <link>//localhost:1313/docs/text-mining/sentiment-analysis/</link>
       <pubDate>Thu, 30 Apr 2020 00:00:00 +0000</pubDate>
