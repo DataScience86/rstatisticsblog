@@ -18,6 +18,8 @@ We only retain collected information for as long as necessary to provide you wit
 We don’t share any personally identifying information publicly or with third-parties, except when required to by law.
 Our website may link to external sites that are not operated by us. Please be aware that we have no control over the content and practices of these sites, and cannot accept responsibility or liability for their respective privacy policies.
 
+For advertising we use Ezoic and you can learn about there policy [here](https://g.ezoic.net/privacy/rstatisticsblog.com)
+
 You are free to refuse our request for your personal information, with the understanding that we may be unable to provide you with some of your desired services.
 
 Your continued use of our website will be regarded as acceptance of our practices around privacy and personal information. If you have any questions about how we handle user data and personal information, feel free to contact us.
