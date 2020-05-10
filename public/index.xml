@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Quick R Tutorial on R Statistics Blog</title>
+    <title>Privacy Policy on R Statistics Blog</title>
     <link>//localhost:1313/</link>
-    <description>Recent content in Quick R Tutorial on R Statistics Blog</description>
+    <description>Recent content in Privacy Policy on R Statistics Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     
 	<atom:link href="//localhost:1313/index.xml" rel="self" type="application/rss+xml" />
@@ -58,7 +58,7 @@ Download RIf you have installed the R software as guided.</description>
     </item>
     
     <item>
-      <title>Word &amp; Document Analysis</title>
+      <title>Word and Document Analysis</title>
       <link>//localhost:1313/docs/text-mining/word-document-analysis/</link>
       <pubDate>Sat, 09 May 2020 00:00:00 +0000</pubDate>
       

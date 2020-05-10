@@ -4,16 +4,16 @@
 <head><script src="/livereload.js?port=1313&mindelay=10&v=2" data-no-instant defer></script>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Overview In the real world, the use of text analytics is growing at a swift pace. Organizations across the globe have started to realize that textual the analysis of textual data can reveal significant insights that can help with decision making. As of today, the text analytics field is seeing exponential growth and will continue to see this high growth rate, even for the coming years. The increase in text analysis use cases can be attributed to the continuous growth of unstructured data both within and outside of the organization."><meta property="og:title" content="Word &amp; Document Analysis" />
+<meta name="description" content="Overview In the real world, the use of text analytics is growing at a swift pace. Organizations across the globe have started to realize that textual the analysis of textual data can reveal significant insights that can help with decision making. As of today, the text analytics field is seeing exponential growth and will continue to see this high growth rate, even for the coming years. The increase in text analysis use cases can be attributed to the continuous growth of unstructured data both within and outside of the organization."><meta property="og:title" content="Word and Document Analysis" />
 <meta property="og:description" content="Overview In the real world, the use of text analytics is growing at a swift pace. Organizations across the globe have started to realize that textual the analysis of textual data can reveal significant insights that can help with decision making. As of today, the text analytics field is seeing exponential growth and will continue to see this high growth rate, even for the coming years. The increase in text analysis use cases can be attributed to the continuous growth of unstructured data both within and outside of the organization." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="//localhost:1313/docs/text-mining/word-document-analysis/" />
 <meta property="article:published_time" content="2020-05-09T00:00:00+00:00" />
-<meta property="article:modified_time" content="2020-05-09T00:00:00+00:00" />
-<title>Word &amp; Document Analysis | R Statistics Blog</title>
+<meta property="article:modified_time" content="2020-05-09T19:20:25+05:30" />
+<title>Word and Document Analysis | R Statistics Blog</title>
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.6df681b0bb21155cba49f6078e3559216772d8e03e780d240c73ea21817ed5e5.css" integrity="sha256-bfaBsLshFVy6SfYHjjVZIWdy2OA&#43;eA0kDHPqIYF&#43;1eU=">
-<script defer src="/en.search.min.bc5e3cc35eb18172472b4af26b403c68200962f9ba251021c4ca09f6cb533b7d.js" integrity="sha256-vF48w16xgXJHK0rya0A8aCAJYvm6JRAhxMoJ9stTO30="></script>
+<script defer src="/en.search.min.467efe3ffa9e2f2aee9fac454f0b7e45a32868ba484ce71412abf7d8395b2a3b.js" integrity="sha256-Rn7&#43;P/qeLyrun6xFTwt&#43;RaMoaLpITOcUEqv32DlbKjs="></script>
 
 <script defer src="/sw.min.74a8bb07f0bee86d6bb9a2750f073f14d93c7e4512f28860370cfd879e9719b4.js" integrity="sha256-dKi7B/C&#43;6G1ruaJ1Dwc/FNk8fkUS8ohgNwz9h56XGbQ="></script>
 
@@ -451,7 +451,7 @@ https://github.com/alex-shpak/hugo-book
         <li>
           
   
-    <a href="/docs/text-mining/word-document-analysis/" class="active">Word &amp; Document Analysis</a>
+    <a href="/docs/text-mining/word-document-analysis/" class="active">Word and Document Analysis</a>
   
 
         </li>
@@ -506,8 +506,20 @@ https://github.com/alex-shpak/hugo-book
   </li>
   
   <li>
+    <a href="/privacy-policy/" >
+        Privacy Policy
+      </a>
+  </li>
+  
+  <li>
     <a href="https://github.com/DataScience86/rstatisticsblog/tree/master/content" target="_blank" rel="noopener">
         Github
+      </a>
+  </li>
+  
+  <li>
+    <a href="/" >
+        Privacy Policy
       </a>
   </li>
   
@@ -537,7 +549,7 @@ https://github.com/alex-shpak/hugo-book
     <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
-  <strong>Word &amp; Document Analysis</strong>
+  <strong>Word and Document Analysis</strong>
 
   <label for="toc-control">
     <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
@@ -553,7 +565,10 @@ https://github.com/alex-shpak/hugo-book
   <ul>
     <li><a href="#overview">Overview</a></li>
     <li><a href="#term-frequencytf">Term frequency(tf)</a></li>
-    <li><a href="#term-frequencytf-1">Term frequency(tf)</a></li>
+    <li><a href="#inverse-document-frequencyidf">Inverse document frequency(idf)</a></li>
+    <li><a href="#term-frequency-inverse-document-frequecnytf-idf">Term frequency-inverse document frequecny(tf-idf)</a></li>
+    <li><a href="#visualizing-high-tf-idf-words">Visualizing high tf-idf words</a></li>
+    <li><a href="#bonus---convert-above-static-chart-to-interactive-chart">Bonus - Convert above static chart to interactive chart</a></li>
   </ul>
 </nav>
 
@@ -568,7 +583,7 @@ https://github.com/alex-shpak/hugo-book
   <article class="markdown"><h1 id="overview">Overview</h1>
 <p>In the real world, the use of text analytics is growing at a swift pace. Organizations across the globe have started to realize that textual the analysis of textual data can reveal significant insights that can help with decision making. As of today, the text analytics field is seeing exponential growth and will continue to see this high growth rate, even for the coming years. The increase in text analysis use cases can be attributed to the continuous growth of unstructured data both within and outside of the organization.</p>
 <p>In this section, we will learn how to figure out and quantify what a document is all about through the use of term-frequency, inverse document frequency, and a technique called tf-idf(combination of tf and idf). We will generate all these statistics using <code>tidytext</code> package in R.</p>
-<p>For examples, we are using text from Jane Austen&rsquo;s published novels. The package <code>janeaustenr</code> in R provides a collection of 6 different novels by Jane formatted in a convenient form for text analysis. Let&rsquo;s print the total number of lines by each book to get an idea about the length of each document.</p>
+<p>For example, we are using text from Jane Austen&rsquo;s published novels. The package <code>janeaustenr</code> in R provides a collection of 6 different novels by Jane formatted in a convenient form for text analysis. Let&rsquo;s print the total number of lines by each book to get an idea about the length of each document.</p>
 <p>For data manipulations, we are uing <code>dplyr</code> package.</p>
 <pre><code>library(tidytext)
 library(dplyr)
@@ -585,10 +600,10 @@ austen_books() %&gt;% group_by(book) %&gt;%
 6 Persuasion                 8328
 </code></pre><h1 id="term-frequencytf">Term frequency(tf)</h1>
 <p>If you think about a text document, it is nothing but a collection of sentences, and sentences are eventually a collection of words. So for a document, its features are the words. That means a similar set of documents will have related terms. Thus, the frequency of a term is a good measure of how important the word is to a given text. This method is called as term frequency.</p>
-<p>It is no surprise that there are going to be words that occur many times but are not relevant; these are words like &ldquo;is&rdquo;, &ldquo;the&rdquo;, &ldquo;that&rdquo;, &ldquo;this&rdquo;, &ldquo;of&rdquo;,  and so forth. It is thus vital to clean the text before getting the term-frequency of a document. To learn more about the text cleaning read the chater 
-  <img src="/docs/text-mining/text-pre-processing/" alt="Text Pre-Processing" />.</p>
-<p>Let us check the frequency of most common words used by Jane Austeneach throughout the novels. Here we <code>unnest_tokens()</code> function converts the text into <code>tokens</code> using tokenizers package. It also coverts the text to lower by default.  We also remove <code>stopwords</code> using <code>anti_join()</code> from <code>dplyr</code> package. The object <code>stop_words</code> is present in tidytext and contains about 1400+ stopwords. The <code>count</code> function counts the occurence of each word by novel.</p>
-<p>In the next chunk of code we are also looking at total number of words by each book. This is achieved by using <code>group_by()</code> and <code>summarise()</code> functions. Finally, we join the two tables using <code>left_join()</code>.</p>
+<p>It is no surprise that there are going to be words that occur many times but are not relevant; these are words like &ldquo;is&rdquo;, &ldquo;the&rdquo;, &ldquo;that&rdquo;, &ldquo;this&rdquo;, &ldquo;of&rdquo;,  and so forth. It is thus vital to clean the text before getting the term-frequency of a document. <strong>To learn more about the text cleaning process and steps read the 
+  <a href="/docs/text-mining/text-pre-processing/">Text Pre-Processing</a> chater</strong>.</p>
+<p>Let us check the frequency of most common words used by Jane Austeneach throughout the novels. Here we <code>unnest_tokens()</code> function converts the text into <code>tokens</code> using tokenizers package. It also coverts the text to lower by default.  We also remove <code>stopwords</code> using <code>anti_join()</code> from <code>dplyr</code> package. The object <code>stop_words</code> is present in <code>tidytext</code> and contains about 1400+ stopwords. The <code>count</code> function counts the occurrence of each word by a novel.</p>
+<p>In the next chunk of code, we are also looking at a total number of words by each book. This is achieved by using <code>group_by()</code> and <code>summarise()</code> functions. Finally, we join the two tables using <code>left_join()</code>.</p>
 <pre><code>library(tidytext)
 library(dplyr)
 
@@ -637,7 +652,103 @@ word_frequency
  9 Mansfiel~ miss     432       47968     3        0.00901
 10 Northang~ cathe~   428       23803     1        0.0180
 # ... with 37,215 more rows
-</code></pre><h1 id="term-frequencytf-1">Term frequency(tf)</h1>
+</code></pre><h1 id="inverse-document-frequencyidf">Inverse document frequency(idf)</h1>
+<p><strong>Inverse document frequency</strong> decreases the weight of words that are common and increases the weight of words, which are more important to the document. Here the frequency of each term in a document is divided by the document frequency of that term. In other words, <code>idf</code> is a measure of whether a term is common or rare to the given document.</p>
+
+<link rel="stylesheet" href="/katex/katex.min.css" />
+<script defer src="/katex/katex.min.js"></script>
+<script defer src="/katex/auto-render.min.js" onload="renderMathInElement(document.body);"></script><span>
+  \[
+{idf_{term}} = \ln(\frac {N_{documnets}} {N_{documents\space{containing}\space{terms}}} )\]
+</span>
+
+<h1 id="term-frequency-inverse-document-frequecnytf-idf">Term frequency-inverse document frequecny(tf-idf)</h1>
+<p>The intention behind <code>tf-idf</code> statistic is to measure the importance of a word in a collection of documents.
+tf-idf is calculated using the following formula.</p>
+<span>
+  \[
+tfidf(t,d,D) = tf(t, d) * idf(t, D)\]
+</span>
+
+<p>Here,
+<span>
+  \[`t` \dashrightarrow term\]
+</span>
+
+<span>
+  \[`d` \dashrightarrow document\]
+</span>
+
+<span>
+  \[`D` \dashrightarrow total\space{number}\space{documents}\space{in}\space{collection}\]
+</span>
+</p>
+<blockquote class="book-hint info">
+  <strong>Note</strong><br>
+In <code>tidytext</code> <strong>idf</strong> and <strong>tf-idf</strong> can be calculated using <code>bind_tf_idf()</code> function.
+</blockquote>
+
+<pre><code>word_frequency &lt;- austen_books() %&gt;%
+  unnest_tokens(word, text) %&gt;%
+  anti_join(stop_words)%&gt;%
+  count(book, word, sort = TRUE)
+
+word_tf_idf &lt;- word_frequency %&gt;%
+  bind_tf_idf(word, book, n)
+
+word_tf_idf
+</code></pre><pre><code># A tibble: 37,225 x 6
+   book                word          n      tf   idf  tf_idf
+   &lt;fct&gt;               &lt;chr&gt;     &lt;int&gt;   &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt;
+ 1 Mansfield Park      fanny       816 0.0170  0.693 0.0118
+ 2 Emma                emma        786 0.0168  1.10  0.0185
+ 3 Sense &amp; Sensibility elinor      623 0.0171  1.79  0.0307
+ 4 Emma                miss        599 0.0128  0     0      
+ 5 Pride &amp; Prejudice   elizabeth   597 0.0160  0.693 0.0111
+ 6 Mansfield Park      crawford    493 0.0103  1.79  0.0184
+ 7 Sense &amp; Sensibility marianne    492 0.0135  1.79  0.0243
+ 8 Persuasion          anne        447 0.0175  0.182 0.00320
+ 9 Mansfield Park      miss        432 0.00901 0     0      
+10 Northanger Abbey    catherine   428 0.0180  0.693 0.0125
+</code></pre><h1 id="visualizing-high-tf-idf-words">Visualizing high tf-idf words</h1>
+<p>To visualize the plot, we will use <code>ggplot2</code> package in R.</p>
+<pre><code>library(ggplot2)
+
+tf_idf_plot &lt;- word_tf_idf %&gt;%
+    arrange(desc(tf_idf)) %&gt;%
+    mutate(word = factor(word, levels = rev(unique(word)))) %&gt;%
+    group_by(book) %&gt;%
+    top_n(10) %&gt;%
+    ungroup() %&gt;%
+    ggplot(aes(word, tf_idf, fill = book)) +
+    geom_col(show.legend = FALSE) +
+    labs(x = NULL, y = &quot;tf-idf&quot;) +
+    facet_wrap(~book, ncol = 3, scales = &quot;free&quot;) +
+    coord_flip()
+</code></pre><figure>
+  <img src="/images/wordprocessing/tf_idf_chart.PNG" alt= "Visualizing clusters by original variables">
+</figure>
+<h1 id="bonus---convert-above-static-chart-to-interactive-chart">Bonus - Convert above static chart to interactive chart</h1>
+<p>You can use <code>ggplotly()</code> function to convert any <code>ggplot2</code> chart to an interactive chart as given blow:</p>
+<pre><code>library(plotly)
+ggplotly(tf_idf_plot)
+</code></pre><blockquote class="book-hint info">
+  <strong>Important Notice</strong><br>
+Stay updated by subscribing to our newsletter.<br>
+We hate spam just like you.
+</blockquote>
+
+
+
+
+  
+  
+
+
+<a  href="https://www.rstatisticsblog.com/docs/subscribe/"   target="_blank"  class="book-btn">
+  Subscribe
+</a>
+
 </article>
  
       
@@ -647,6 +758,12 @@ word_frequency
   <div class="flex justify-between">
 
 
+
+  <div><a class="flex align-center" href="https://github.com/DataScience86/rstatisticsblog/tree/master/content/docs/commit/0873ff12c1287c33ff3127ebb990bd96e1d420cc" title='Last modified by datasciencebeginner | May 9, 2020' target="_blank" rel="noopener">
+      <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
+      <span>May 9, 2020</span>
+    </a>
+  </div>
 
 
 
@@ -693,7 +810,10 @@ word_frequency
   <ul>
     <li><a href="#overview">Overview</a></li>
     <li><a href="#term-frequencytf">Term frequency(tf)</a></li>
-    <li><a href="#term-frequencytf-1">Term frequency(tf)</a></li>
+    <li><a href="#inverse-document-frequencyidf">Inverse document frequency(idf)</a></li>
+    <li><a href="#term-frequency-inverse-document-frequecnytf-idf">Term frequency-inverse document frequecny(tf-idf)</a></li>
+    <li><a href="#visualizing-high-tf-idf-words">Visualizing high tf-idf words</a></li>
+    <li><a href="#bonus---convert-above-static-chart-to-interactive-chart">Bonus - Convert above static chart to interactive chart</a></li>
   </ul>
 </nav>
 
