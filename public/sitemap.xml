@@ -178,11 +178,6 @@
   </url>
   
   <url>
-    <loc>//localhost:1313/</loc>
-    <lastmod>2020-05-10T18:32:48+05:30</lastmod>
-  </url>
-  
-  <url>
     <loc>//localhost:1313/posts/</loc>
     <lastmod>2020-04-28T22:05:20+05:30</lastmod>
   </url>
@@ -193,7 +188,12 @@
   
   <url>
     <loc>//localhost:1313/privacy-policy/</loc>
-    <lastmod>2020-05-10T18:32:48+05:30</lastmod>
+    <lastmod>2020-05-10T18:37:47+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>//localhost:1313/</loc>
+    <lastmod>2020-05-10T18:37:47+05:30</lastmod>
   </url>
   
   <url>
